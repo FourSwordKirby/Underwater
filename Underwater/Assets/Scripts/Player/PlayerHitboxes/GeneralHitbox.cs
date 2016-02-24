@@ -18,9 +18,6 @@ public class GeneralHitbox : Hitbox {
 
             hurtbox.TakeDamage(damage);
             hurtbox.TakeHit(hitlag, hitstun, knockbackVector);
-
-
-            owner.gainMeter(meterGain);
         }
     }
 }

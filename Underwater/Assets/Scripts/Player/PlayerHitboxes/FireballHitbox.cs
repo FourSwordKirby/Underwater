@@ -29,9 +29,6 @@ public class FireballHitbox : Hitbox {
             hurtbox.TakeDamage(damage);
             hurtbox.TakeHit(hitlag, hitstun, knockbackVector);
 
-             
-            owner.gainMeter(meterGain);
-
             Destroy(this.transform.parent.gameObject);
         }
     }

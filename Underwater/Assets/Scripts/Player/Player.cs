@@ -5,29 +5,20 @@ using System.Collections.Generic;
 public class Player : Mobile {
 
     public float maxHealth;
-    public float maxMeter;
-    private float baseKnockdownThreshold;
 
     public float health { get; private set; }
-    public float meter { get; private set; }
-    public int stocks { get; private set; }
 
     public float movementSpeed;
-    public float rollSpeed;
     public float friction;
     public float jumpHeight;
     public float fallSpeed;
     public float airMovementSpeed;
 
-    public float knockdownThreshold;
+    public bool isUnderWater;
 
     public bool grounded;
 
-    public int maxAirJumps;
-    public int maxAirDashes;
-
-    public int airJumps;
-    public int airDashes;
+    public float jetpackFuel;
 
     public Parameters.InputDirection direction { get; set; }
     
@@ -36,19 +27,12 @@ public class Player : Mobile {
     
     public const int DEFAULT_MAX_HEALTH = 100;
     public const int DEFAULT_MAX_METER = 100;
-    public const int DEFAULT_STOCK_COUNT = 4;
 
     public const float DEFAULT_SPEED = 2.0f;
-    public const float DEFAULT_ROLL_SPEED = 6.0f;
     public const float DEFAULT_FRICTION = 1.0f;
     public const float DEFAULT_JUMP_HEIGHT = 10.0f;
     public const float DEFAULT_FALL_SPEED = 1.0f;
     public const float DEFAULT_AIR_MOVEMENT_SPEED = 2.0f;
-
-    public const float DEFAULT_KNOCKDOWN_THRESHOLD = 1.0f;
-
-    public const int DEFAULT_MAX_AIR_JUMPS = 1;
-    public const int DEFAULT_MAX_AIR_DASHES = 1;
 
     public StateMachine<Player> ActionFsm { get; private set; }
 
@@ -67,13 +51,7 @@ public class Player : Mobile {
     void Awake()
     {
         maxHealth = DEFAULT_MAX_HEALTH;
-        maxMeter = DEFAULT_MAX_METER;
         health = maxHealth;
-        meter = 0.0f;
-        stocks = DEFAULT_STOCK_COUNT;
-
-        airJumps = 0;
-        airDashes = 0;
 
         /*
         baseKnockdownThreshold = DEFAULT_KNOCKDOWN_THRESHOLD;
@@ -115,27 +93,11 @@ public class Player : Mobile {
             float xDir = Parameters.getVector(direction).x;
             newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
         }
-
-        if (health <= 0)
-        {
-            stocks -= 1;
-            if(stocks > 0)
-                health = maxHealth;
-        }
-
-        if (stocks <= 0)
-            Debug.Log("Player defeated");
 	}
 
     void FixedUpdate()
     {
         this.ActionFsm.FixedExecute();
-    }
-
-    public void gainMeter(float meterGain)
-    {
-        if (meterGain > 0)
-            this.meter += meterGain;
     }
 
     public void loseHealth(float damage)
@@ -146,11 +108,6 @@ public class Player : Mobile {
 
     public void Die()
     {
-        this.stocks--;
-        if (stocks > 0)
-        {
-            this.transform.position = GameManager.GetRespawnPosition();
-            ActionFsm.ChangeState(new RespawnState(this, this.ActionFsm));
-        }
+        Debug.Log("died");
     }
 }

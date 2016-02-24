@@ -34,7 +34,6 @@ public class MeterOrb : MonoBehaviour {
 
         if (playerOriginPoint != null)
         {
-            playerOriginPoint.player.gainMeter(meterGain);
             respawnTimer = respawnTime;
 
             sprite.enabled = false;

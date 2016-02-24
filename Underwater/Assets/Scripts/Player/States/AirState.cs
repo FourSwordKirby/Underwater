@@ -34,9 +34,10 @@ public class AirState : State<Player>
         }
 
         //Doing double jumps
-        if (Controls.jumpInputDown(player) && player.airJumps < player.maxAirJumps)
+        if (Controls.jumpInputDown(player))
         {
-            player.airJumps++;
+            //Do some stuff to activate the jetpack
+            //************
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
             return;
         }
@@ -54,6 +55,5 @@ public class AirState : State<Player>
 
     override public void Exit()
     {
-        player.airJumps = 0;
     }
 }
