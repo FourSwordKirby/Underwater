@@ -15,6 +15,7 @@ public class FireballHitbox : Hitbox {
 
     void OnTriggerEnter2D(Collider2D col)
     {
+        /*
         Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
         if (hurtbox != null && hurtbox.owner != this.owner)
         {
@@ -31,5 +32,6 @@ public class FireballHitbox : Hitbox {
 
             Destroy(this.transform.parent.gameObject);
         }
+         */
     }
 }

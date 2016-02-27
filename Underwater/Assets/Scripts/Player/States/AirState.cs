@@ -6,6 +6,9 @@ public class AirState : State<Player>
     private Player player;
     private Vector2 movementInputVector;
 
+    //This is used to prevent the game from declaring the player as grounded too soon.
+    private int leewayFrames = 3;
+
     public AirState(Player playerInstance, StateMachine<Player> fsm)
         : base(playerInstance, fsm)
     {
@@ -14,8 +17,13 @@ public class AirState : State<Player>
 
     override public void Enter()
     {
+        player.LockDirection();
+
         if(player.grounded)
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
+
+        player.anim.SetBool("Airborne", true);
+
         return;
     }
 
@@ -27,25 +35,20 @@ public class AirState : State<Player>
 
         //Might want to change this stuff later to include transition states
         //Check if the player is grounded.
-        if (player.grounded)
+        if (player.grounded && leewayFrames <= 0)
         {
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
             return;
         }
 
-        //Doing double jumps
-        if (Controls.jumpInputDown(player))
+        //Doing air boosts
+        if (Controls.jumpInputDown() && player.isUnderWater && player.jetpackFuel > 0)
         {
-            //Do some stuff to activate the jetpack
-            //************
-            player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
+            player.ActionFsm.ChangeState(new BoostState(player, player.ActionFsm));
             return;
         }
 
-        //Temporary measures until we get more animations.
-        //if (movementInputVector.x != 0)
-        //    player.anim.SetFloat("DirX", movementInputVector.x / Mathf.Abs(movementInputVector.x));
-        //player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
+        leewayFrames--;
     }
 
     override public void FixedExecute()

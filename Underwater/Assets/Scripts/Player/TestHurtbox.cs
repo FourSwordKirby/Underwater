@@ -4,7 +4,7 @@ using System.Collections;
 public class TestHurtbox : Hurtbox {
     override public void TakeDamage(float damage)
     {
-        owner.loseHealth(damage);
+        owner.LoseHealth(damage);
     }
 
     override public void TakeHit(float hitlag, float hitstun, Vector2 knockback)

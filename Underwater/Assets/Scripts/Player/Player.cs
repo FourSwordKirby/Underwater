@@ -5,34 +5,85 @@ using System.Collections.Generic;
 public class Player : Mobile {
 
     public float maxHealth;
+    public float maxJetpackFuel;    //Amount of time the jetpack can be used.
+
 
     public float health { get; private set; }
+    public float jetpackFuel { get; private set; }
 
-    public float movementSpeed;
+    public Weapon activeWeapon;
+    public List<Weapon> weaponInventory;
+
+    public float baseMovementSpeed;
+    public float baseFriction;
+    public float baseJumpHeight;
+    public float baseFallSpeed;
+    public float baseAirMovementSpeed;
+    public float baseJetpackSpeed;
+
+
+    public float movementSpeed
+    {
+        get
+        {
+            if(isUnderWater)
+                return 0.5f * baseMovementSpeed;
+            else
+                return baseMovementSpeed;
+        }
+    }
     public float friction;
-    public float jumpHeight;
-    public float fallSpeed;
-    public float airMovementSpeed;
+    public float jumpHeight
+    {
+        get
+        {
+            if (isUnderWater)
+                return 2.0f * baseJumpHeight;
+            else
+                return baseJumpHeight;
+        }
+    }
+    public float fallSpeed
+    {
+        get
+        {
+            if (isUnderWater)
+                return 0.5f * fallSpeed;
+            else
+                return fallSpeed;
+        }
+    }
+    public float airMovementSpeed
+    {
+        get
+        {
+            if (isUnderWater)
+                return 0.5f * baseAirMovementSpeed;
+            else
+                return baseAirMovementSpeed;
+        }
+    }
+    public float jetpackSpeed
+    {
+        get
+        {
+            if(isUnderWater)
+                return baseJetpackSpeed;
+            else
+                return baseJetpackSpeed/4;
+        }
+    }
 
     public bool isUnderWater;
-
     public bool grounded;
 
-    public float jetpackFuel;
+    public Parameters.PlayerDirection direction; //{ get; set; }
+    public Parameters.PlayerAim aim; //{ get; set; }
 
-    public Parameters.InputDirection direction { get; set; }
-    
+    private bool lockedDir;
+
     //Tells us the status of the player (things that affect the hitbox)
     public Parameters.PlayerStatus status {get; set; }
-    
-    public const int DEFAULT_MAX_HEALTH = 100;
-    public const int DEFAULT_MAX_METER = 100;
-
-    public const float DEFAULT_SPEED = 2.0f;
-    public const float DEFAULT_FRICTION = 1.0f;
-    public const float DEFAULT_JUMP_HEIGHT = 10.0f;
-    public const float DEFAULT_FALL_SPEED = 1.0f;
-    public const float DEFAULT_AIR_MOVEMENT_SPEED = 2.0f;
 
     public StateMachine<Player> ActionFsm { get; private set; }
 
@@ -50,22 +101,7 @@ public class Player : Mobile {
     //Used for the initialization of internal, non-object variables
     void Awake()
     {
-        maxHealth = DEFAULT_MAX_HEALTH;
         health = maxHealth;
-
-        /*
-        baseKnockdownThreshold = DEFAULT_KNOCKDOWN_THRESHOLD;
-        knockdownThreshold = baseKnockdownThreshold;
-
-        this.movementSpeed = DEFAULT_SPEED;
-        this.rollSpeed = DEFAULT_ROLL_SPEED;
-        this.friction = DEFAULT_FRICTION;
-        this.jumpHeight = DEFAULT_JUMP_HEIGHT;
-        this.fallSpeed = DEFAULT_FALL_SPEED;
-        this.airMovementSpeed = DEFAULT_AIR_MOVEMENT_SPEED;
-        this.maxAirJumps = DEFAULT_MAX__AIR_JUMPS;
-        this.maxAirDashes = DEFAULT_MAX__AIR_DASHES;
-         */
     }
 
     // Use this for initialization of variables that rely on other objects
@@ -82,16 +118,33 @@ public class Player : Mobile {
 	
 	// Update is called once per frame
 	void Update () {
+        //Animation control stuff
+        Vector2 movementInputVector = Controls.getDirection();
+
+        //Controlling where we are aiming
+        this.aim = Parameters.VectorToAim(movementInputVector);
+        if (this.grounded && this.aim == Parameters.PlayerAim.Down)
+            this.aim = Parameters.PlayerAim.TiltDown;
+
+        //Controlling the direction we are facing
+        if (movementInputVector.x != 0 && !lockedDir)
+            this.direction = Parameters.VectorToDir(movementInputVector);
+
+        this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
+        this.anim.SetFloat("Aim", Parameters.GetAimAnimation(this.aim));
+
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
-        if (Controls.attackInputDown(this))
+        if (Controls.shootInputHeld())
         {
-            GameObject newFireball = Instantiate(prefabs[0]);
-            newFireball.GetComponentInChildren<FireballHitbox>().owner = this;
-            newFireball.transform.position = this.transform.position + new Vector3(0, 1, 0);
-            float xDir = Parameters.getVector(direction).x;
-            newFireball.GetComponent<Rigidbody2D>().velocity = new Vector3(xDir * 4, 0, 0);
+            activeWeapon.Fire(direction, aim);
+            LockDirection();
+        }
+        else
+        {
+            activeWeapon.CeaseFire();
+            UnlockDirection();
         }
 	}
 
@@ -100,14 +153,39 @@ public class Player : Mobile {
         this.ActionFsm.FixedExecute();
     }
 
-    public void loseHealth(float damage)
+    public void LoseHealth(float damage)
     {
         if (damage > 0)
             this.health -= damage;
     }
 
+    public void RegainHealth(float amount)
+    {
+        this.health = Mathf.Clamp(this.health + amount, 0.0f, maxHealth);
+    }
+
+    public void UseFuel(float amount)
+    {
+        this.jetpackFuel -= amount;
+    }
+
+    public void RefillFuel()
+    {
+        this.jetpackFuel = maxJetpackFuel;
+    }
+
     public void Die()
     {
         Debug.Log("died");
+    }
+
+    public void LockDirection()
+    {
+        lockedDir = true;
+    }
+
+    public void UnlockDirection()
+    {
+        lockedDir = false;
     }
 }

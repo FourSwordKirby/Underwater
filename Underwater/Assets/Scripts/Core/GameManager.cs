@@ -76,17 +76,17 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         /*ButtonCheck*/
-        if (Controls.attackInputDown(Players[0]))
+        if (Controls.shootInputDown(Players[0]))
             Debug.Log("P1 ATTACK");
-        if (Controls.specialInputDown(Players[0]))
+        if (Controls.nextWeaponInputDown(Players[0]))
             Debug.Log("P1 SPECIAL");
-        if (Controls.jumpInputDown(Players[0]))
+        if (Controls.jumpInputDown())
             Debug.Log("P1 JUMP");
-        if (Controls.shieldInputDown(Players[0]))
+        if (Controls.prevWeaponInputDown(Players[0]))
             Debug.Log("P1 SHIELD");
-        if (Controls.enhanceInputDown(Players[0]))
+        if (Controls.AimUpInputDown(Players[0]))
             Debug.Log("P1 ENHANCE");
-        if (Controls.superInputDown(Players[0]))
+        if (Controls.AimDownInputDown(Players[0]))
             Debug.Log("P1 SUPER");
         if (Controls.pauseInputDown(Players[0]))
             Debug.Log("PAUSE");
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour {
         float incrementDistance = 0.1f;
         float currentDistance = 0.0f;
 
-        increment = Parameters.getVector(direction) * incrementDistance;
+        increment = Parameters.InputDirToVector(direction) * incrementDistance;
         while (pointCollides(newPosition))
         {
             currentDistance += incrementDistance;

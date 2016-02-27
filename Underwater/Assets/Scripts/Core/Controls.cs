@@ -9,56 +9,61 @@ public class Controls {
      */
     public const float FALL_THROUGH_THRESHOLD = 0.5f;
 
+    public static Vector2 getDirection()
+    {
+        return getDirection(null);
+    }
+
     public static Vector2 getDirection(Player player)
     {
         float xAxis = 0;
         float yAxis = 0;
 
-        if (Mathf.Abs(Input.GetAxis("P1 Horizontal")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Horizontal")))
-            xAxis = Input.GetAxis("P1 Horizontal");
+        if (Mathf.Abs(Input.GetAxis("Horizontal")) > Mathf.Abs(Input.GetAxis("Keyboard Horizontal")))
+            xAxis = Input.GetAxis("Horizontal");
         else
-            xAxis = Input.GetAxis("P1 Keyboard Horizontal");
-        if (Mathf.Abs(Input.GetAxis("P1 Vertical")) > Mathf.Abs(Input.GetAxis("P1 Keyboard Vertical")))
-            yAxis = Input.GetAxis("P1 Vertical");
+            xAxis = Input.GetAxis("Keyboard Horizontal");
+        if (Mathf.Abs(Input.GetAxis("Vertical")) > Mathf.Abs(Input.GetAxis("Keyboard Vertical")))
+            yAxis = Input.GetAxis("Vertical");
         else
-            yAxis = Input.GetAxis("P1 Keyboard Vertical");
+            yAxis = Input.GetAxis("Keyboard Vertical");
 
         return new Vector2(xAxis, yAxis);
     }
 
-    public static Parameters.InputDirection getInputDirection(Player player)
+    public static bool jumpInputDown()
     {
-        return Parameters.vectorToDirection(getDirection(player));
+        return Input.GetButtonDown("Jump");
     }
 
-    public static bool jumpInputDown(Player player)
+    public static bool shootInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Jump");
+        return Input.GetButtonDown("Shoot");
     }
 
-    public static bool attackInputDown(Player player)
+    public static bool nextWeaponInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Attack");
+        return Input.GetButtonDown("Next Weapon");
     }
 
-    public static bool specialInputDown(Player player)
+    public static bool prevWeaponInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Special");
+        return Input.GetButtonDown("Prev Weapon");
     }
 
-    public static bool shieldInputDown(Player player)
+    public static bool AimUpInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Shield");
+        return Input.GetButtonDown("Aim Up");
     }
 
-    public static bool enhanceInputDown(Player player)
+    public static bool AimDownInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Enhance");
+        return Input.GetButtonDown("AimDown");
     }
 
-    public static bool superInputDown(Player player)
+    public static bool InteractInputDown(Player player)
     {
-        return Input.GetButtonDown("P1 Super");
+        return Input.GetButtonDown("Interact");
     }
 
     public static bool pauseInputDown(Player player)
@@ -67,37 +72,42 @@ public class Controls {
     }
 
 
-    public static bool jumpInputHeld(Player player)
+    public static bool jumpInputHeld()
     {
-        return Input.GetButton("P1 Jump");
+        return Input.GetButton("Jump");
     }
 
-    public static bool attackInputHeld(Player player)
+    public static bool shootInputHeld()
     {
-        return Input.GetButton("P1 Attack");
+        return Input.GetButton("Shoot");
     }
 
-    public static bool specialInputHeld(Player player)
+    public static bool nextWeaponInputHeld()
     {
-        return Input.GetButton("P1 Special");
+        return Input.GetButton("Next Weapon");
     }
 
-    public static bool shieldInputHeld(Player player)
+    public static bool prevWeaponInputHeld()
     {
-        return Input.GetButton("P1 Shield");
+        return Input.GetButton("Prev Weapon");
     }
 
-    public static bool enhanceInputHeld(Player player)
+    public static bool AimUpInputHeld()
     {
-        return Input.GetButton("P1 Enhance");
+        return Input.GetButton("Aim Up");
     }
 
-    public static bool superInputHeld(Player player)
+    public static bool AimInputHeld()
     {
-        return Input.GetButton("P1 Super");
+        return Input.GetButton("Aim");
     }
 
-    public static bool pauseInputHeld(Player player)
+    public static bool InteractInputHeld()
+    {
+        return Input.GetButton("Interact");
+    }
+
+    public static bool pauseInputHeld()
     {
         return Input.GetButton("Pause");
     }

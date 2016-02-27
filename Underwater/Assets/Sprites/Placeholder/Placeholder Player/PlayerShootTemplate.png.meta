@@ -1,0 +1,377 @@
+fileFormatVersion: 2
+guid: 2239813ff8ea2454c8fc8fba13e13e4a
+timeCreated: 1456544142
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PlayerShootTemplate_0
+    21300002: PlayerShootTemplate_1
+    21300004: PlayerShootTemplate_2
+    21300006: PlayerShootTemplate_3
+    21300008: PlayerShootTemplate_4
+    21300010: PlayerShootTemplate_5
+    21300012: PlayerShootTemplate_6
+    21300014: PlayerShootTemplate_7
+    21300016: PlayerShootTemplate_8
+    21300018: PlayerShootTemplate_9
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: PlayerShootTemplate_0
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 693
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_1
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 695
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_2
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 694
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_3
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 695
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_4
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 688
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_5
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 289
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_6
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 281
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_7
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 284
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_8
+      rect:
+        serializedVersion: 2
+        x: 1006
+        y: 281
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    - name: PlayerShootTemplate_9
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 288
+        width: 240
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 107, y: 90}
+        - {x: 105, y: 92}
+        - {x: 92, y: 92}
+        - {x: 92, y: 105}
+        - {x: 90, y: 107}
+        - {x: 77, y: 107}
+        - {x: 77, y: 120}
+        - {x: -77, y: 120}
+        - {x: -77, y: 107}
+        - {x: -90, y: 107}
+        - {x: -92, y: 105}
+        - {x: -92, y: 92}
+        - {x: -105, y: 92}
+        - {x: -107, y: 90}
+        - {x: -107, y: 77}
+        - {x: -120, y: 77}
+        - {x: -120, y: -120}
+        - {x: 120, y: -120}
+        - {x: 120, y: 77}
+        - {x: 107, y: 77}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

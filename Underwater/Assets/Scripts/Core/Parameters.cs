@@ -5,9 +5,31 @@ public class Parameters : MonoBehaviour {
 
     public enum InputDirection
     {
+        North,
+        NorthEast,
+        East,
+        SouthEast,
+        South,
+        SouthWest,
+        West,
+        NorthWest,
+        Stop
+    };
+
+    public enum PlayerDirection
+    {
         Left,
         Right
-    };
+    }
+
+    public enum PlayerAim
+    {
+        Up,
+        TiltUp,
+        Neutral,
+        TiltDown,
+        Down
+    }
 
     //Do we need this?
     public enum PlayerStatus
@@ -31,18 +53,151 @@ public class Parameters : MonoBehaviour {
         Poison        
     }
 
-    public static InputDirection vectorToDirection(Vector2 inputVector)
+    public static PlayerDirection VectorToDir(Vector2 inputVector)
     {
         if (inputVector.x > 0)
-            return InputDirection.Right;
+            return PlayerDirection.Right;
         else
-            return InputDirection.Left;
+            return PlayerDirection.Left;
+    }
 
-        /*
-        if (inputVector == Vector2.zero)
-            return Parameters.InputDirection.Stop; ;
+    public static PlayerAim VectorToAim(Vector2 inputVector)
+    {
+        float xMag = Mathf.Abs(inputVector.x);
+        float yMag = Mathf.Abs(inputVector.y);
+        if (inputVector.y > 0 && yMag > 1.5f * xMag)
+            return PlayerAim.Up;
+        else if (inputVector.y > 0 && yMag < 1.5f * xMag) 
+                return PlayerAim.TiltUp;
+        if (inputVector.y == 0.0)
+            return PlayerAim.Neutral;
+        else if (inputVector.y < 0 && yMag < 1.5f * xMag)
+            return PlayerAim.TiltDown;
+        else if (inputVector.y < 0 && yMag > 1.5f * xMag) 
+            return PlayerAim.Down;
+        return PlayerAim.Neutral;
+    }
 
-        float angle = Mathf.Atan2(inputVector.y, inputVector.x) * Mathf.Rad2Deg;
+    public static InputDirection PlayerOrientationToDir(PlayerDirection playerDir, PlayerAim playerAim)
+    {
+        return InputDirection.East;
+    }
+
+    public static Vector2 InputDirToVector(InputDirection dir)
+    {
+        switch (dir)
+        {
+            case Parameters.InputDirection.North:
+                return new Vector2(0, 1);
+            case Parameters.InputDirection.NorthEast:
+                return new Vector2(Mathf.Sin(Mathf.PI / 2), Mathf.Sin(Mathf.PI / 2));
+            case Parameters.InputDirection.East:
+                return new Vector2(1, 0);
+            case Parameters.InputDirection.SouthEast:
+                return new Vector2(Mathf.Sin(Mathf.PI / 2), Mathf.Sin(3 * Mathf.PI / 2));
+            case Parameters.InputDirection.South:
+                return new Vector2(0, -1);
+            case Parameters.InputDirection.SouthWest:
+                return new Vector2(Mathf.Sin(3 * Mathf.PI / 2), Mathf.Sin(3 * Mathf.PI / 2));
+            case Parameters.InputDirection.West:
+                return new Vector2(-1, 0);
+            case Parameters.InputDirection.NorthWest:
+                return new Vector2(Mathf.Sin(3 * Mathf.PI / 2), Mathf.Sin(Mathf.PI / 2));
+        }
+        return Vector2.zero;
+    }
+
+
+    public static int GetDirAnimation(PlayerDirection playerDir)
+    {
+        switch (playerDir)
+        {
+            case Parameters.PlayerDirection.Left:
+                return -1;
+            case Parameters.PlayerDirection.Right:
+                return 1;
+        }
+        return 0;
+    }
+
+    public static int GetAimAnimation(PlayerAim playerAim)
+    {
+        switch (playerAim)
+        {
+            case Parameters.PlayerAim.Down:
+                return -2;
+            case Parameters.PlayerAim.TiltDown:
+                return -1;
+            case Parameters.PlayerAim.Neutral:
+                return 0;
+            case Parameters.PlayerAim.TiltUp:
+                return 1;
+            case Parameters.PlayerAim.Up:
+                return 2;
+        }
+        return 0;
+    }
+
+
+
+    public static bool isOppositeDirection(InputDirection dir_1, InputDirection dir_2)
+    {
+        switch (dir_1)
+        {
+            case InputDirection.North: 
+                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.South || dir_2 == InputDirection.SouthWest);
+            case InputDirection.NorthEast: 
+                return (dir_2 == InputDirection.West || dir_2 == InputDirection.South || dir_2 == InputDirection.SouthWest);
+            case InputDirection.East: 
+                return (dir_2 == InputDirection.NorthWest || dir_2 == InputDirection.West || dir_2 == InputDirection.SouthWest);
+            case InputDirection.SouthEast: 
+                return (dir_2 == InputDirection.NorthWest || dir_2 == InputDirection.West || dir_2 == InputDirection.North);
+            case InputDirection.South: 
+                return (dir_2 == InputDirection.NorthEast || dir_2 == InputDirection.North || dir_2 == InputDirection.NorthWest);
+            case InputDirection.SouthWest: 
+                return (dir_2 == InputDirection.East || dir_2 == InputDirection.North || dir_2 == InputDirection.NorthEast);
+            case InputDirection.West: 
+                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.East || dir_2 == InputDirection.NorthEast);
+            case InputDirection.NorthWest: 
+                return (dir_2 == InputDirection.SouthEast || dir_2 == InputDirection.South || dir_2 == InputDirection.East);
+        }
+        return false;
+    }
+
+    public static InputDirection getOppositeDirection(InputDirection dir)
+    {
+        switch (dir)
+        {
+            case InputDirection.North:
+                return InputDirection.South;
+            case InputDirection.NorthEast:
+                return InputDirection.SouthWest;
+            case InputDirection.East:
+                return InputDirection.West;
+            case InputDirection.SouthEast:
+                return InputDirection.NorthWest;
+            case InputDirection.South:
+                return InputDirection.North;
+            case InputDirection.SouthWest:
+                return InputDirection.NorthEast;
+            case InputDirection.West:
+                return InputDirection.East;
+            case InputDirection.NorthWest:
+                return InputDirection.SouthEast;
+        }
+        return InputDirection.Stop;
+    }
+
+    
+
+    public static InputDirection getTargetDirection(Mobile player, Mobile target)
+    {
+        Vector2 playerPos = player.transform.position; 
+        Vector2 targetPos = target.transform.position;
+
+        Vector2 dir = targetPos - playerPos;
+
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         if (angle >= -22.5 && angle < 22.5)
         {
@@ -77,56 +232,7 @@ public class Parameters : MonoBehaviour {
             return Parameters.InputDirection.SouthEast;
         }
 
-        return Parameters.InputDirection.Stop
-            */
-    }
 
-    public static bool isOppositeDirection(InputDirection dir_1, InputDirection dir_2)
-    {
-        switch (dir_1)
-        {
-            case InputDirection.Left: 
-                return dir_2 == InputDirection.Right;
-            case InputDirection.Right:
-                return dir_2 == InputDirection.Left;
-            }
-        return false;
-    }
-
-    public static InputDirection getOppositeDirection(InputDirection dir)
-    {
-        switch (dir)
-        {
-            case InputDirection.Left:
-                return InputDirection.Right;
-            case InputDirection.Right:
-                return InputDirection.Left;
-        }
-        return InputDirection.Left;
-    }
-
-    public static Vector2 getVector(InputDirection dir)
-    {
-        switch (dir)
-        {
-            case Parameters.InputDirection.Left:
-                return new Vector2(-1, 0);
-            case Parameters.InputDirection.Right:
-                return new Vector2(1, 0);
-        }
-        return Vector2.zero;
-    }
-
-    public static InputDirection getTargetDirection(Mobile player, Mobile target)
-    {
-        Vector2 playerPos = player.transform.position; 
-        Vector2 targetPos = target.transform.position;
-
-        if (player.transform.position.x - target.transform.position.x > 0)
-        {
-            return InputDirection.Right;
-        }
-        else
-            return InputDirection.Left;
+        return Parameters.InputDirection.Stop;
     }
 }

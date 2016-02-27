@@ -16,6 +16,7 @@ public class MovementState : State<Player> {
     override public void Enter()
     {
         player.anim.SetFloat("MoveSpeed", 1.0f);
+        player.anim.SetBool("Airborne", false);
         return;
     }
 
@@ -30,15 +31,14 @@ public class MovementState : State<Player> {
             return;
         }
 
-        if (Controls.jumpInputDown(player) || !player.grounded)
+        if (Controls.jumpInputDown() || !player.grounded)
         {
             player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));
             return;
         }
 
         //Temporary measures until we get more animations.
-        if(movementInputVector.x != 0)
-            player.anim.SetFloat("DirX", movementInputVector.x/Mathf.Abs(movementInputVector.x));
+
         //player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
     }
 
