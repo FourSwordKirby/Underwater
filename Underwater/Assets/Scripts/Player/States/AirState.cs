@@ -19,8 +19,11 @@ public class AirState : State<Player>
     {
         player.LockDirection();
 
-        if(player.grounded)
+        if (player.grounded)
+        {
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
+            player.grounded = false;
+        }
 
         player.anim.SetBool("Airborne", true);
 

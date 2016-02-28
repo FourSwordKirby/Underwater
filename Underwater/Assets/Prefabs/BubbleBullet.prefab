@@ -12,7 +12,7 @@ GameObject:
   - 50: {fileID: 5033666}
   - 61: {fileID: 6175294}
   - 114: {fileID: 11405866}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BubbleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ MonoBehaviour:
   knockbackVector: {x: 0, y: 0}
   hitstun: 0
   effect: 0
-  decayTime: 1.5
+  decayTime: 1
   selfBody: {fileID: 5033666}
 --- !u!212 &21264572
 SpriteRenderer:
@@ -155,12 +155,16 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: decayTime
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: selfBody
       value: 
       objectReference: {fileID: 5033666}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 125960}

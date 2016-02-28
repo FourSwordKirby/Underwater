@@ -53,10 +53,6 @@ public class CameraControls : MonoBehaviour {
 	void Start () {
         cameraComponent = GetComponent<Camera>();
 
-        foreach(Player player in GameManager.Players){
-            focus.addTargets(player);
-        }
-
         original_camera_size = cameraComponent.orthographicSize;
         min_camera_size = 0.75f * original_camera_size;
         max_camera_size = 2.0f * original_camera_size;

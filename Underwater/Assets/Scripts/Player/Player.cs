@@ -144,7 +144,8 @@ public class Player : Mobile {
         else
         {
             activeWeapon.CeaseFire();
-            UnlockDirection();
+            if(grounded)
+                UnlockDirection();
         }
 	}
 

@@ -30,23 +30,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &149680
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 483514}
-  - 61: {fileID: 6187690}
-  - 114: {fileID: 11495196}
-  m_Layer: 0
-  m_Name: StompHitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &157500
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,8 +199,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 483514}
+  m_Children: []
   m_Father: {fileID: 484188}
   m_RootOrder: 2
 --- !u!4 &455744
@@ -270,18 +252,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484188}
   m_RootOrder: 4
---- !u!4 &483514
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149680}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 454032}
-  m_RootOrder: 0
 --- !u!4 &484188
 Transform:
   m_ObjectHideFlags: 1
@@ -382,20 +352,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!61 &6187690
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149680}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
 --- !u!61 &6193956
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -486,9 +442,9 @@ MonoBehaviour:
   name: Bubbler
   maxAmmoCount: 100
   ammo: {fileID: 11405866, guid: 2d18d78544aff9e4794c08f923022100, type: 2}
-  rechargeRate: 20
-  fireRate: 10
-  bubbleSpeed: 2
+  rechargeRate: 30
+  fireRate: 20
+  bubbleSpeed: 5
 --- !u!114 &11470188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -539,23 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionBoxes:
-  - {fileID: 11495196}
---- !u!114 &11495196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0bddff6a382a40458c7c3ba078b4c96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: StompHitbox
-  damage: 30
-  knockbackVector: {x: 0, y: -20}
-  hitstun: 0.4
-  effect: 0
+  - {fileID: 11472642}
 --- !u!212 &21226642
 SpriteRenderer:
   m_ObjectHideFlags: 1

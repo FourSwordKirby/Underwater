@@ -8,7 +8,7 @@ public class FocalPoint : MonoBehaviour {
 
     void Awake()
     {
-        targets = new List<Mobile>();
+        //targets = new List<Mobile>();
     }
 
     public void addTargets(Mobile target)
