@@ -76,11 +76,11 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         /*ButtonCheck*/
-        if (Controls.shootInputDown(Players[0]))
+        if (Controls.ShootInputDown(Players[0]))
             Debug.Log("P1 ATTACK");
-        if (Controls.nextWeaponInputDown(Players[0]))
+        if (Controls.NextWeaponInputDown(Players[0]))
             Debug.Log("P1 SPECIAL");
-        if (Controls.jumpInputDown())
+        if (Controls.JumpInputDown())
             Debug.Log("P1 JUMP");
         if (Controls.prevWeaponInputDown(Players[0]))
             Debug.Log("P1 SHIELD");

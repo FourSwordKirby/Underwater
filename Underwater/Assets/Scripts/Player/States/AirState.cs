@@ -45,7 +45,7 @@ public class AirState : State<Player>
         }
 
         //Doing air boosts
-        if (Controls.jumpInputDown() && player.isUnderWater && player.jetpackFuel > 0)
+        if (Controls.JumpInputDown() && player.isUnderWater && player.jetpackFuel > 0)
         {
             player.ActionFsm.ChangeState(new BoostState(player, player.ActionFsm));
             return;

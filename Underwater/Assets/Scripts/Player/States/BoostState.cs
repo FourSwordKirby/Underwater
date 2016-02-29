@@ -53,7 +53,7 @@ public class BoostState : State<Player>
             return;
         }
 
-        if (!Controls.jumpInputHeld() || player.jetpackFuel < 0)
+        if (!Controls.JumpInputHeld() || player.jetpackFuel < 0)
         {
             player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));
             return;

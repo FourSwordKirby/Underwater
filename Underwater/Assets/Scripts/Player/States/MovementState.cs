@@ -31,7 +31,7 @@ public class MovementState : State<Player> {
             return;
         }
 
-        if (Controls.jumpInputDown() || !player.grounded)
+        if (Controls.JumpInputDown() || !player.grounded)
         {
             player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));
             return;

@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 401220}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Collisionboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +23,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 454032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hitboxes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 474182}
   - 61: {fileID: 6127500}
   - 114: {fileID: 11470188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PointOfOrigin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 487506}
   - 114: {fileID: 11461400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Bubbler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   - 4: {fileID: 407946}
   - 61: {fileID: 6193956}
   - 114: {fileID: 11415556}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundedChecker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   - 4: {fileID: 473200}
   - 114: {fileID: 11483892}
   - 61: {fileID: 6117614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ GameObject:
   - 212: {fileID: 21226642}
   - 50: {fileID: 5043688}
   - 95: {fileID: 9582840}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Test Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - 4: {fileID: 488198}
   - 61: {fileID: 6182826}
   - 114: {fileID: 11472642}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: TestECB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +142,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 455744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -157,7 +157,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 457746}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Weapons
   m_TagString: Untagged
   m_Icon: {fileID: 0}

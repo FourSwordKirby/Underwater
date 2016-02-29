@@ -80,27 +80,27 @@ public class Bubbler : Weapon {
         {
             if (aim == Parameters.PlayerAim.Up)
             {
-                firePosition = this.transform.position + new Vector3(0, 1, 0);
+                firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.TiltUp)
             {
-                firePosition = this.transform.position + new Vector3(-0.5f, 0.5f, 0);
+                firePosition = this.transform.position + new Vector3(-0.25f, 0.25f, 0);
                 fireVelocity = new Vector3(-0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.Neutral)
             {
-                firePosition = this.transform.position + new Vector3(-1, 0, 0);
+                firePosition = this.transform.position + new Vector3(-0.5f, 0, 0);
                 fireVelocity = new Vector3(-1, yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.TiltDown)
             {
-                firePosition = this.transform.position + new Vector3(-0.5f, -0.5f, 0);
+                firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0);
                 fireVelocity = new Vector3(-0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.Down)
             {
-                firePosition = this.transform.position + new Vector3(0, -1, 0);
+                firePosition = this.transform.position + new Vector3(0, -0.5f, 0);
                 fireVelocity = new Vector3(xRand, -1, 0) * bubbleSpeed;
             }
         }
@@ -109,27 +109,27 @@ public class Bubbler : Weapon {
         {
             if (aim == Parameters.PlayerAim.Up)
             {
-                firePosition = this.transform.position + new Vector3(0, 1, 0);
+                firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.TiltUp)
             {
-                firePosition = this.transform.position + new Vector3(0.5f, 0.5f, 0);
+                firePosition = this.transform.position + new Vector3(0.25f, 0.25f, 0);
                 fireVelocity = new Vector3(0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.Neutral)
             {
-                firePosition = this.transform.position + new Vector3(1, 0, 0);
+                firePosition = this.transform.position + new Vector3(0.5f, 0, 0);
                 fireVelocity = new Vector3(1, yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.TiltDown)
             {
-                firePosition = this.transform.position + new Vector3(0.5f, -0.5f, 0);
+                firePosition = this.transform.position + new Vector3(0.25f, -0.25f, 0);
                 fireVelocity = new Vector3(0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.PlayerAim.Down)
             {
-                firePosition = this.transform.position + new Vector3(0, -1, 0);
+                firePosition = this.transform.position + new Vector3(0, -0.5f, 0);
                 fireVelocity = new Vector3(xRand, -1, 0) * bubbleSpeed;
             }
         }

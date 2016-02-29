@@ -125,6 +125,15 @@ public class Player : Mobile {
         this.aim = Parameters.VectorToAim(movementInputVector);
         if (this.grounded && this.aim == Parameters.PlayerAim.Down)
             this.aim = Parameters.PlayerAim.TiltDown;
+        if (Controls.AimDownInputHeld())
+        {
+            this.aim = Parameters.PlayerAim.TiltDown;
+        }
+        if (Controls.AimUpInputHeld())
+        {
+            this.aim = Parameters.PlayerAim.TiltUp;
+        }
+
 
         //Controlling the direction we are facing
         if (movementInputVector.x != 0 && !lockedDir)
@@ -136,7 +145,7 @@ public class Player : Mobile {
         this.ActionFsm.Execute();
 
         //Testing of the other buttons
-        if (Controls.shootInputHeld())
+        if (Controls.ShootInputHeld())
         {
             activeWeapon.Fire(direction, aim);
             LockDirection();

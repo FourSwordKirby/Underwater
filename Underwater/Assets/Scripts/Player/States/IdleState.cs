@@ -32,7 +32,7 @@ public class IdleState : State<Player> {
         }
 
         //Jumping
-        if (Controls.jumpInputDown())
+        if (Controls.JumpInputDown())
         {
             player.ActionFsm.ChangeState(new AirState(player, player.ActionFsm));
             return;

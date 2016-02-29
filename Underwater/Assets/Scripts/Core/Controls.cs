@@ -28,20 +28,21 @@ public class Controls {
         else
             yAxis = Input.GetAxis("Keyboard Vertical");
 
+        Debug.Log(yAxis);
         return new Vector2(xAxis, yAxis);
     }
 
-    public static bool jumpInputDown()
+    public static bool JumpInputDown()
     {
         return Input.GetButtonDown("Jump");
     }
 
-    public static bool shootInputDown(Player player)
+    public static bool ShootInputDown(Player player)
     {
         return Input.GetButtonDown("Shoot");
     }
 
-    public static bool nextWeaponInputDown(Player player)
+    public static bool NextWeaponInputDown(Player player)
     {
         return Input.GetButtonDown("Next Weapon");
     }
@@ -72,22 +73,22 @@ public class Controls {
     }
 
 
-    public static bool jumpInputHeld()
+    public static bool JumpInputHeld()
     {
         return Input.GetButton("Jump");
     }
 
-    public static bool shootInputHeld()
+    public static bool ShootInputHeld()
     {
         return Input.GetButton("Shoot");
     }
 
-    public static bool nextWeaponInputHeld()
+    public static bool NextWeaponInputHeld()
     {
         return Input.GetButton("Next Weapon");
     }
 
-    public static bool prevWeaponInputHeld()
+    public static bool PrevWeaponInputHeld()
     {
         return Input.GetButton("Prev Weapon");
     }
@@ -97,9 +98,9 @@ public class Controls {
         return Input.GetButton("Aim Up");
     }
 
-    public static bool AimInputHeld()
+    public static bool AimDownInputHeld()
     {
-        return Input.GetButton("Aim");
+        return Input.GetButton("Aim Down");
     }
 
     public static bool InteractInputHeld()
