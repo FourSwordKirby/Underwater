@@ -27,8 +27,6 @@ public class Controls {
             yAxis = Input.GetAxis("Vertical");
         else
             yAxis = Input.GetAxis("Keyboard Vertical");
-
-        Debug.Log(yAxis);
         return new Vector2(xAxis, yAxis);
     }
 

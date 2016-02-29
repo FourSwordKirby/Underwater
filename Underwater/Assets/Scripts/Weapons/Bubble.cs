@@ -16,6 +16,11 @@ public class Bubble : Hitbox {
         }
     }
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        Debug.Log(col.gameObject);
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         /*do stuff with hitting enemies please

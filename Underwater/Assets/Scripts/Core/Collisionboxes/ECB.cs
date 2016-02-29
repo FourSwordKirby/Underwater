@@ -8,12 +8,12 @@ public class ECB : Collisionbox {
 
     public void fallThrough()
     {
-        if(this.gameObject.layer == LayerMask.NameToLayer("Default"))
+        if(this.gameObject.layer == LayerMask.NameToLayer("Player"))
             this.gameObject.layer = LayerMask.NameToLayer("Fall Through");
     }
 
     void OnCollisionExit2D()
     {
-        this.gameObject.layer = LayerMask.NameToLayer("Default");
+        this.gameObject.layer = LayerMask.NameToLayer("Player");
     }
 }
