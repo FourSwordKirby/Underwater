@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEditor.SceneManagement;
-using UnityEngine.SceneManagement;
 public class TitleUI : MonoBehaviour
 {
 
