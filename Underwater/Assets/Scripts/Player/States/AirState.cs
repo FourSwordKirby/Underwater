@@ -36,8 +36,7 @@ public class AirState : State<Player>
     {
         movementInputVector = Controls.getDirection(player);
 
-        //Might want to change this stuff later to include transition states
-        //Check if the player is grounded.
+        //Check if the player is grounded. If they are transition back into the grounded state
         if (player.grounded && leewayFrames <= 0)
         {
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
@@ -60,7 +59,14 @@ public class AirState : State<Player>
                                         -player.airMovementSpeed,
                                         player.airMovementSpeed);
         float yVelocity = player.selfBody.velocity.y;
-        player.selfBody.velocity += new Vector2(xVelocity, yVelocity);
+
+        //Used for variable jump height
+        if (!Controls.JumpInputHeld() && yVelocity > 0)
+        {
+            yVelocity = yVelocity * 0.9f;
+        }
+
+        player.selfBody.velocity = new Vector2(xVelocity, yVelocity);
     }
 
     override public void Exit()
