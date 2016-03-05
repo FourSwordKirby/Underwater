@@ -91,7 +91,7 @@ GameObject:
   - 114: {fileID: 11483892}
   - 61: {fileID: 6117614}
   m_Layer: 10
-  m_Name: EnemyHurtbox
+  m_Name: TestHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

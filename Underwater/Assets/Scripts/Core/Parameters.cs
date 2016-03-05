@@ -16,13 +16,13 @@ public class Parameters : MonoBehaviour {
         Stop
     };
 
-    public enum PlayerDirection
+    public enum Direction
     {
         Left,
         Right
     }
 
-    public enum PlayerAim
+    public enum Aim
     {
         Up,
         TiltUp,
@@ -53,32 +53,32 @@ public class Parameters : MonoBehaviour {
         Poison        
     }
 
-    public static PlayerDirection VectorToDir(Vector2 inputVector)
+    public static Direction VectorToDir(Vector2 inputVector)
     {
         if (inputVector.x > 0)
-            return PlayerDirection.Right;
+            return Direction.Right;
         else
-            return PlayerDirection.Left;
+            return Direction.Left;
     }
 
-    public static PlayerAim VectorToAim(Vector2 inputVector)
+    public static Aim VectorToAim(Vector2 inputVector)
     {
         float xMag = Mathf.Abs(inputVector.x);
         float yMag = Mathf.Abs(inputVector.y);
         if (inputVector.y > 0 && yMag > 1.5f * xMag)
-            return PlayerAim.Up;
+            return Aim.Up;
         else if (inputVector.y > 0 && yMag < 1.5f * xMag) 
-                return PlayerAim.TiltUp;
+                return Aim.TiltUp;
         if (inputVector.y == 0.0)
-            return PlayerAim.Neutral;
+            return Aim.Neutral;
         else if (inputVector.y < 0 && yMag < 1.5f * xMag)
-            return PlayerAim.TiltDown;
+            return Aim.TiltDown;
         else if (inputVector.y < 0 && yMag > 1.5f * xMag) 
-            return PlayerAim.Down;
-        return PlayerAim.Neutral;
+            return Aim.Down;
+        return Aim.Neutral;
     }
 
-    public static InputDirection PlayerOrientationToDir(PlayerDirection playerDir, PlayerAim playerAim)
+    public static InputDirection PlayerOrientationToDir(Direction playerDir, Aim playerAim)
     {
         return InputDirection.East;
     }
@@ -108,31 +108,31 @@ public class Parameters : MonoBehaviour {
     }
 
 
-    public static int GetDirAnimation(PlayerDirection playerDir)
+    public static int GetDirAnimation(Direction playerDir)
     {
         switch (playerDir)
         {
-            case Parameters.PlayerDirection.Left:
+            case Parameters.Direction.Left:
                 return -1;
-            case Parameters.PlayerDirection.Right:
+            case Parameters.Direction.Right:
                 return 1;
         }
         return 0;
     }
 
-    public static int GetAimAnimation(PlayerAim playerAim)
+    public static int GetAimAnimation(Aim playerAim)
     {
         switch (playerAim)
         {
-            case Parameters.PlayerAim.Down:
+            case Parameters.Aim.Down:
                 return -2;
-            case Parameters.PlayerAim.TiltDown:
+            case Parameters.Aim.TiltDown:
                 return -1;
-            case Parameters.PlayerAim.Neutral:
+            case Parameters.Aim.Neutral:
                 return 0;
-            case Parameters.PlayerAim.TiltUp:
+            case Parameters.Aim.TiltUp:
                 return 1;
-            case Parameters.PlayerAim.Up:
+            case Parameters.Aim.Up:
                 return 2;
         }
         return 0;

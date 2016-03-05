@@ -23,7 +23,7 @@ public class Bubble : Hitbox {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        /*do stuff with hitting enemies please
+        //Basic normal bubble stuff
         Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
         if (hurtbox != null)
         {
@@ -31,6 +31,6 @@ public class Bubble : Hitbox {
             hurtbox.TakeHit(0, hitstun, knockbackVector);
 
             Destroy(this.gameObject);
-        }*/
+        }
     }
 }

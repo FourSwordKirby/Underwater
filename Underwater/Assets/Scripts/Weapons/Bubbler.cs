@@ -69,65 +69,65 @@ public class Bubbler : Weapon {
         }
 	}
 
-    override public void Fire(Parameters.PlayerDirection dir, Parameters.PlayerAim aim)
+    override public void Fire(Parameters.Direction dir, Parameters.Aim aim)
     {
         firing = true;
 
         float xRand = Random.Range(-0.1f, 0.1f);
         float yRand = Random.Range(-0.1f, 0.1f);
 
-        if(dir == Parameters.PlayerDirection.Left)
+        if(dir == Parameters.Direction.Left)
         {
-            if (aim == Parameters.PlayerAim.Up)
+            if (aim == Parameters.Aim.Up)
             {
                 firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.TiltUp)
+            else if (aim == Parameters.Aim.TiltUp)
             {
                 firePosition = this.transform.position + new Vector3(-0.25f, 0.25f, 0);
                 fireVelocity = new Vector3(-0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.Neutral)
+            else if (aim == Parameters.Aim.Neutral)
             {
                 firePosition = this.transform.position + new Vector3(-0.5f, 0, 0);
                 fireVelocity = new Vector3(-1, yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.TiltDown)
+            else if (aim == Parameters.Aim.TiltDown)
             {
                 firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0);
                 fireVelocity = new Vector3(-0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.Down)
+            else if (aim == Parameters.Aim.Down)
             {
                 firePosition = this.transform.position + new Vector3(0, -0.5f, 0);
                 fireVelocity = new Vector3(xRand, -1, 0) * bubbleSpeed;
             }
         }
 
-        else if (dir == Parameters.PlayerDirection.Right)
+        else if (dir == Parameters.Direction.Right)
         {
-            if (aim == Parameters.PlayerAim.Up)
+            if (aim == Parameters.Aim.Up)
             {
                 firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.TiltUp)
+            else if (aim == Parameters.Aim.TiltUp)
             {
                 firePosition = this.transform.position + new Vector3(0.25f, 0.25f, 0);
                 fireVelocity = new Vector3(0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.Neutral)
+            else if (aim == Parameters.Aim.Neutral)
             {
                 firePosition = this.transform.position + new Vector3(0.5f, 0, 0);
                 fireVelocity = new Vector3(1, yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.TiltDown)
+            else if (aim == Parameters.Aim.TiltDown)
             {
                 firePosition = this.transform.position + new Vector3(0.25f, -0.25f, 0);
                 fireVelocity = new Vector3(0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
             }
-            else if (aim == Parameters.PlayerAim.Down)
+            else if (aim == Parameters.Aim.Down)
             {
                 firePosition = this.transform.position + new Vector3(0, -0.5f, 0);
                 fireVelocity = new Vector3(xRand, -1, 0) * bubbleSpeed;

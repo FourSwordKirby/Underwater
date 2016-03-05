@@ -9,7 +9,7 @@ public abstract class Weapon : MonoBehaviour {
     /// What happens when the weapon fires
     /// You need to specify what direction the weapon is being fired in.
     /// </summary>
-    public abstract void Fire(Parameters.PlayerDirection dir, Parameters.PlayerAim aim);
+    public abstract void Fire(Parameters.Direction dir, Parameters.Aim aim);
 
     /// <summary>
     /// What happens when the player releases the fire button

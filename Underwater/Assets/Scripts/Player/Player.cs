@@ -88,8 +88,8 @@ public class Player : Mobile {
     public bool isUnderWater;
     public bool grounded;
 
-    public Parameters.PlayerDirection direction; //{ get; set; }
-    public Parameters.PlayerAim aim; //{ get; set; }
+    public Parameters.Direction direction; //{ get; set; }
+    public Parameters.Aim aim; //{ get; set; }
 
     private bool lockedDir;
 
@@ -134,15 +134,15 @@ public class Player : Mobile {
 
         //Controlling where we are aiming
         this.aim = Parameters.VectorToAim(movementInputVector);
-        if (this.grounded && this.aim == Parameters.PlayerAim.Down)
-            this.aim = Parameters.PlayerAim.TiltDown;
+        if (this.grounded && this.aim == Parameters.Aim.Down)
+            this.aim = Parameters.Aim.TiltDown;
         if (Controls.AimDownInputHeld())
         {
-            this.aim = Parameters.PlayerAim.TiltDown;
+            this.aim = Parameters.Aim.TiltDown;
         }
         if (Controls.AimUpInputHeld())
         {
-            this.aim = Parameters.PlayerAim.TiltUp;
+            this.aim = Parameters.Aim.TiltUp;
         }
 
 
