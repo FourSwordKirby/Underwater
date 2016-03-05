@@ -19,6 +19,7 @@ public class Player : Mobile {
     public float baseJumpHeight;
     public float baseFallSpeed;
     public float baseAirMovementSpeed;
+    public float baseAirDrift;
     public float baseJetpackSpeed;
 
 
@@ -61,6 +62,16 @@ public class Player : Mobile {
                 return 0.5f * baseAirMovementSpeed;
             else
                 return baseAirMovementSpeed;
+        }
+    }
+    public float airDrift
+    {
+        get
+        {
+            if (isUnderWater)
+                return 0.5f * baseAirDrift;
+            else
+                return baseAirDrift;
         }
     }
     public float jetpackSpeed

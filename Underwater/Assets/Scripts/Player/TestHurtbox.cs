@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class TestHurtbox : Hurtbox {
+    public Player owner;
+
     override public void TakeDamage(float damage)
     {
         owner.LoseHealth(damage);

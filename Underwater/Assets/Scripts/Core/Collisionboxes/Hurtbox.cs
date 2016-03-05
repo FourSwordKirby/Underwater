@@ -6,7 +6,6 @@ using System.Collections;
  * The reason for this is because Hurtboxes have more consistent and adaptable behavior compared to other hitboxes
  */
 public abstract class Hurtbox : Collisionbox {
-    public Player owner;
     public Parameters.HurtboxStatus status;
 
 

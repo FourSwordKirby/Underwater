@@ -4,7 +4,7 @@ using System.Collections;
 public class Water : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D col)
     {
-        Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
+        TestHurtbox hurtbox = col.gameObject.GetComponent<TestHurtbox>();
         if (hurtbox != null && hurtbox.owner != null)
         {
             hurtbox.owner.isUnderWater = true;
@@ -13,7 +13,7 @@ public class Water : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D col)
     {
-        Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
+        TestHurtbox hurtbox = col.gameObject.GetComponent<TestHurtbox>();
         if (hurtbox != null && hurtbox.owner != null)
         {
             hurtbox.owner.isUnderWater = false;

@@ -91,7 +91,7 @@ GameObject:
   - 114: {fileID: 11483892}
   - 61: {fileID: 6117614}
   m_Layer: 10
-  m_Name: TestHurtbox
+  m_Name: EnemyHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -419,6 +419,7 @@ MonoBehaviour:
   baseJumpHeight: 3
   baseFallSpeed: 5
   baseAirMovementSpeed: 5
+  baseAirDrift: 2
   baseJetpackSpeed: 9
   friction: 0
   isUnderWater: 0
@@ -481,8 +482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: TestHurtbox
-  owner: {fileID: 11431266}
   status: 0
+  owner: {fileID: 11431266}
 --- !u!114 &11488440
 MonoBehaviour:
   m_ObjectHideFlags: 1
