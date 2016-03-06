@@ -17,8 +17,6 @@ public class AirState : State<Player>
 
     override public void Enter()
     {
-        player.LockDirection();
-
         if (player.grounded)
         {
             player.selfBody.velocity = new Vector2(player.selfBody.velocity.x, player.jumpHeight);
