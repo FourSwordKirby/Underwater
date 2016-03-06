@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 439788}
   - 212: {fileID: 21278306}
   m_Layer: 0
-  m_Name: New Prefab
+  m_Name: BoostTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

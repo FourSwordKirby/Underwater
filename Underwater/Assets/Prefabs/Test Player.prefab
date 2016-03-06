@@ -259,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.98, y: 0.15261288, z: 0}
+  m_LocalPosition: {x: 12.95, y: -27.9, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -416,7 +416,7 @@ MonoBehaviour:
   weaponInventory: []
   currentWeaponIndex: 0
   baseMovementSpeed: 4
-  baseMovementDrift: 1
+  baseMovementDrift: 2
   baseFriction: 1
   baseJumpHeight: 3
   baseFallSpeed: 5

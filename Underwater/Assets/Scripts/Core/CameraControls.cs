@@ -54,7 +54,7 @@ public class CameraControls : MonoBehaviour {
         cameraComponent = GetComponent<Camera>();
 
         original_camera_size = cameraComponent.orthographicSize;
-        min_camera_size = 0.75f * original_camera_size;
+        min_camera_size = 1.0f * original_camera_size;
         max_camera_size = 2.0f * original_camera_size;
         target_camera_size = original_camera_size;
 

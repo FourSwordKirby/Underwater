@@ -97,8 +97,11 @@ public class Player : Mobile {
         }
     }
 
+    //Stateful things
     public bool isUnderWater;
     public bool grounded;
+    public Vector2 externalForce;
+
 
     public Parameters.Direction direction; //{ get; set; }
     public Parameters.Aim aim; //{ get; set; }
@@ -201,6 +204,11 @@ public class Player : Mobile {
     void FixedUpdate()
     {
         this.ActionFsm.FixedExecute();
+
+        //Hacky stuff to deal with wind and related pushing based things
+        if(this.selfBody.velocity.magnitude < externalForce.magnitude + movementSpeed)
+            this.selfBody.velocity += externalForce;
+        externalForce = Vector2.zero;
     }
 
     public void LoseHealth(float damage)
@@ -265,5 +273,10 @@ public class Player : Mobile {
         }
         this.currentWeaponIndex = weaponIndex;
         this.activeWeapon = weaponInventory[currentWeaponIndex];
+    }
+
+    public void ApplyPushForce(Vector2 force)
+    {
+        externalForce = force;
     }
 }
