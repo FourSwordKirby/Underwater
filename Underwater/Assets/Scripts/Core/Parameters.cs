@@ -47,10 +47,10 @@ public class Parameters : MonoBehaviour {
         invuln
     }
 
-    public enum Effect
+    public enum DamageEffect
     {
         None,
-        Poison        
+        Freeze
     }
 
     public static Direction VectorToDir(Vector2 inputVector)

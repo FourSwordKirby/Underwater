@@ -8,5 +8,5 @@ public abstract class Hitbox : Collisionbox{
     public float hitstun;
 
     //This is mostly for aesthetic stuff
-    public Parameters.Effect effect;
+    public Parameters.DamageEffect effect;
 }

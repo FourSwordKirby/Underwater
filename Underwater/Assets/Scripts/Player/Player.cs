@@ -13,6 +13,7 @@ public class Player : Mobile {
 
     public Weapon activeWeapon;
     public List<Weapon> weaponInventory;
+    public int currentWeaponIndex;
 
     public float baseMovementSpeed;
     public float baseFriction;
@@ -128,7 +129,8 @@ public class Player : Mobile {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+    void Update()
+    {
         //Animation control stuff
         Vector2 movementInputVector = Controls.getDirection();
 
@@ -155,8 +157,8 @@ public class Player : Mobile {
 
         this.ActionFsm.Execute();
 
-        //Testing of the other buttons
-        if (Controls.ShootInputHeld())
+        //Shooting controls
+        if (Controls.ShootInputHeld() && activeWeapon != null)
         {
             activeWeapon.Fire(direction, aim);
             LockDirection();
@@ -164,10 +166,20 @@ public class Player : Mobile {
         else
         {
             activeWeapon.CeaseFire();
-            if(grounded)
+            if (grounded)
                 UnlockDirection();
         }
-	}
+
+        //Switching Weapons Controls
+        if(Controls.PrevWeaponInputDown())
+        {
+            SwitchWeapons(currentWeaponIndex - 1);
+        }
+        if (Controls.NextWeaponInputDown())
+        {
+            SwitchWeapons(currentWeaponIndex + 1);
+        }
+    }
 
     void FixedUpdate()
     {
@@ -208,5 +220,33 @@ public class Player : Mobile {
     public void UnlockDirection()
     {
         lockedDir = false;
+    }
+
+    public void AddWeapon(Weapon weaponPrefab)
+    {
+        Weapon weapon = Instantiate(weaponPrefab);
+        weapon.transform.parent = this.gameObject.transform.FindChild("Weapons");
+        weapon.transform.position = this.gameObject.transform.position;
+
+        this.activeWeapon = weapon;
+        this.weaponInventory.Add(weapon);
+        this.currentWeaponIndex = weaponInventory.Count - 1;
+    }
+
+    public void SwitchWeapons(int weaponIndex)
+    {
+        if (weaponInventory.Count == 0)
+            return;
+
+        if (weaponIndex > weaponInventory.Count - 1)
+        {
+            weaponIndex = 0;
+        }
+        if (weaponIndex < 0)
+        {
+            weaponIndex = weaponInventory.Count - 1;
+        }
+        this.currentWeaponIndex = weaponIndex;
+        this.activeWeapon = weaponInventory[currentWeaponIndex];
     }
 }

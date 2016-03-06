@@ -9,8 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 483282}
   - 114: {fileID: 11455014}
-  m_Layer: 0
-  m_Name: Bubbler
+  m_Layer: 10
+  m_Name: Bubbler_Basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.7661448, y: -3.1549084, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,9 +41,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Bubbler
   maxAmmoCount: 100
-  ammo: {fileID: 125960, guid: 2d18d78544aff9e4794c08f923022100, type: 2}
-  rechargeRate: 20
-  fireRate: 10
+  ammo: {fileID: 11405866, guid: 2d18d78544aff9e4794c08f923022100, type: 2}
+  rechargeRate: 30
+  fireRate: 20
+  bubbleSpeed: 5
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

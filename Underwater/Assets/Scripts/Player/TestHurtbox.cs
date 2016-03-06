@@ -17,7 +17,7 @@ public class TestHurtbox : Hurtbox {
             owner.selfBody.velocity = knockback;
     }
 
-    override public void ApplyEffect(Parameters.Effect effect)
+    override public void ApplyEffect(Parameters.DamageEffect effect)
     {
     }
 }

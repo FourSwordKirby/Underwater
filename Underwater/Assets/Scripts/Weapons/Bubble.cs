@@ -16,11 +16,6 @@ public class Bubble : Hitbox {
         }
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log(col.gameObject);
-    }
-
     void OnTriggerEnter2D(Collider2D col)
     {
         //Basic normal bubble stuff
@@ -29,6 +24,7 @@ public class Bubble : Hitbox {
         {
             hurtbox.TakeDamage(damage);
             hurtbox.TakeHit(0, hitstun, knockbackVector);
+            hurtbox.ApplyEffect(this.effect);
 
             Destroy(this.gameObject);
         }

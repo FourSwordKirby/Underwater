@@ -74,4 +74,9 @@ public class Enemy : Mobile {
         //this.ActionFsm.FixedExecute();
         this.StatusFsm.FixedExecute();
     }
+
+    public void Freeze()
+    {
+        Debug.Log("Frozen");
+    }
 }

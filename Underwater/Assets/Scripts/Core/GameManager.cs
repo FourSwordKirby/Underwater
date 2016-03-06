@@ -78,11 +78,11 @@ public class GameManager : MonoBehaviour {
         /*ButtonCheck*/
         if (Controls.ShootInputDown(Players[0]))
             Debug.Log("P1 ATTACK");
-        if (Controls.NextWeaponInputDown(Players[0]))
+        if (Controls.NextWeaponInputDown())
             Debug.Log("P1 SPECIAL");
         if (Controls.JumpInputDown())
             Debug.Log("P1 JUMP");
-        if (Controls.prevWeaponInputDown(Players[0]))
+        if (Controls.PrevWeaponInputDown())
             Debug.Log("P1 SHIELD");
         if (Controls.AimUpInputDown(Players[0]))
             Debug.Log("P1 ENHANCE");

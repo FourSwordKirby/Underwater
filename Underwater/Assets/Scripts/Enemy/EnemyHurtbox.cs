@@ -19,7 +19,14 @@ public class EnemyHurtbox : Hurtbox {
          */
     }
 
-    override public void ApplyEffect(Parameters.Effect effect)
+    override public void ApplyEffect(Parameters.DamageEffect effect)
     {
+        if (effect == Parameters.DamageEffect.Freeze)
+        {
+            if (owner.health < owner.maxHealth * 0.5f)
+            {
+                owner.Freeze();
+            }
+        }
     }
 }

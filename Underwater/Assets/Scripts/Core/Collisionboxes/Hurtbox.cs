@@ -23,5 +23,5 @@ public abstract class Hurtbox : Collisionbox {
     /// <summary>
     /// This function is currently a placeholder in case we actually want to implement custom visual/gameplay effects
     /// </summary>
-    public abstract void ApplyEffect(Parameters.Effect effect);
+    public abstract void ApplyEffect(Parameters.DamageEffect effect);
 }

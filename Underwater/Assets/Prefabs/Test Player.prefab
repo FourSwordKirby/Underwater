@@ -30,6 +30,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &135930
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 485742}
+  - 114: {fileID: 11455070}
+  m_Layer: 10
+  m_Name: BasicBubbler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &157500
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,22 +58,6 @@ GameObject:
   - 114: {fileID: 11470188}
   m_Layer: 10
   m_Name: PointOfOrigin
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &159824
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 487506}
-  - 114: {fileID: 11461400}
-  m_Layer: 10
-  m_Name: Bubbler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -225,7 +225,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
-  - {fileID: 487506}
+  - {fileID: 485742}
   m_Father: {fileID: 484188}
   m_RootOrder: 0
 --- !u!4 &473200
@@ -269,12 +269,12 @@ Transform:
   - {fileID: 474182}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!4 &487506
+--- !u!4 &485742
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159824}
+  m_GameObject: {fileID: 135930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   maxJetpackFuel: 0.5
-  activeWeapon: {fileID: 11461400}
+  activeWeapon: {fileID: 11455070}
   weaponInventory: []
   baseMovementSpeed: 5
   baseFriction: 1
@@ -429,12 +429,12 @@ MonoBehaviour:
   environmentCollisionBox: {fileID: 11472642}
   prefabs:
   - {fileID: 142996, guid: 79906aa9daebb4d4da698be60a875aa1, type: 2}
---- !u!114 &11461400
+--- !u!114 &11455070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159824}
+  m_GameObject: {fileID: 135930}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 22e611c181d461d4984d56e0002d30e3, type: 3}

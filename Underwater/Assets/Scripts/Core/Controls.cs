@@ -40,12 +40,12 @@ public class Controls {
         return Input.GetButtonDown("Shoot");
     }
 
-    public static bool NextWeaponInputDown(Player player)
+    public static bool NextWeaponInputDown()
     {
         return Input.GetButtonDown("Next Weapon");
     }
 
-    public static bool prevWeaponInputDown(Player player)
+    public static bool PrevWeaponInputDown()
     {
         return Input.GetButtonDown("Prev Weapon");
     }
