@@ -16,6 +16,7 @@ public class Player : Mobile {
     public int currentWeaponIndex;
 
     public float baseMovementSpeed;
+    public float baseMovementDrift;
     public float baseFriction;
     public float baseJumpHeight;
     public float baseFallSpeed;
@@ -32,6 +33,16 @@ public class Player : Mobile {
                 return 0.5f * baseMovementSpeed;
             else
                 return baseMovementSpeed;
+        }
+    }
+    public float movementDrift
+    {
+        get
+        {
+            if (isUnderWater)
+                return 0.5f * baseMovementDrift;
+            else
+                return baseMovementDrift;
         }
     }
     public float friction;

@@ -4,6 +4,8 @@ using System.Collections;
 public class Bomb : Hitbox {
     public float fuseLength;
 
+    public Explosion explosionPrefab;
+
     /*self references*/
     public Rigidbody2D selfBody;
 
@@ -12,9 +14,11 @@ public class Bomb : Hitbox {
         fuseLength -= Time.deltaTime;
         if (fuseLength < 0)
         {
-            Destroy(this.gameObject);
-
             //SPAWN A COOL EXPLOSION
+            Explosion explosionInstance = Instantiate(explosionPrefab);
+            explosionInstance.transform.position = this.gameObject.transform.position;
+
+            Destroy(this.gameObject);
         }
     }
 }

@@ -45,7 +45,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &157500
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,7 +259,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 0.15261288, z: 0}
+  m_LocalPosition: {x: 1.98, y: 0.15261288, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -346,7 +346,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 178600}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 182a685e39e080643ad99a7a3fdee296, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -414,12 +414,14 @@ MonoBehaviour:
   maxJetpackFuel: 0.5
   activeWeapon: {fileID: 11455070}
   weaponInventory: []
-  baseMovementSpeed: 5
+  currentWeaponIndex: 0
+  baseMovementSpeed: 4
+  baseMovementDrift: 1
   baseFriction: 1
   baseJumpHeight: 3
   baseFallSpeed: 5
-  baseAirMovementSpeed: 5
-  baseAirDrift: 2
+  baseAirMovementSpeed: 3
+  baseAirDrift: 0.2
   baseJetpackSpeed: 9
   friction: 0
   isUnderWater: 0
