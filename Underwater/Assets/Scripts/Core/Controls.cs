@@ -50,6 +50,11 @@ public class Controls {
         return Input.GetButtonDown("Prev Weapon");
     }
 
+    public static bool Toggle1Down()
+    {
+        return Input.GetButtonDown("Toggle 1");
+    }
+
     public static bool AimUpInputDown(Player player)
     {
         return Input.GetButtonDown("Aim Up");

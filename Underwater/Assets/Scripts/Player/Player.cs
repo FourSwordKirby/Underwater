@@ -190,6 +190,12 @@ public class Player : Mobile {
         {
             SwitchWeapons(currentWeaponIndex + 1);
         }
+
+        //Toggle controls (for weights and related things)
+        if (Controls.Toggle1Down())
+        {
+            Debug.Log("Weights Equipped");
+        }
     }
 
     void FixedUpdate()
