@@ -50,7 +50,8 @@ public class Parameters : MonoBehaviour {
     public enum DamageEffect
     {
         None,
-        Freeze
+        Freeze,
+        Blast
     }
 
     public static Direction VectorToDir(Vector2 inputVector)
