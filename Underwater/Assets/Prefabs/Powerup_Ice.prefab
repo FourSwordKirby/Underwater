@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IceBubbler: {fileID: 11477744, guid: d6114151b104abd4bbbe00c86f8a2dbf, type: 2}
-  textFile: {fileID: 4900000, guid: 17dd287b043243f42b462d7e4afdba77, type: 3}
+  textFile: {fileID: 4900000, guid: afc158c2a2873f44b829177a4b15960e, type: 3}
 --- !u!212 &21228936
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,7 +97,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: textFile
       value: 
-      objectReference: {fileID: 4900000, guid: 17dd287b043243f42b462d7e4afdba77, type: 3}
+      objectReference: {fileID: 4900000, guid: afc158c2a2873f44b829177a4b15960e, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 145514}
