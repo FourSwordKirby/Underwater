@@ -77,6 +77,12 @@ public class Enemy : Mobile {
 
     public void Freeze()
     {
-        Debug.Log("Frozen");
+        this.selfBody.isKinematic = true;
+        this.selfBody.gravityScale = 0;
+    }
+
+    public void Unfreeze()
+    {
+        this.selfBody.isKinematic = false;
     }
 }
