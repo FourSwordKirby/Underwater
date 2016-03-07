@@ -111,6 +111,7 @@ public class Player : Mobile {
     public Parameters.Aim aim; //{ get; set; }
 
     private bool lockedDir;
+    private bool inCutscene;
 
     //Tells us the status of the player (things that affect the hitbox)
     public Parameters.PlayerStatus status {get; set; }
@@ -123,6 +124,7 @@ public class Player : Mobile {
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
     public ECB environmentCollisionBox;
+    public DialogBox dialogBox;
     public List<GameObject> prefabs;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
@@ -149,6 +151,10 @@ public class Player : Mobile {
 	// Update is called once per frame
     void Update()
     {
+        this.ActionFsm.Execute();
+
+        if (inCutscene)
+            return;
         //Animation control stuff
         Vector2 movementInputVector = Controls.getDirection();
 
@@ -172,8 +178,6 @@ public class Player : Mobile {
 
         this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
         this.anim.SetFloat("Aim", Parameters.GetAimAnimation(this.aim));
-
-        this.ActionFsm.Execute();
 
         //Shooting controls
         if (Controls.ShootInputHeld() && activeWeapon != null)
@@ -250,6 +254,16 @@ public class Player : Mobile {
     public void UnlockDirection()
     {
         lockedDir = false;
+    }
+
+    public void LockControls()
+    {
+        inCutscene = true;
+    }
+
+    public void UnlockControls()
+    {
+        inCutscene = false;
     }
 
     public void AddWeapon(Weapon weaponPrefab)

@@ -117,6 +117,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &175392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 482718}
+  - 23: {fileID: 2340630}
+  - 102: {fileID: 10256938}
+  - 114: {fileID: 11440642}
+  m_Layer: 10
+  m_Name: Dialogbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &178600
 GameObject:
   m_ObjectHideFlags: 1
@@ -252,6 +270,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484188}
   m_RootOrder: 4
+--- !u!4 &482718
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.55, y: 6.72, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 484188}
+  m_RootOrder: 5
 --- !u!4 &484188
 Transform:
   m_ObjectHideFlags: 1
@@ -259,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.95, y: -27.9, z: 0}
+  m_LocalPosition: {x: 4.7, y: -3, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -267,6 +297,7 @@ Transform:
   - {fileID: 454032}
   - {fileID: 401220}
   - {fileID: 474182}
+  - {fileID: 482718}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &485742
@@ -293,6 +324,32 @@ Transform:
   m_Children: []
   m_Father: {fileID: 401220}
   m_RootOrder: 0
+--- !u!23 &2340630
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175392}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
 --- !u!50 &5043688
 Rigidbody2D:
   serializedVersion: 2
@@ -346,7 +403,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 178600}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 182a685e39e080643ad99a7a3fdee296, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
@@ -383,6 +440,27 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!102 &10256938
+TextMesh:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175392}
+  m_Text: Here is my dialog
+  m_OffsetZ: 0
+  m_CharacterSize: 0.5
+  m_LineSpacing: 1
+  m_Anchor: 0
+  m_Alignment: 1
+  m_TabSize: 4
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_RichText: 1
+  m_Font: {fileID: 0}
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
 --- !u!114 &11415556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -424,13 +502,30 @@ MonoBehaviour:
   baseAirDrift: 0.2
   baseJetpackSpeed: 9
   friction: 0
+  hasWeights: 0
   isUnderWater: 0
   grounded: 1
+  isWeighted: 0
+  externalForce: {x: 0, y: 0}
   direction: 0
   aim: 0
   environmentCollisionBox: {fileID: 11472642}
+  dialogBox: {fileID: 11440642}
   prefabs:
   - {fileID: 142996, guid: 79906aa9daebb4d4da698be60a875aa1, type: 2}
+--- !u!114 &11440642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 175392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5abdc78370440644932337d9d0abf33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogField: {fileID: 10256938}
+  width: 50
 --- !u!114 &11455070
 MonoBehaviour:
   m_ObjectHideFlags: 1

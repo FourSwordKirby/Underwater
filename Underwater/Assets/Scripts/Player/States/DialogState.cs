@@ -4,7 +4,7 @@ using System.Collections;
 public class DialogState : State<Player>
 {
     private Player player;
-    //public DialogBox dialogBox;
+    public DialogBox dialogBox;
 
     public TextAsset textFile;
 
@@ -18,23 +18,26 @@ public class DialogState : State<Player>
     {
         player = playerInstance;
 
+        this.dialogBox = player.dialogBox;
         this.dialog = textFile.text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
         this.dialogCounter = 0;
 
         Debug.Log(dialog[dialogCounter]);
-        //dialogBox.displayDialog(name, dialog[dialogCounter]);
+        dialogBox.displayDialog(dialog[dialogCounter]);
         dialogCounter++;
     }
 
     override public void Enter()
     {
+        player.LockControls();
     }
 
     override public void Execute()
     {
-        if (Controls.JumpInputDown()) //&& dialogBox.dialogField.text == dialog[dialogCounter-1])
+        Debug.Log(dialogBox.dialogField.text.Replace("\n", ""));
+        if (Controls.JumpInputDown() && dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
         {
-            Debug.Log(dialog[dialogCounter]);
+            dialogBox.displayDialog(dialog[dialogCounter]);
             dialogCounter++;
         }
 
@@ -50,5 +53,6 @@ public class DialogState : State<Player>
 
     override public void Exit()
     {
+        player.UnlockControls();
     }
 }

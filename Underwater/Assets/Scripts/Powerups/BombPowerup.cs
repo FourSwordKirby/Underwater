@@ -13,7 +13,6 @@ public class BombPowerup : MonoBehaviour {
         if (hurtbox != null)
         {
             Player player = hurtbox.owner;
-            //Make the player go into a dialog state
             player.AddWeapon(TimedBomber);
 
             //Make the player go into a dialog state + cutscenes I guess

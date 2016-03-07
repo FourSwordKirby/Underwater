@@ -55,6 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca4e1f36c054254d84080f8ad13575f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textFile: {fileID: 4900000, guid: 17dd287b043243f42b462d7e4afdba77, type: 3}
 --- !u!212 &21216052
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -97,6 +98,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: 61b67f13263dd1b49902fba97370c071,
         type: 3}
+    - target: {fileID: 0}
+      propertyPath: textFile
+      value: 
+      objectReference: {fileID: 4900000, guid: 17dd287b043243f42b462d7e4afdba77, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 191016}
