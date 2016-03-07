@@ -97,9 +97,13 @@ public class Player : Mobile {
         }
     }
 
+    //Booleans for items
+    public bool hasWeights;
+
     //Stateful things
     public bool isUnderWater;
     public bool grounded;
+    public bool isWeighted;
     public Vector2 externalForce;
 
 
@@ -195,8 +199,9 @@ public class Player : Mobile {
         }
 
         //Toggle controls (for weights and related things)
-        if (Controls.Toggle1Down())
+        if (hasWeights && Controls.Toggle1Down())
         {
+            isWeighted = !isWeighted;
             Debug.Log("Weights Equipped");
         }
     }
@@ -277,6 +282,7 @@ public class Player : Mobile {
 
     public void ApplyPushForce(Vector2 force)
     {
-        externalForce = force;
+        if(!isWeighted)
+            externalForce = force;
     }
 }
