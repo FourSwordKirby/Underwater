@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.7, y: -3, z: 0}
+  m_LocalPosition: {x: -7.6196427, y: -3.6795733, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -359,7 +359,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 169450}
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0
   m_GravityScale: 1
   m_IsKinematic: 0
@@ -493,10 +493,10 @@ MonoBehaviour:
   activeWeapon: {fileID: 11455070}
   weaponInventory: []
   currentWeaponIndex: 0
-  baseMovementSpeed: 4
+  baseMovementSpeed: 5
   baseMovementDrift: 2
-  baseFriction: 1
-  baseJumpHeight: 3
+  baseFriction: 2
+  baseJumpHeight: 5
   baseFallSpeed: 5
   baseAirMovementSpeed: 3
   baseAirDrift: 0.2

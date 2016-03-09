@@ -44,18 +44,20 @@ public class MovementState : State<Player> {
 
     override public void FixedExecute()
     {
+        /*
         float xVelocity = Mathf.Clamp(player.selfBody.velocity.x + movementInputVector.x * player.movementDrift,
                                         -player.movementSpeed,
                                         player.movementSpeed);
+         */
         float yVelocity = player.selfBody.velocity.y;
-
+        /*
         //Used for variable jump height
         if (!Controls.JumpInputHeld() && yVelocity > 0)
         {
             yVelocity = yVelocity * 0.9f;
         }
-
-        player.selfBody.velocity = new Vector2(xVelocity, yVelocity);
+        */
+        player.selfBody.velocity = new Vector2(movementInputVector.x * player.movementSpeed, yVelocity);
     }
 
     override public void Exit()

@@ -30,7 +30,7 @@ public class Player : Mobile {
         get
         {
             if(isUnderWater)
-                return 0.5f * baseMovementSpeed;
+                return 0.75f * baseMovementSpeed;
             else
                 return baseMovementSpeed;
         }

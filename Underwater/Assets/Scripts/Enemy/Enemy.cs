@@ -77,12 +77,14 @@ public class Enemy : Mobile {
 
     public void Freeze()
     {
+        this.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.selfBody.isKinematic = true;
         this.selfBody.gravityScale = 0;
     }
 
     public void Unfreeze()
     {
+        this.gameObject.layer = LayerMask.NameToLayer("Default");
         this.selfBody.isKinematic = false;
     }
 }
