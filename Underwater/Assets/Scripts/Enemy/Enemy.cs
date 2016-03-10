@@ -5,14 +5,26 @@ using System.Collections.Generic;
 public class Enemy : Mobile {
 
     public float maxHealth;
-    public float healthRegenRate;
+    public float baseHealthRegenRate;
 
     public float health;
+
+    public bool frozen;
+    public float healthRegenRate
+    {
+        get
+        {
+            if (frozen)
+                return 0.5f * baseHealthRegenRate;
+            else
+                return baseHealthRegenRate;
+        }
+    }
 
     public float baseSpeed;
     public float baseDrift;
 
-    public Parameters.Direction direction; //{ get; set; }
+    public Parameters.Direction direction;
 
     /*used for controlling how the enemy moves etc.*/
     public StateMachine<Enemy> ActionFsm { get; private set; }
@@ -25,7 +37,7 @@ public class Enemy : Mobile {
     public Animator anim { get; private set; }
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
-    public ECB environmentCollisionBox;
+    public Collider2D environmentCollisionBox;
     public List<GameObject> prefabs;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
@@ -77,14 +89,26 @@ public class Enemy : Mobile {
 
     public void Freeze()
     {
+        this.frozen = true;
+
+        //Temporary visual cue
+        this.GetComponent<SpriteRenderer>().color = Color.blue;
+
         this.gameObject.layer = LayerMask.NameToLayer("Platform");
+        this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.selfBody.isKinematic = true;
         this.selfBody.gravityScale = 0;
     }
 
     public void Unfreeze()
     {
-        this.gameObject.layer = LayerMask.NameToLayer("Default");
+        this.frozen = false;
+
+        //Temporary visual cue
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+
+        this.gameObject.layer = LayerMask.NameToLayer("Enemy");
+        this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Enemy");
         this.selfBody.isKinematic = false;
     }
 }

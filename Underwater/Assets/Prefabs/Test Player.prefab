@@ -134,7 +134,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &178600
 GameObject:
   m_ObjectHideFlags: 1
@@ -277,7 +277,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.55, y: 6.72, z: 0}
+  m_LocalPosition: {x: -6.26, y: 5.76, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484188}
@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.6196427, y: -3.6795733, z: 0}
+  m_LocalPosition: {x: -15.66, y: -1.6, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -449,7 +449,7 @@ TextMesh:
   m_GameObject: {fileID: 175392}
   m_Text: Here is my dialog
   m_OffsetZ: 0
-  m_CharacterSize: 0.5
+  m_CharacterSize: 0.75
   m_LineSpacing: 1
   m_Anchor: 0
   m_Alignment: 1
@@ -498,12 +498,12 @@ MonoBehaviour:
   baseFriction: 2
   baseJumpHeight: 5
   baseFallSpeed: 5
-  baseAirMovementSpeed: 3
-  baseAirDrift: 0.2
+  baseAirMovementSpeed: 5
+  baseAirDrift: 0.3
   baseJetpackSpeed: 9
   friction: 0
   hasWeights: 0
-  isUnderWater: 0
+  isUnderWater: 1
   grounded: 1
   isWeighted: 0
   externalForce: {x: 0, y: 0}

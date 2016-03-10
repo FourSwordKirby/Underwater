@@ -71,7 +71,7 @@ public class Player : Mobile {
         get
         {
             if (isUnderWater)
-                return 0.5f * baseAirMovementSpeed;
+                return 0.75f * baseAirMovementSpeed;
             else
                 return baseAirMovementSpeed;
         }

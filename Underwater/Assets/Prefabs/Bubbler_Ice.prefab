@@ -43,7 +43,7 @@ MonoBehaviour:
   maxAmmoCount: 50
   ammo: {fileID: 11405866, guid: 83741fe70c01a81478c5edbc253adb7b, type: 2}
   rechargeRate: 30
-  fireRate: 15
+  fireRate: 10
   bubbleSpeed: 5
 --- !u!1001 &100100000
 Prefab:
@@ -63,7 +63,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fireRate
-      value: 15
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

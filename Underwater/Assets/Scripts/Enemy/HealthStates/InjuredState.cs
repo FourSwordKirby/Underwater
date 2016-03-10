@@ -21,7 +21,6 @@ public class InjuredState : State<Enemy> {
     }
 
 
-    /*error with collision boxes puts player in air state when he actually isn't*/
     override public void Execute()
     {
         counter += Time.deltaTime;

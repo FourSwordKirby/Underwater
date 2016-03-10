@@ -29,12 +29,12 @@ public class DialogState : State<Player>
 
     override public void Enter()
     {
+        dialogBox.gameObject.active = true;
         player.LockControls();
     }
 
     override public void Execute()
     {
-        Debug.Log(dialogBox.dialogField.text.Replace("\n", ""));
         if (Controls.JumpInputDown() && dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
         {
             dialogBox.displayDialog(dialog[dialogCounter]);
@@ -43,6 +43,7 @@ public class DialogState : State<Player>
 
         if (dialogCounter == dialog.Length)
         {
+            dialogBox.gameObject.active = false;
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
         }
     }

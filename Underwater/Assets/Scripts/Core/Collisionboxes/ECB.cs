@@ -8,7 +8,7 @@ public class ECB : Collisionbox {
 
     public void fallThrough()
     {
-        if(this.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (this.gameObject.layer == LayerMask.NameToLayer("Player"))
             this.gameObject.layer = LayerMask.NameToLayer("Fall Through");
     }
 

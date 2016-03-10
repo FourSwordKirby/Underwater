@@ -21,7 +21,11 @@ public class DefaultState : State<Enemy>
     override public void Execute()
     {
         if (enemy.health < enemy.maxHealth && enemy.health > 0)
+        {
             enemy.health = Mathf.Clamp(enemy.health + enemy.healthRegenRate * Time.deltaTime, 0, enemy.maxHealth);
+            if (enemy.health == enemy.maxHealth)
+                enemy.Unfreeze();
+        }
     }
 
     override public void FixedExecute()
