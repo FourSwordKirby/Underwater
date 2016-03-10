@@ -88,8 +88,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473200}
-  - 114: {fileID: 11483892}
   - 61: {fileID: 6117614}
+  - 114: {fileID: 11473604}
   m_Layer: 10
   m_Name: TestHurtbox
   m_TagString: Untagged
@@ -289,7 +289,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15.66, y: -1.6, z: 0}
+  m_LocalPosition: {x: -7.6196427, y: -3.6795733, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -493,6 +493,7 @@ MonoBehaviour:
   activeWeapon: {fileID: 11455070}
   weaponInventory: []
   currentWeaponIndex: 0
+  currentInteractable: {fileID: 0}
   baseMovementSpeed: 5
   baseMovementDrift: 2
   baseFriction: 2
@@ -567,7 +568,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: ECB
---- !u!114 &11483892
+--- !u!114 &11473604
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -575,10 +576,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 168220}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bc55df43398bc247b7e64fb63b8490f, type: 3}
+  m_Script: {fileID: 11500000, guid: a43a466029a9c864a99afd017a82c6f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: TestHurtbox
+  name: Hurtbox
   status: 0
   owner: {fileID: 11431266}
 --- !u!114 &11488440

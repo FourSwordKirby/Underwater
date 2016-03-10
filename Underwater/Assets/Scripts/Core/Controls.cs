@@ -65,7 +65,7 @@ public class Controls {
         return Input.GetButtonDown("AimDown");
     }
 
-    public static bool InteractInputDown(Player player)
+    public static bool InteractInputDown()
     {
         return Input.GetButtonDown("Interact");
     }

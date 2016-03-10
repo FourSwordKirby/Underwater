@@ -15,6 +15,8 @@ public class Player : Mobile {
     public List<Weapon> weaponInventory;
     public int currentWeaponIndex;
 
+    public Interactable currentInteractable;
+
     public float baseMovementSpeed;
     public float baseMovementDrift;
     public float baseFriction;
@@ -200,6 +202,12 @@ public class Player : Mobile {
         if (Controls.NextWeaponInputDown())
         {
             SwitchWeapons(currentWeaponIndex + 1);
+        }
+
+        //Interacting Controls
+        if (Controls.InteractInputDown() && currentInteractable != null)
+        {
+            currentInteractable.Interact(this);
         }
 
         //Toggle controls (for weights and related things)

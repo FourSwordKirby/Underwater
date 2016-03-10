@@ -9,7 +9,7 @@ public class BubblerPowerup : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        TestHurtbox hurtbox = col.gameObject.GetComponent<TestHurtbox>();
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null)
         {
             Player player = hurtbox.owner;

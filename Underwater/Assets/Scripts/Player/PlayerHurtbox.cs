@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TestHurtbox : Hurtbox {
+public class PlayerHurtbox : Hurtbox {
     public Player owner;
 
     override public void TakeDamage(float damage)

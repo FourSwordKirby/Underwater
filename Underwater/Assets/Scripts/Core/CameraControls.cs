@@ -17,8 +17,8 @@ public class CameraControls : MonoBehaviour {
     private float max_camera_size;
     private float target_camera_size;
 
-    public float zoomSpeed = 20f;
-    public float maxZoomFOV = 10f;
+    public float zoomSpeed;
+    public float maxZoomFOV;
 
     /* camera moving constants */
     private const float Z_OFFSET = -10;
@@ -94,7 +94,7 @@ public class CameraControls : MonoBehaviour {
         transform.position = pos;
 
         //used to scale the camera's size as targets spread out
-        foreach(Mobile targ in focus.targets)
+        /*foreach(Mobile targ in focus.targets)
         {
             //check that the target is in bounds
             if(inCameraBounds(targ))
@@ -109,7 +109,7 @@ public class CameraControls : MonoBehaviour {
             cameraComponent.orthographicSize = Mathf.MoveTowards(cameraSize, cameraSize * 1 + ZOOM_RATE, zoomSpeed * Time.deltaTime);
         if (cameraSize > target_camera_size)
             cameraComponent.orthographicSize = Mathf.MoveTowards(cameraSize, cameraSize * 1 - ZOOM_RATE, zoomSpeed * Time.deltaTime);
-        
+        */
 	}
 
     public void Shake(float Intensity = 0.05f, 

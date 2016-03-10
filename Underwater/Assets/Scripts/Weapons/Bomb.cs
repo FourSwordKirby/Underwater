@@ -14,7 +14,6 @@ public class Bomb : Hitbox {
         fuseLength -= Time.deltaTime;
         if (fuseLength < 0)
         {
-            //SPAWN A COOL EXPLOSION
             Explosion explosionInstance = Instantiate(explosionPrefab);
             explosionInstance.transform.position = this.gameObject.transform.position;
 

@@ -21,5 +21,11 @@ public class Explosion : MonoBehaviour {
             Vector3 launchDirection = hurtboxPosition - this.transform.position;
             hurtbox.TakeHit(0, 0, launchDirection * explosionForce);
         }
+
+        DestroyableWall wall = col.gameObject.GetComponent<DestroyableWall>();
+        if(wall != null)
+        {
+            Destroy(wall.gameObject);
+        }
     }
 }

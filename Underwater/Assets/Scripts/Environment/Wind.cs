@@ -31,7 +31,7 @@ public class Wind : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        TestHurtbox hurtbox = col.gameObject.GetComponent<TestHurtbox>();
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null)
         {
             hurtbox.owner.ApplyPushForce(this.force);
@@ -40,7 +40,7 @@ public class Wind : MonoBehaviour {
 
     void OnTriggerStay2D(Collider2D col)
     {
-        TestHurtbox hurtbox = col.gameObject.GetComponent<TestHurtbox>();
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null)
         {
             hurtbox.owner.ApplyPushForce(this.force);
