@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DestroyableWall : Hurtbox {
+public class SeaweedHurtbox : Hurtbox {
+
+    public Seaweed owner;
+
     override public void TakeDamage(float damage)
     {
     }
@@ -12,9 +15,13 @@ public class DestroyableWall : Hurtbox {
 
     override public void ApplyEffect(Parameters.DamageEffect effect)
     {
-        if (effect == Parameters.DamageEffect.Blast)
+        if (effect == Parameters.DamageEffect.Freeze)
         {
-            Destroy(this.gameObject);
+            owner.Freeze();
+        }
+        else
+        {
+            owner.Retract();
         }
     }
 }

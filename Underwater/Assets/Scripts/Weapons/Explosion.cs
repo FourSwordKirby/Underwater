@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Explosion : MonoBehaviour {
+public class Explosion : Hitbox {
     public float explosionForce;
     public float explosionLength;
 
@@ -19,13 +19,10 @@ public class Explosion : MonoBehaviour {
         {
             Vector3 hurtboxPosition = hurtbox.transform.position;
             Vector3 launchDirection = hurtboxPosition - this.transform.position;
-            hurtbox.TakeHit(0, 0, launchDirection * explosionForce);
-        }
 
-        DestroyableWall wall = col.gameObject.GetComponent<DestroyableWall>();
-        if(wall != null)
-        {
-            Destroy(wall.gameObject);
+            hurtbox.TakeDamage(damage);
+            hurtbox.TakeHit(0, 0, launchDirection * explosionForce);
+            hurtbox.ApplyEffect(this.effect);
         }
     }
 }
