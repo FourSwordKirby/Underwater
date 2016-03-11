@@ -21,15 +21,10 @@ public class Enemy : Mobile {
         }
     }
 
-    public float baseSpeed;
-    public float baseDrift;
-
     public Parameters.Direction direction;
 
-    /*used for controlling how the enemy moves etc.*/
-    public StateMachine<Enemy> ActionFsm { get; private set; }
-
-    /*used for things like health regen, which is seperate from attacking*/
+    /*used for things like health regen, which is seperate from attacking
+     This is universal to all enemies, so we put it in this base class*/
     public StateMachine<Enemy> StatusFsm { get; private set; }
 
     //self references to various components
@@ -51,6 +46,11 @@ public class Enemy : Mobile {
 
     // Use this for initialization of variables that rely on other objects
 	void Start () {
+        initBaseClass();
+    }
+
+    public void initBaseClass()
+    {
         //Initializing components
         anim = this.GetComponent<Animator>();
         selfBody = this.GetComponent<Rigidbody2D>();
@@ -58,16 +58,10 @@ public class Enemy : Mobile {
 
 
         StatusFsm = new StateMachine<Enemy>(this);
-        State<Enemy> startState = new DefaultState(this, this.ActionFsm);
+        State<Enemy> startState = new DefaultState(this, this.StatusFsm);
         StatusFsm.InitialState(startState);
-
-        /*
-        ActionFsm = new StateMachine<Player>(this);
-        State<Enemy> startState = new IdleState(this, this.ActionFsm);
-        ActionFsm.InitialState(startState);
-         * */
     }
-	
+
 	// Update is called once per frame
 	void Update () {
         this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));

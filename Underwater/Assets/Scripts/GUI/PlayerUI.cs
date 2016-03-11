@@ -6,8 +6,6 @@ public class PlayerUI : MonoBehaviour {
     public Player player;
 
     public HealthBar healthBar;
-    public MeterBar meterBar;
-    public StockCount stockCount;
 
 	// Use this for initialization
 	void Start () {
