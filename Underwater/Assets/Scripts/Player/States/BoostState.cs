@@ -4,6 +4,8 @@ using System.Collections;
 public class BoostState : State<Player>
 {
     private Player player;
+    private float trailDisplacement = 0.5f;
+
 
     Vector2 movementInputVector;
     Vector2 jetPackDirection;
@@ -63,6 +65,14 @@ public class BoostState : State<Player>
         player.UseFuel(Time.deltaTime);
 
         //Gotta animate the jetpacktrail
+        GameObject boostTrail = GameObject.Instantiate(player.prefabs[0]);
+        Vector3 offset = Vector3.zero;
+        if(jetPackDirection.x == 0)
+            offset = new Vector3(0, -Mathf.Sign(jetPackDirection.y), 0);
+        if(jetPackDirection.y == 0)
+            offset = new Vector3(-Mathf.Sign(jetPackDirection.x), 0, 0);
+
+        boostTrail.transform.position = player.transform.position + offset * trailDisplacement;
     }
 
     override public void FixedExecute()
