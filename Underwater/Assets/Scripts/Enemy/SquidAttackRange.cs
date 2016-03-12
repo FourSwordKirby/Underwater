@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SquidAttackRange : MonoBehaviour {
 
-    private SquidEnemy owner;
+    public SquidEnemy owner;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -11,7 +11,7 @@ public class SquidAttackRange : MonoBehaviour {
         if (hurtbox != null)
         {
             //Change to an attacking state
-            owner.currentTarget = hurtbox.owner.gameObject;
+            owner.ActionFsm.ChangeState(new SquidAttackState(owner, owner.ActionFsm, hurtbox.owner.gameObject));
         }
     }
 
@@ -21,7 +21,7 @@ public class SquidAttackRange : MonoBehaviour {
         if (hurtbox != null && hurtbox.owner.gameObject == owner.currentTarget.gameObject)
         {
             //Change to an idle state
-            owner.currentTarget = null;
+            owner.ActionFsm.ChangeState(new SquidIdleState(owner, owner.ActionFsm));
         }
     }
 }

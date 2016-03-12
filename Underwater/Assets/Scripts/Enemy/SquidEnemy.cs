@@ -16,8 +16,8 @@ public class SquidEnemy : Enemy {
         initBaseClass();
 
         ActionFsm = new StateMachine<SquidEnemy>(this);
-        //State<SquidEnemy> startState = new DefaultState(this, this.StatusFsm);
-        //ActionFsm.InitialState(startState);
+        State<SquidEnemy> startState = new SquidIdleState(this, this.ActionFsm);
+        ActionFsm.InitialState(startState);
 	}
 	
 	// Update is called once per frame

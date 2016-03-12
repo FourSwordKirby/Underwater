@@ -2,16 +2,16 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &133460
 GameObject:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 448470}
-  - 114: {fileID: 11479498}
   - 61: {fileID: 6173284}
+  - 114: {fileID: 11485792}
   m_Layer: 11
-  m_Name: EnemyHurtbox
+  m_Name: AttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,8 +30,26 @@ GameObject:
   - 114: {fileID: 11486506}
   - 50: {fileID: 5073112}
   - 95: {fileID: 9567862}
+  - 114: {fileID: 11483754}
   m_Layer: 11
   m_Name: Enemy_Squid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &153888
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 403344}
+  - 114: {fileID: 11479498}
+  - 61: {fileID: 6130510}
+  m_Layer: 11
+  m_Name: EnemyHurtbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -110,6 +128,18 @@ Transform:
   m_Children:
   - {fileID: 420234}
   m_Father: {fileID: 449374}
+  m_RootOrder: 1
+--- !u!4 &403344
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153888}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.1006608, y: 3.10066, z: 3.10066}
+  m_Children: []
+  m_Father: {fileID: 429962}
   m_RootOrder: 0
 --- !u!4 &407482
 Transform:
@@ -122,7 +152,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 449374}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!4 &420234
 Transform:
   m_ObjectHideFlags: 1
@@ -145,9 +175,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 448470}
+  - {fileID: 403344}
   m_Father: {fileID: 449374}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &448470
 Transform:
   m_ObjectHideFlags: 1
@@ -156,9 +186,9 @@ Transform:
   m_GameObject: {fileID: 133460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1006608, y: 3.10066, z: 3.10066}
+  m_LocalScale: {x: 30.97866, y: 30.978642, z: 30.978642}
   m_Children: []
-  m_Father: {fileID: 429962}
+  m_Father: {fileID: 449374}
   m_RootOrder: 0
 --- !u!4 &449374
 Transform:
@@ -168,8 +198,9 @@ Transform:
   m_GameObject: {fileID: 151990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 24.92, y: -15.42, z: 0}
-  m_LocalScale: {x: 0.679355, y: 0.679355, z: 0.679355}
+  m_LocalScale: {x: 0.50703615, y: 0.50703615, z: 0.50703615}
   m_Children:
+  - {fileID: 448470}
   - {fileID: 403114}
   - {fileID: 429962}
   - {fileID: 407482}
@@ -186,12 +217,26 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0
-  m_GravityScale: 0
+  m_GravityScale: 0.4
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
+--- !u!61 &6130510
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 153888}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!61 &6149936
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -252,8 +297,6 @@ MonoBehaviour:
   baseHealthRegenRate: 0
   health: 0
   frozen: 0
-  baseSpeed: 0
-  baseDrift: 0
   direction: 0
   environmentCollisionBox: {fileID: 6149936}
   prefabs: []
@@ -262,7 +305,7 @@ MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 133460}
+  m_GameObject: {fileID: 153888}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c29e83d6bcba1749b231cb856d9d2dc, type: 3}
@@ -271,6 +314,38 @@ MonoBehaviour:
   name: Hurtbox
   status: 0
   owner: {fileID: 11447426}
+--- !u!114 &11483754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 223fa1e0bb41fe1449bfc315f0361b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  baseHealthRegenRate: 0
+  health: 0
+  frozen: 0
+  direction: 0
+  environmentCollisionBox: {fileID: 0}
+  prefabs: []
+  currentTarget: {fileID: 0}
+  attackRange: {fileID: 0}
+--- !u!114 &11485792
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64c2c169133a2443a6a3f1ed55fa5c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 11483754}
 --- !u!114 &11486506
 MonoBehaviour:
   m_ObjectHideFlags: 1
