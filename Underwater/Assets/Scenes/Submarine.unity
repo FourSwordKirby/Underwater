@@ -831,11 +831,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 449374, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 24.92
+      value: 28.55
       objectReference: {fileID: 0}
     - target: {fileID: 449374, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -15.42
+      value: -13.72
       objectReference: {fileID: 0}
     - target: {fileID: 449374, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_LocalPosition.z
@@ -861,9 +861,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11447426, guid: 45735941a48aa39469402d039a82cd56, type: 2}
+      propertyPath: environmentCollisionBox
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 151990, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_Name
       value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028800, guid: 45735941a48aa39469402d039a82cd56, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6046066, guid: 45735941a48aa39469402d039a82cd56, type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45735941a48aa39469402d039a82cd56, type: 2}
@@ -985,11 +997,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 494870, guid: 0a1036495a1c55147876f0b4588472ed, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 11.62
+      value: 13.03
       objectReference: {fileID: 0}
     - target: {fileID: 494870, guid: 0a1036495a1c55147876f0b4588472ed, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.06
+      value: -17.46
       objectReference: {fileID: 0}
     - target: {fileID: 494870, guid: 0a1036495a1c55147876f0b4588472ed, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1035,11 +1047,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 14.16
+      value: 15.57
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.81
+      value: -17.21
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.z

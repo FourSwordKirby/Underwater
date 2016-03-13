@@ -5,6 +5,19 @@ public class SquidAttackRange : MonoBehaviour {
 
     public SquidEnemy owner;
 
+    public float deaggroLength;
+    public float deaggroTimer;
+
+    void Update()
+    {
+        if (deaggroTimer > 0)
+        {
+            deaggroTimer -= Time.deltaTime;
+            if(deaggroTimer <= 0)
+                owner.ActionFsm.ChangeState(new SquidIdleState(owner, owner.ActionFsm));
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D col)
     {
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
@@ -12,6 +25,7 @@ public class SquidAttackRange : MonoBehaviour {
         {
             //Change to an attacking state
             owner.ActionFsm.ChangeState(new SquidAttackState(owner, owner.ActionFsm, hurtbox.owner.gameObject));
+            deaggroTimer = 0;
         }
     }
 
@@ -20,8 +34,8 @@ public class SquidAttackRange : MonoBehaviour {
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null && hurtbox.owner.gameObject == owner.currentTarget.gameObject)
         {
-            //Change to an idle state
-            owner.ActionFsm.ChangeState(new SquidIdleState(owner, owner.ActionFsm));
+            //start the deaggro timer
+            deaggroTimer = deaggroLength;
         }
     }
 }

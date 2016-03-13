@@ -9,7 +9,7 @@ public class SquidAttackState : State<SquidEnemy>
     private SquidEnemy enemy;
 
 
-    private float chargeLength = 5.0f;
+    private float chargeLength = 3.0f;
     private float attackLength = 0.5f;
     private float recoveryLength = 1.5f;
     private float timer;
