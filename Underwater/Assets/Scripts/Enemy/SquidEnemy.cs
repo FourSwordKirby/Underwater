@@ -3,10 +3,13 @@ using System.Collections;
 
 public class SquidEnemy : Enemy {
 
+    public float startingHeight {get; private set;}
+
     /*used for controlling how the squid moves etc.*/
     public StateMachine<SquidEnemy> ActionFsm { get; private set; }
 
     public GameObject currentTarget;
+
 
     /*self refernces*/
     public Collider2D attackRange;
@@ -15,6 +18,8 @@ public class SquidEnemy : Enemy {
 	void Start () {
         initBaseClass();
 
+        this.startingHeight = this.transform.position.y;
+    
         ActionFsm = new StateMachine<SquidEnemy>(this);
         State<SquidEnemy> startState = new SquidIdleState(this, this.ActionFsm);
         ActionFsm.InitialState(startState);
