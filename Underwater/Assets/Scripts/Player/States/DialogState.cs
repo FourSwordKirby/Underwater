@@ -28,7 +28,7 @@ public class DialogState : State<Player>
 
     override public void Enter()
     {
-        dialogBox.gameObject.active = true;
+        dialogBox.gameObject.SetActive(true);
         player.LockControls();
     }
 
@@ -36,7 +36,7 @@ public class DialogState : State<Player>
     {
         if (Controls.JumpInputDown() && dialogCounter == dialog.Length)
         {
-            dialogBox.gameObject.active = false;
+            dialogBox.gameObject.SetActive(false);
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
             return;
         }

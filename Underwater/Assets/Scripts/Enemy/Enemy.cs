@@ -81,7 +81,7 @@ public class Enemy : Mobile {
         this.StatusFsm.FixedExecute();
     }
 
-    public void Freeze()
+    public virtual void Freeze()
     {
         this.frozen = true;
 
@@ -94,7 +94,7 @@ public class Enemy : Mobile {
         this.selfBody.gravityScale = 0;
     }
 
-    public void Unfreeze()
+    public virtual void Unfreeze()
     {
         this.frozen = false;
 

@@ -18,6 +18,8 @@ public class SquidEnemy : Enemy {
 	void Start () {
         initBaseClass();
 
+        Debug.Log(selfBody);
+
         this.startingHeight = this.transform.position.y;
     
         ActionFsm = new StateMachine<SquidEnemy>(this);
@@ -27,11 +29,32 @@ public class SquidEnemy : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+        this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
+
         ActionFsm.Execute();
+        StatusFsm.Execute();
+
+        if (this.health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
 	}
 
     void FixedUpdate()
     {
         ActionFsm.FixedExecute();
+        StatusFsm.Execute();
+    }
+
+    override public void Freeze()
+    {
+        base.Freeze();
+        ActionFsm.SuspendState(new SquidFrozenState(this, this.ActionFsm));
+    }
+
+    override public void Unfreeze()
+    {
+        base.Unfreeze();
+        ActionFsm.ResumeState();
     }
 }

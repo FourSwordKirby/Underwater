@@ -12,7 +12,7 @@ public class StateMachine<CoreType> where CoreType : MonoBehaviour {
     public StateMachine(CoreType owner)
     {
         this.owner = owner;
-        StateStack = null;
+        StateStack = new Stack<State<CoreType>>();
         CurrentState = null;
     } 
 

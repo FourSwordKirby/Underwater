@@ -26,7 +26,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 449374}
   - 212: {fileID: 21270624}
-  - 114: {fileID: 11447426}
   - 114: {fileID: 11486506}
   - 50: {fileID: 5073112}
   - 95: {fileID: 9567862}
@@ -336,24 +335,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11447426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 454ab53ff456b994f92618ee723cbbff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 10
-  baseHealthRegenRate: 0
-  health: 0
-  frozen: 0
-  direction: 0
-  environmentCollisionBox: {fileID: 0}
-  prefabs: []
 --- !u!114 &11479498
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -367,7 +348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Hurtbox
   status: 0
-  owner: {fileID: 11447426}
+  owner: {fileID: 11483754}
 --- !u!114 &11483754
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -379,15 +360,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223fa1e0bb41fe1449bfc315f0361b82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 0
-  baseHealthRegenRate: 0
+  maxHealth: 10
+  baseHealthRegenRate: 0.5
   health: 0
   frozen: 0
   direction: 0
-  environmentCollisionBox: {fileID: 0}
+  environmentCollisionBox: {fileID: 5809198}
   prefabs: []
   currentTarget: {fileID: 0}
-  attackRange: {fileID: 0}
+  attackRange: {fileID: 5837724}
 --- !u!114 &11485792
 MonoBehaviour:
   m_ObjectHideFlags: 1

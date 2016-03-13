@@ -267,6 +267,7 @@ public class Player : Mobile {
     public void LockControls()
     {
         inCutscene = true;
+        this.selfBody.velocity = new Vector2(0.0f, this.selfBody.velocity.y);
     }
 
     public void UnlockControls()
