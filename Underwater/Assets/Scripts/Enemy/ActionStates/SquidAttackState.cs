@@ -51,8 +51,8 @@ public class SquidAttackState : State<SquidEnemy>
         {
             enemy.selfBody.velocity = Vector2.Lerp(enemy.selfBody.velocity, Vector2.zero, Time.deltaTime * chargeLength / 2);
 
-            Vector3 dir = enemy.transform.position - enemy.currentTarget.transform.position;
-            float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Vector3 dir = enemy.currentTarget.transform.position - enemy.transform.position;
+            float angle = Vector2.Angle(Vector2.up, dir);
             Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
             enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, targetRotation, 60 * Time.deltaTime);
 

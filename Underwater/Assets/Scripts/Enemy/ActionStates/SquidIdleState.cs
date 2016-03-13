@@ -30,6 +30,9 @@ public class SquidIdleState : State<SquidEnemy>
         Quaternion targetRotation = Quaternion.AngleAxis(0.0f, Vector3.forward);
         enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, targetRotation, 60 * Time.deltaTime);
 
+        if (Mathf.Abs(enemy.transform.rotation.eulerAngles.z) < 1.0f)
+            enemy.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
+
         if (enemy.transform.position.y <= enemy.startingHeight)
             enemy.selfBody.velocity = new Vector2(0, jumpHeight);
     }
