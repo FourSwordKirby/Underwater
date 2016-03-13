@@ -22,7 +22,6 @@ public class DialogState : State<Player>
         this.dialog = textFile.text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
         this.dialogCounter = 0;
 
-        Debug.Log(dialog[dialogCounter]);
         dialogBox.displayDialog(dialog[dialogCounter]);
         dialogCounter++;
     }
@@ -35,16 +34,17 @@ public class DialogState : State<Player>
 
     override public void Execute()
     {
+        if (Controls.JumpInputDown() && dialogCounter == dialog.Length)
+        {
+            dialogBox.gameObject.active = false;
+            player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
+            return;
+        }
+
         if (Controls.JumpInputDown() && dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
         {
             dialogBox.displayDialog(dialog[dialogCounter]);
             dialogCounter++;
-        }
-
-        if (dialogCounter == dialog.Length)
-        {
-            dialogBox.gameObject.active = false;
-            player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
         }
     }
 
