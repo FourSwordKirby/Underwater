@@ -861,21 +861,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 11447426, guid: 45735941a48aa39469402d039a82cd56, type: 2}
-      propertyPath: environmentCollisionBox
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 151990, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_Name
       value: Squid
-      objectReference: {fileID: 0}
-    - target: {fileID: 6028800, guid: 45735941a48aa39469402d039a82cd56, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6046066, guid: 45735941a48aa39469402d039a82cd56, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45735941a48aa39469402d039a82cd56, type: 2}
