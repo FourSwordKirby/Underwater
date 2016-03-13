@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public abstract class Hitbox : Collisionbox{
     public float damage;
     public Vector2 knockbackVector;
+    public float hitlag;
     public float hitstun;
 
     //This is mostly for aesthetic stuff

@@ -32,7 +32,6 @@ public class SquidIdleState : State<SquidEnemy>
 
         if (enemy.transform.position.y <= enemy.startingHeight)
             enemy.selfBody.velocity = new Vector2(0, jumpHeight);
-        Debug.Log("Idling");
     }
 
     override public void Exit()
