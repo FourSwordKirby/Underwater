@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Water : MonoBehaviour {
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerStay2D(Collider2D col)
     {
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null && hurtbox.owner != null)
