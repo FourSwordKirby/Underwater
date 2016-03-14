@@ -46,6 +46,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &152606
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 479244}
+  - 114: {fileID: 11443278}
+  m_Layer: 10
+  m_Name: GroundedChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &157500
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,8 +87,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 407946}
-  - 61: {fileID: 6193956}
-  - 114: {fileID: 11415556}
   m_Layer: 10
   m_Name: GroundedCheckerRight
   m_TagString: Untagged
@@ -143,8 +157,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 473546}
-  - 61: {fileID: 6118102}
-  - 114: {fileID: 11430194}
   m_Layer: 10
   m_Name: GroundedCheckerLeft
   m_TagString: Untagged
@@ -212,6 +224,7 @@ Transform:
   - {fileID: 488198}
   - {fileID: 473546}
   - {fileID: 407946}
+  - {fileID: 479244}
   m_Father: {fileID: 484188}
   m_RootOrder: 3
 --- !u!4 &407946
@@ -300,6 +313,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 484188}
   m_RootOrder: 4
+--- !u!4 &479244
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152606}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1601522, y: 2.1601539, z: 2.1601539}
+  m_Children: []
+  m_Father: {fileID: 401220}
+  m_RootOrder: 3
 --- !u!4 &482718
 Transform:
   m_ObjectHideFlags: 1
@@ -319,7 +344,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.57, y: -17.21, z: 0}
+  m_LocalPosition: {x: -1, y: -3.54, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -411,20 +436,6 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!61 &6118102
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177550}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
 --- !u!61 &6127500
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -446,20 +457,6 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178600}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!61 &6193956
-BoxCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160414}
-  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -505,38 +502,6 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
---- !u!114 &11415556
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 160414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 11431266}
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkDistance: 0.1
---- !u!114 &11430194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 177550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  owner: {fileID: 11431266}
-  floorMask:
-    serializedVersion: 2
-    m_Bits: 256
-  checkDistance: 0.1
 --- !u!114 &11431266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -587,6 +552,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogField: {fileID: 10256938}
   width: 50
+--- !u!114 &11443278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1623f180dd76f247ba605a86ba7228a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  owner: {fileID: 11431266}
+  floorMask:
+    serializedVersion: 2
+    m_Bits: 256
+  leftCheck: {fileID: 177550}
+  rightCheck: {fileID: 160414}
+  checkDistance: 0.1
 --- !u!114 &11455070
 MonoBehaviour:
   m_ObjectHideFlags: 1
