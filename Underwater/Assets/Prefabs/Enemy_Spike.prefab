@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21261912}
   - 114: {fileID: 11424470}
   - 50: {fileID: 5003362}
+  - 61: {fileID: 6174058}
   m_Layer: 0
   m_Name: Enemy_Spike
   m_TagString: Untagged
@@ -47,6 +48,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &6174058
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121298}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
 --- !u!114 &11424470
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,6 +79,7 @@ MonoBehaviour:
   hitlag: 0
   hitstun: 0
   effect: 0
+  decayTime: 5
   selfBody: {fileID: 5003362}
 --- !u!212 &21261912
 SpriteRenderer:
@@ -101,7 +117,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: decayTime
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 121298}

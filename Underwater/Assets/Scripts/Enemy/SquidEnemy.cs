@@ -18,8 +18,6 @@ public class SquidEnemy : Enemy {
 	void Start () {
         initBaseClass();
 
-        Debug.Log(selfBody);
-
         this.startingHeight = this.transform.position.y;
     
         ActionFsm = new StateMachine<SquidEnemy>(this);
