@@ -35,8 +35,13 @@ public class DialogBox : MonoBehaviour {
             dialogTracker++;
 
             textDisplayTimer = textDisplaySpeed;
-        };
+        }
 	}
+
+    public void forceDialog(string dialog)
+    {
+        this.dialogField.text = FitText(dialog, width);
+    }
 
     public void displayDialog(string dialog, DisplaySpeed displaySpeed = DisplaySpeed.fast)
     {

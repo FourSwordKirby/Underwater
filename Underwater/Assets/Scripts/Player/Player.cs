@@ -187,7 +187,7 @@ public class Player : Mobile {
             if (isUnderWater)
                 activeWeapon.Fire(direction, aim);
             else
-                ;//play a dry firing sound here;
+                dialogBox.displayDialog("emtpy");//play a dry firing sound here;
             LockDirection();
         }
         else

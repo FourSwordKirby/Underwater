@@ -34,17 +34,25 @@ public class DialogState : State<Player>
 
     override public void Execute()
     {
-        if (Controls.JumpInputDown() && dialogCounter == dialog.Length)
+        if (Controls.JumpInputDown() && dialogCounter == dialog.Length
+            && dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
         {
             dialogBox.gameObject.SetActive(false);
             player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
             return;
         }
 
-        if (Controls.JumpInputDown() && dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
+        if (Controls.JumpInputDown())
         {
-            dialogBox.displayDialog(dialog[dialogCounter]);
-            dialogCounter++;
+            if (dialogBox.dialogField.text.Replace("\n", "") == dialog[dialogCounter - 1].Trim())
+            {
+                dialogBox.displayDialog(dialog[dialogCounter]);
+                dialogCounter++;
+            }
+            else
+            {
+                dialogBox.forceDialog(dialog[dialogCounter - 1].Trim());
+            }
         }
     }
 
