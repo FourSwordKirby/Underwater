@@ -13,14 +13,15 @@ public class UrchinAttackState : State<Urchin>
 
     override public void Enter()
     {
-        enemy.selfBody.gravityScale = 0.4f;
     }
 
 
     /*error with collision boxes puts player in air state when he actually isn't*/
     override public void Execute()
     {
-
+        UrchinSpikeHitbox spike = GameObject.Instantiate(enemy.ammo);
+        spike.transform.position = enemy.gameObject.transform.position;
+        spike.selfBody.velocity = Vector2.left;
     }
 
     override public void FixedExecute()

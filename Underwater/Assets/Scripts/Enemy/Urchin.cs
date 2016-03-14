@@ -8,13 +8,13 @@ public class Urchin : Enemy {
 
     /*self refernces*/
     public Collider2D attackRange;
+    public UrchinSpikeHitbox ammo;
+
 
     // Use this for initialization
     void Start()
     {
         initBaseClass();
-
-        Debug.Log(selfBody);
 
         ActionFsm = new StateMachine<Urchin>(this);
         State<Urchin> startState = new UrchinIdleState(this, this.ActionFsm);
@@ -24,7 +24,7 @@ public class Urchin : Enemy {
     // Update is called once per frame
     void Update()
     {
-        this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
+        //this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
 
         ActionFsm.Execute();
         StatusFsm.Execute();
@@ -44,7 +44,7 @@ public class Urchin : Enemy {
     override public void Freeze()
     {
         base.Freeze();
-        //ActionFsm.SuspendState(new UrchinFrozenState(this, this.ActionFsm));
+        ActionFsm.SuspendState(new UrchinFrozenState(this, this.ActionFsm));
     }
 
     override public void Unfreeze()

@@ -13,7 +13,6 @@ public class UrchinIdleState : State<Urchin>
 
     override public void Enter()
     {
-        enemy.selfBody.gravityScale = 0.4f;
     }
 
 
