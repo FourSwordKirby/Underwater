@@ -33,10 +33,6 @@ public class EnemyHurtbox : Hurtbox {
 
     override public void ApplyEffect(Parameters.DamageEffect effect)
     {
-        if (owner.spriteRenderer.color != hitColor)
-            previousColor = owner.spriteRenderer.color;
-        timer = hitFlashLength;
-
         if (effect == Parameters.DamageEffect.Freeze)
         {
             if (owner.health < owner.maxHealth * 0.5f)
@@ -44,5 +40,9 @@ public class EnemyHurtbox : Hurtbox {
                 owner.Freeze();
             }
         }
+
+        if (owner.spriteRenderer.color != hitColor)
+            previousColor = owner.spriteRenderer.color;
+        timer = hitFlashLength;
     }
 }
