@@ -1,0 +1,3 @@
+Welcome to deep-sea diver training! Hit Z to continue dialogue.
+Use the arrow keys to move.
+To begin, pick up the bubble caster in front of you.

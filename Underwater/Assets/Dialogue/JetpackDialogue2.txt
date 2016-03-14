@@ -1,2 +1,3 @@
-Let’s see. If I remember correctly, this Z button activates the jets. 
+Let’s see. If I remember correctly, this Z button makes the suit jump.
+Hitting the button again activates the jetpack. 
 I think holding the button down boosts me for longer, too.
