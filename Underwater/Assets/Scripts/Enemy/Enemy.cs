@@ -32,6 +32,7 @@ public class Enemy : Mobile {
     public Animator anim { get; private set; }
     public Rigidbody2D selfBody { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public Collider2D environmentCollisionBox;
     public List<GameObject> prefabs;
     /*private GameObject bodyVisual;
@@ -55,7 +56,7 @@ public class Enemy : Mobile {
         anim = this.GetComponent<Animator>();
         selfBody = this.GetComponent<Rigidbody2D>();
         hitboxManager = this.GetComponent<CollisionboxManager>();
-
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         StatusFsm = new StateMachine<Enemy>(this);
         State<Enemy> startState = new DefaultState(this, this.StatusFsm);
@@ -86,7 +87,7 @@ public class Enemy : Mobile {
         this.frozen = true;
 
         //Temporary visual cue
-        this.GetComponent<SpriteRenderer>().color = Color.blue;
+        spriteRenderer.color = Color.blue;
 
         this.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Platform");
@@ -99,7 +100,7 @@ public class Enemy : Mobile {
         this.frozen = false;
 
         //Temporary visual cue
-        this.GetComponent<SpriteRenderer>().color = Color.white;
+        spriteRenderer.color = Color.white;
 
         this.gameObject.layer = LayerMask.NameToLayer("Enemy");
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Enemy");
