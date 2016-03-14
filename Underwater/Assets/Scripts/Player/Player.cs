@@ -184,7 +184,10 @@ public class Player : Mobile {
         //Shooting controls
         if (Controls.ShootInputHeld() && activeWeapon != null)
         {
-            activeWeapon.Fire(direction, aim);
+            if (isUnderWater)
+                activeWeapon.Fire(direction, aim);
+            else
+                ;//play a dry firing sound here;
             LockDirection();
         }
         else
