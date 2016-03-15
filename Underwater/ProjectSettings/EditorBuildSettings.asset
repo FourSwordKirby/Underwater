@@ -6,4 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/mainMenu.unity
+  - enabled: 1
     path: Assets/Scenes/testScene.unity
+  - enabled: 1
+    path: Assets/Scenes/OceanFloor.unity
+  - enabled: 1
+    path: Assets/Scenes/Submarine.unity
+  - enabled: 1
+    path: Assets/Scenes/Temple.unity
+  - enabled: 1
+    path: Assets/Scenes/TempleWalk.unity
+  - enabled: 1
+    path: Assets/Scenes/testScene.unity
+  - enabled: 1
+    path: Assets/Scenes/testScene2.unity
