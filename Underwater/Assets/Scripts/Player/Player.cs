@@ -127,6 +127,7 @@ public class Player : Mobile {
     public CollisionboxManager hitboxManager { get; private set; }
     public ECB environmentCollisionBox;
     public DialogBox dialogBox;
+    public List<AudioClip> audio;
     public List<GameObject> prefabs;
     /*private GameObject bodyVisual;
     public PlayerSounds Sounds { get; private set; }
@@ -187,7 +188,10 @@ public class Player : Mobile {
             if (isUnderWater)
                 activeWeapon.Fire(direction, aim);
             else
-                dialogBox.displayDialog("emtpy");//play a dry firing sound here;
+            {
+                AudioSource.PlayClipAtPoint(audio[0], transform.position);
+                //Do another indicator you can't fire
+            }
             LockDirection();
         }
         else
@@ -200,10 +204,12 @@ public class Player : Mobile {
         //Switching Weapons Controls
         if(Controls.PrevWeaponInputDown())
         {
+            AudioSource.PlayClipAtPoint(audio[1], transform.position);
             SwitchWeapons(currentWeaponIndex - 1);
         }
         if (Controls.NextWeaponInputDown())
         {
+            AudioSource.PlayClipAtPoint(audio[1], transform.position);
             SwitchWeapons(currentWeaponIndex + 1);
         }
 
@@ -216,6 +222,11 @@ public class Player : Mobile {
         //Toggle controls (for weights and related things)
         if (hasWeights && Controls.Toggle1Down())
         {
+            if(isWeighted)
+                AudioSource.PlayClipAtPoint(audio[3], transform.position);
+            else
+                AudioSource.PlayClipAtPoint(audio[2], transform.position);
+
             isWeighted = !isWeighted;
             Debug.Log("Weights Equipped");
         }

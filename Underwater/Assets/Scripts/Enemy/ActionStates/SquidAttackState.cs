@@ -4,9 +4,9 @@ using System.Collections;
 /// <summary>
 /// Squids should float. When the player enter's their range, they should charge up and then spin towards the player
 /// </summary>
-public class SquidAttackState : State<SquidEnemy>
+public class SquidAttackState : State<Squid>
 {
-    private SquidEnemy enemy;
+    private Squid enemy;
 
 
     private float chargeLength = 3.0f;
@@ -25,7 +25,7 @@ public class SquidAttackState : State<SquidEnemy>
         Recovering
     }
 
-    public SquidAttackState(SquidEnemy enemyInstance, StateMachine<SquidEnemy> fsm, GameObject currentTarget)
+    public SquidAttackState(Squid enemyInstance, StateMachine<Squid> fsm, GameObject currentTarget)
         : base(enemyInstance, fsm)
     {
         enemy = enemyInstance;
@@ -35,6 +35,8 @@ public class SquidAttackState : State<SquidEnemy>
     override public void Enter()
     {
         enemy.selfBody.gravityScale = 0.0f;
+        AudioSource.PlayClipAtPoint(enemy.audio[0], enemy.transform.position);
+        AudioSource.PlayClipAtPoint(enemy.audio[1], enemy.transform.position);
     }
 
 
@@ -60,6 +62,7 @@ public class SquidAttackState : State<SquidEnemy>
             {
                 timer = 0.0f;
                 phase = attackPhase.Attacking;
+                AudioSource.PlayClipAtPoint(enemy.audio[2], enemy.transform.position);
             }
         }
         if (phase == attackPhase.Attacking)
@@ -79,6 +82,7 @@ public class SquidAttackState : State<SquidEnemy>
             {
                 timer = 0.0f;
                 phase = attackPhase.Charging;
+                AudioSource.PlayClipAtPoint(enemy.audio[1], enemy.transform.position);
             }
         }
     }

@@ -23,7 +23,7 @@ public class EnemyHurtbox : Hurtbox {
 
     override public void TakeDamage(float damage)
     {
-        owner.health -= damage;
+        owner.TakeDamage(damage);
     }
 
     override public void TakeHit(float hitlag, float hitstun, Vector2 knockback)

@@ -5,11 +5,11 @@ using UnityEngine;
 // <summary>
 /// Squids should float. When the player enter's their range, they should charge up and then spin towards the player
 /// </summary>
-public class SquidFrozenState : State<SquidEnemy>
+public class SquidFrozenState : State<Squid>
 {
-    private SquidEnemy enemy;
+    private Squid enemy;
 
-    public SquidFrozenState(SquidEnemy enemyInstance, StateMachine<SquidEnemy> fsm)
+    public SquidFrozenState(Squid enemyInstance, StateMachine<Squid> fsm)
         : base(enemyInstance, fsm)
     {
         enemy = enemyInstance;

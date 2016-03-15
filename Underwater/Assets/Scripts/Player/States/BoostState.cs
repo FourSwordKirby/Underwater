@@ -10,6 +10,9 @@ public class BoostState : State<Player>
     Vector2 movementInputVector;
     Vector2 jetPackDirection;
 
+    private float jetpackTrailCooldownTime = 0.05f;
+    private float timer;
+
     public BoostState(Player playerInstance, StateMachine<Player> fsm)
         : base(playerInstance, fsm)
     {
@@ -65,14 +68,23 @@ public class BoostState : State<Player>
         player.UseFuel(Time.deltaTime);
 
         //Gotta animate the jetpacktrail
-        GameObject boostTrail = GameObject.Instantiate(player.prefabs[0]);
-        Vector3 offset = Vector3.zero;
-        if(jetPackDirection.x == 0)
-            offset = new Vector3(0, -Mathf.Sign(jetPackDirection.y), 0);
-        if(jetPackDirection.y == 0)
-            offset = new Vector3(-Mathf.Sign(jetPackDirection.x), 0, 0);
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            GameObject boostTrail = GameObject.Instantiate(player.prefabs[0]);
+            Vector3 offset = Vector3.zero;
+            if (jetPackDirection.x == 0)
+                offset = new Vector3(0, -Mathf.Sign(jetPackDirection.y), 0);
+            if (jetPackDirection.y == 0)
+                offset = new Vector3(-Mathf.Sign(jetPackDirection.x), 0, 0);
 
-        boostTrail.transform.position = player.transform.position + offset * trailDisplacement;
+            boostTrail.transform.position = player.transform.position + offset * trailDisplacement;
+
+            //making sfx
+            AudioSource.PlayClipAtPoint(player.audio[4], player.transform.position);
+
+            timer = jetpackTrailCooldownTime;
+        }
     }
 
     override public void FixedExecute()

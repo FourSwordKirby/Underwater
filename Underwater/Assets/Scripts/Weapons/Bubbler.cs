@@ -27,6 +27,9 @@ public class Bubbler : Weapon {
     private Vector2 firePosition;
     private Vector2 fireVelocity;
 
+    /*audio references*/
+    public AudioSource firingAudio;
+
 	// Use this for initialization
 	void Start () 
     {
@@ -49,6 +52,8 @@ public class Bubbler : Weapon {
                     bubble.transform.position = firePosition;
                     bubble.selfBody.velocity = fireVelocity;
                     currentAmmoCount--;
+
+                    firingAudio.Play();
                 }
                 fireTimer = 0.0f;
             }

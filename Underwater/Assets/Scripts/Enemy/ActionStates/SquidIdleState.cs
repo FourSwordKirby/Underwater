@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SquidIdleState : State<SquidEnemy>
+public class SquidIdleState : State<Squid>
 {
-    private SquidEnemy enemy;
+    private Squid enemy;
     private float jumpHeight = 6.0f;
 
-    public SquidIdleState(SquidEnemy enemyInstance, StateMachine<SquidEnemy> fsm)
+    public SquidIdleState(Squid enemyInstance, StateMachine<Squid> fsm)
         : base(enemyInstance, fsm)
     {
         enemy = enemyInstance;

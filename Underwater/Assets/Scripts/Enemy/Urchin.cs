@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Urchin : Enemy {
 
@@ -9,7 +10,7 @@ public class Urchin : Enemy {
     /*self refernces*/
     public Collider2D attackRange;
     public UrchinSpikeHitbox ammo;
-
+    public List<AudioClip> audio;
 
     // Use this for initialization
     void Start()
@@ -39,6 +40,12 @@ public class Urchin : Enemy {
     {
         ActionFsm.FixedExecute();
         StatusFsm.Execute();
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        AudioSource.PlayClipAtPoint(audio[1], transform.position);
     }
 
     override public void Freeze()

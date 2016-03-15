@@ -7,6 +7,7 @@ public class PlayerHurtbox : Hurtbox {
     override public void TakeDamage(float damage)
     {
         owner.LoseHealth(damage);
+        AudioSource.PlayClipAtPoint(owner.audio[5], owner.transform.position);
     }
 
     override public void TakeHit(float hitlag, float hitstun, Vector2 knockback)

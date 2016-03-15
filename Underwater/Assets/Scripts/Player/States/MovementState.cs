@@ -6,6 +6,8 @@ public class MovementState : State<Player> {
     private Player player;
     private Vector2 movementInputVector;
 
+    private float footstepAudioLength = 0.3f;
+    private float timer;
 
     public MovementState(Player playerInstance, StateMachine<Player> fsm)
         : base(playerInstance, fsm)
@@ -40,6 +42,19 @@ public class MovementState : State<Player> {
         //Temporary measures until we get more animations.
 
         //player.anim.SetFloat("DirY", Mathf.Ceil(Parameters.getVector(player.direction).y));
+
+        //playing audio
+        //Gotta animate the jetpacktrail
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            if(player.isUnderWater)
+                AudioSource.PlayClipAtPoint(player.audio[6], player.transform.position);
+            else
+                AudioSource.PlayClipAtPoint(player.audio[7], player.transform.position);
+
+            timer = footstepAudioLength;
+        }
     }
 
     override public void FixedExecute()

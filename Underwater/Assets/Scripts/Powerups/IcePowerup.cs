@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class IcePowerup : MonoBehaviour 
+public class IcePowerup : Powerup
 {
     public Weapon IceBubbler;
 
     public TextAsset textFile;
+
+    public AudioSource pickupSound;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -18,7 +20,9 @@ public class IcePowerup : MonoBehaviour
             //Make the player go into a dialog state + cutscenes I guess
             player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
 
-            Destroy(this.gameObject);
+            pickupSound.Play();
+
+            finishPickup();
         }
     }
 }

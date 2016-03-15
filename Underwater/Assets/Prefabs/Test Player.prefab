@@ -332,7 +332,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 175392}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.26, y: 5.76, z: -1}
+  m_LocalPosition: {x: -4.51, y: 4.81, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484188}
@@ -344,7 +344,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169450}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -3.54, z: 0}
+  m_LocalPosition: {x: 5.05, y: -8.87, z: 0}
   m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
   m_Children:
   - {fileID: 457746}
@@ -537,6 +537,15 @@ MonoBehaviour:
   aim: 0
   environmentCollisionBox: {fileID: 11472642}
   dialogBox: {fileID: 11440642}
+  audio:
+  - {fileID: 8300000, guid: 91801f1976060434ba3fce4755ee2e2b, type: 3}
+  - {fileID: 8300000, guid: c010a4268fb79514ea491c6814c200b9, type: 3}
+  - {fileID: 8300000, guid: 57af35e90db1aaf4881a939d895ba9d0, type: 3}
+  - {fileID: 8300000, guid: 55477e13b840c6a419c517ecc12218e6, type: 3}
+  - {fileID: 8300000, guid: 9e1defe6b24f03d4d84c060ab352a773, type: 3}
+  - {fileID: 8300000, guid: 15c68c4a8e1200d4e833cc11cb1277b9, type: 3}
+  - {fileID: 8300000, guid: 30d448ec2b296424c99bf570f2bd120d, type: 3}
+  - {fileID: 8300000, guid: f1247affedee006459b1b13896bc0d1f, type: 3}
   prefabs:
   - {fileID: 155412, guid: 6f47f6ddd9c309a43b3581771251ab39, type: 2}
 --- !u!114 &11440642
@@ -587,6 +596,7 @@ MonoBehaviour:
   rechargeRate: 30
   fireRate: 20
   bubbleSpeed: 5
+  firingAudio: {fileID: 0}
 --- !u!114 &11470188
 MonoBehaviour:
   m_ObjectHideFlags: 1

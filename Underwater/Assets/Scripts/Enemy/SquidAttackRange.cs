@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SquidAttackRange : MonoBehaviour {
 
-    public SquidEnemy owner;
+    public Squid owner;
 
     public float deaggroLength;
     public float deaggroTimer;

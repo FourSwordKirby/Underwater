@@ -27,6 +27,9 @@ public class Bomber : Weapon {
     private Vector2 firePosition;
     private Vector2 fireVelocity;
 
+    /*audio references*/
+    public AudioSource firingAudio;
+
     // Use this for initialization
     void Start()
     {
@@ -49,6 +52,8 @@ public class Bomber : Weapon {
                     bomb.transform.position = firePosition;
                     bomb.selfBody.velocity = fireVelocity;
                     currentAmmoCount--;
+
+                    firingAudio.Play();
                 }
                 fireTimer = 0.0f;
             }

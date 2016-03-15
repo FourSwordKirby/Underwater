@@ -82,6 +82,11 @@ public class Enemy : Mobile {
         this.StatusFsm.FixedExecute();
     }
 
+    public virtual void TakeDamage(float damage)
+    {
+        this.health -= damage;
+    }
+
     public virtual void Freeze()
     {
         this.frozen = true;

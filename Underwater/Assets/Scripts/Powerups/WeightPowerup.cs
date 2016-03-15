@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WeightPowerup : MonoBehaviour 
+public class WeightPowerup : Powerup
 {
     public TextAsset textFile;
+
+    public AudioSource pickupSound;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -16,7 +18,9 @@ public class WeightPowerup : MonoBehaviour
             //Make the player go into a dialog state + cutscenes I guess
             player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
 
-            Destroy(this.gameObject);
+            pickupSound.Play();
+
+            finishPickup();
         }
     }
 }

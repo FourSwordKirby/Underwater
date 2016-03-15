@@ -45,6 +45,8 @@ public class UrchinAttackState : State<Urchin>
             spikeRight.transform.position = enemy.gameObject.transform.position;
             spikeRight.transform.Rotate(0, 0, -90.0f);
             spikeRight.selfBody.velocity = Vector2.right;
+    
+            AudioSource.PlayClipAtPoint(enemy.audio[0], enemy.transform.position);
         }
     }
 

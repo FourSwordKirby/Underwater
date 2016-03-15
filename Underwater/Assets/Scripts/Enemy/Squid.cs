@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class SquidEnemy : Enemy {
+public class Squid : Enemy {
 
     public float startingHeight {get; private set;}
 
     /*used for controlling how the squid moves etc.*/
-    public StateMachine<SquidEnemy> ActionFsm { get; private set; }
+    public StateMachine<Squid> ActionFsm { get; private set; }
 
     public GameObject currentTarget;
 
-
     /*self refernces*/
     public Collider2D attackRange;
+    public List<AudioClip> audio;
 
 	// Use this for initialization
 	void Start () {
@@ -20,8 +21,8 @@ public class SquidEnemy : Enemy {
 
         this.startingHeight = this.transform.position.y;
     
-        ActionFsm = new StateMachine<SquidEnemy>(this);
-        State<SquidEnemy> startState = new SquidIdleState(this, this.ActionFsm);
+        ActionFsm = new StateMachine<Squid>(this);
+        State<Squid> startState = new SquidIdleState(this, this.ActionFsm);
         ActionFsm.InitialState(startState);
 	}
 	
@@ -42,6 +43,12 @@ public class SquidEnemy : Enemy {
     {
         ActionFsm.FixedExecute();
         StatusFsm.Execute();
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        AudioSource.PlayClipAtPoint(audio[3], transform.position);
     }
 
     override public void Freeze()

@@ -214,7 +214,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.55, y: -13.72, z: 0}
+  m_LocalPosition: {x: 26.76, y: -13.72, z: 0}
   m_LocalScale: {x: 0.3440861, y: 0.3440861, z: 0.3440861}
   m_Children:
   - {fileID: 448470}
@@ -357,7 +357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 151990}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 223fa1e0bb41fe1449bfc315f0361b82, type: 3}
+  m_Script: {fileID: 11500000, guid: b0855f08666a93445a3d351a8532caea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
@@ -369,6 +369,11 @@ MonoBehaviour:
   prefabs: []
   currentTarget: {fileID: 0}
   attackRange: {fileID: 5837724}
+  audio:
+  - {fileID: 8300000, guid: a18576e91db1c824e8b5bf252ba5fe61, type: 3}
+  - {fileID: 8300000, guid: 9ee369f5571c7de44b399e9efb3d7009, type: 3}
+  - {fileID: 8300000, guid: 9ee369f5571c7de44b399e9efb3d7009, type: 3}
+  - {fileID: 8300000, guid: 15c68c4a8e1200d4e833cc11cb1277b9, type: 3}
 --- !u!114 &11485792
 MonoBehaviour:
   m_ObjectHideFlags: 1
