@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 21230976}
   TimedBomber: {fileID: 11481742, guid: 8836a5675dd99e24ca73808bfb37dffc, type: 2}
-  textFile: {fileID: 4900000, guid: 8a200c8d02a2ddd4d860769c15de7a35, type: 3}
+  textFile: {fileID: 4900000, guid: 6013680d378bccc439451a08009e2cf6, type: 3}
   pickupSound: {fileID: 8286404}
 --- !u!212 &21230976
 SpriteRenderer:
@@ -184,7 +184,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: textFile
       value: 
-      objectReference: {fileID: 4900000, guid: 8a200c8d02a2ddd4d860769c15de7a35, type: 3}
+      objectReference: {fileID: 4900000, guid: 6013680d378bccc439451a08009e2cf6, type: 3}
     - target: {fileID: 0}
       propertyPath: panLevelCustomCurve.m_RotationOrder
       value: 0
