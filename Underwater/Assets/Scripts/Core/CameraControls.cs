@@ -174,7 +174,7 @@ public class CameraControls : MonoBehaviour {
 
     public void repositionCameraBound(BoxCollider2D targetBound)
     {
-
+        desiredCameraBounds = targetBound;
     }
 
     public void changeCameraSize(float desiredSize)

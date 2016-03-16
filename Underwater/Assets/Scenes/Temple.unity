@@ -1238,6 +1238,56 @@ SpriteRenderer:
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!1001 &917360574
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 44.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -24.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_RootOrder
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 11417144, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: newCameraBounds
+      value: 
+      objectReference: {fileID: 333358306}
+    - target: {fileID: 114106, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_Name
+      value: BossTrigger
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &947571101
 Prefab:
   m_ObjectHideFlags: 0
@@ -1612,62 +1662,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b647b8dc88cbbf34abfab52ee5da55c5, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1187385677
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1187385680}
-  - 114: {fileID: 1187385679}
-  - 61: {fileID: 1187385678}
-  m_Layer: 0
-  m_Name: BossTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!61 &1187385678
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1187385677}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!114 &1187385679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1187385677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e382a37afc6ca5c4cb9814a759effdff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  newCameraBounds: {fileID: 333358306}
-  cameraSize: 10
---- !u!4 &1187385680
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1187385677}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 43.39, y: -24.94, z: 0}
-  m_LocalScale: {x: 1, y: 3.1999934, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 26
 --- !u!1001 &1210984678
 Prefab:
   m_ObjectHideFlags: 0
