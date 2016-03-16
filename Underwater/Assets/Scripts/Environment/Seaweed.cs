@@ -44,6 +44,7 @@ public class Seaweed : MonoBehaviour {
             recoveryTimer += Time.deltaTime;
             if (recoveryTimer > recoveryTime)
             {
+                retracted = false;
                 recoveryTimer = 0.0f;
             }
         }
@@ -55,14 +56,14 @@ public class Seaweed : MonoBehaviour {
             return;
         if (retracted)
         {
-            float xScale = Mathf.Lerp(this.transform.localScale.x, 0.01f, Time.deltaTime);
+            float xScale = this.transform.localScale.x;// Mathf.Lerp(this.transform.localScale.x, 0.01f, Time.deltaTime);
             float yScale = Mathf.Lerp(this.transform.localScale.y, 0.01f, Time.deltaTime);
             float zScale = Mathf.Lerp(this.transform.localScale.z, 0.01f, Time.deltaTime);
             this.transform.localScale = new Vector3(xScale, yScale, zScale);
         }
         else
         {
-            float xScale = Mathf.Lerp(this.transform.localScale.x, initialScale.x, Time.deltaTime);
+            float xScale = this.transform.localScale.x;//Mathf.Lerp(this.transform.localScale.x, initialScale.x, Time.deltaTime);
             float yScale = Mathf.Lerp(this.transform.localScale.y, initialScale.y, Time.deltaTime);
             float zScale = Mathf.Lerp(this.transform.localScale.z, initialScale.z, Time.deltaTime);
             this.transform.localScale = new Vector3(xScale, yScale, zScale);
