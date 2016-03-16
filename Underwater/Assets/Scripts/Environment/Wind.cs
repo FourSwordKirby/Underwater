@@ -12,6 +12,7 @@ public class Wind : MonoBehaviour {
 
     /*self-references*/
     public Collider2D windArea;
+    public SpriteRenderer spriteRenderer;
 
 	// Update is called once per frame
 	void Update () {
@@ -21,11 +22,13 @@ public class Wind : MonoBehaviour {
         {
             timer = 0.0f;
             windArea.enabled = false;
+            spriteRenderer.enabled = false;
         }
         else if (!windArea.enabled && timer > cooldownPeriod)
         {
             timer = 0.0f;
             windArea.enabled = true;
+            spriteRenderer.enabled = true;
         }
 	}
 

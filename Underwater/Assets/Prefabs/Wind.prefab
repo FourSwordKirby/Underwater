@@ -60,6 +60,7 @@ MonoBehaviour:
   activePeriod: 5
   cooldownPeriod: 2
   windArea: {fileID: 6159678}
+  spriteRenderer: {fileID: 21262286}
 --- !u!212 &21262286
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -118,6 +119,10 @@ Prefab:
       propertyPath: m_Size.y
       value: 4.14
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 21262286}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136854}
