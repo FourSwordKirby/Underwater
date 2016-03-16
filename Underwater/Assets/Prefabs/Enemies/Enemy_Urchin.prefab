@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 479832}
   - 212: {fileID: 21243940}
   - 114: {fileID: 11419440}
+  - 114: {fileID: 11426114}
   - 50: {fileID: 5089912}
   m_Layer: 0
   m_Name: Enemy_Urchin
@@ -343,6 +344,19 @@ MonoBehaviour:
   name: Hurtbox
   status: 0
   owner: {fileID: 11419440}
+--- !u!114 &11426114
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 103768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2276a94b377940e4eba8e920428bbcef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionBoxes:
+  - {fileID: 11497272}
 --- !u!114 &11496900
 MonoBehaviour:
   m_ObjectHideFlags: 1

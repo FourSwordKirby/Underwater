@@ -98,6 +98,8 @@ public class Enemy : Mobile {
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.selfBody.isKinematic = true;
         this.selfBody.gravityScale = 0;
+
+        hitboxManager.deactivateAllHitboxes();
     }
 
     public virtual void Unfreeze()
@@ -110,5 +112,7 @@ public class Enemy : Mobile {
         this.gameObject.layer = LayerMask.NameToLayer("Enemy");
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Enemy");
         this.selfBody.isKinematic = false;
+
+        hitboxManager.activateAllHitboxes();
     }
 }

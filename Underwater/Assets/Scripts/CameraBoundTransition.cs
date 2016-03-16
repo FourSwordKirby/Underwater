@@ -4,10 +4,11 @@ using System.Collections;
 public class CameraBoundTransition : MonoBehaviour {
 
     /*self-references*/
-    public Collider2D newCameraBounds;
+    public BoxCollider2D newCameraBounds;
 
     void OnTriggerEnter2D()
     {
         Camera myCamera = Camera.main;
+        myCamera.GetComponent<CameraControls>().CameraBounds = newCameraBounds;
     }
 }
