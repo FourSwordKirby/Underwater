@@ -5,6 +5,14 @@ public class Explosion : Hitbox {
     public float explosionForce;
     public float explosionLength;
 
+    public AudioSource explosionSound;
+
+    void Start()
+    {
+        Camera.main.GetComponent<CameraControls>().Shake(0.1f);
+        AudioSource.PlayClipAtPoint(explosionSound.clip, this.transform.position);
+    }
+
     void Update()
     {
         explosionLength -= Time.deltaTime;

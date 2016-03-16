@@ -23,6 +23,10 @@ public class Boss : MonoBehaviour {
 	void Start () {
         health = maxHealth;
 
+        ActionFsm = new StateMachine<Boss>(this);
+        //State<Boss> startState = new SquidIdleState(this, this.ActionFsm);
+        //ActionFsm.InitialState(startState);
+
         if (this.health <= 0)
             Die();
 	}

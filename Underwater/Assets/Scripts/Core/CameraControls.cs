@@ -34,7 +34,7 @@ public class CameraControls : MonoBehaviour {
     };
     private float shakeIntensity = 0.0f;
     private float shakeDuration = 0.0f;
-    private ShakePresets shakeDirection = ShakePresets.NONE;
+    private ShakePresets shakeDirection = ShakePresets.BOTH;
     private Action shakeComplete = null;
     private Vector2 shakeOffset = new Vector2();
 
@@ -66,16 +66,6 @@ public class CameraControls : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-        //Do shake calculations
-        if (shakeDuration > 0)
-        {
-            shakeDuration -= Time.deltaTime;
-            if (shakeDuration <= 0)
-                stopShaking();
-            else
-                applyShake();
-        }
-
         //Now follow the target
         if (transform.position != focus.transform.position + new Vector3(0, 0, Z_OFFSET))
         {
@@ -86,6 +76,16 @@ public class CameraControls : MonoBehaviour {
         else
         {
             GetComponent<Rigidbody2D>().velocity.Set(0.0f, 0.0f);
+        }
+
+        //Do shake calculations
+        if (shakeDuration > 0)
+        {
+            shakeDuration -= Time.deltaTime;
+            if (shakeDuration <= 0)
+                stopShaking();
+            else
+                applyShake();
         }
 
         //Keep the camera in bounds
@@ -140,7 +140,7 @@ public class CameraControls : MonoBehaviour {
                         float Duration = 0.5f, 
                         Action OnComplete = null, 
                         bool Force = true, 
-                        ShakePresets Direction = ShakePresets.NONE)
+                        ShakePresets Direction = ShakePresets.BOTH)
     {
         if(!Force && ((shakeOffset.x != 0) || (shakeOffset.y != 0)))
 			return;
@@ -161,15 +161,18 @@ public class CameraControls : MonoBehaviour {
     private void applyShake()
     {
         if (shakeDirection == ShakePresets.BOTH || shakeDirection == ShakePresets.HORIZONTAL)
-                    shakeOffset.x = (UnityEngine.Random.Range(-1.0F, 1.0F) * shakeIntensity);
+            shakeOffset.x = (UnityEngine.Random.Range(-1.0f, 1.0f) * shakeIntensity);
         if (shakeDirection == ShakePresets.BOTH || shakeDirection == ShakePresets.VERTICAL)
-              shakeOffset.y = (UnityEngine.Random.Range(-1.0F, 1.0F) * shakeIntensity);
+            shakeOffset.y = (UnityEngine.Random.Range(-1.0f, 1.0f) * shakeIntensity);
 
         float x = transform.position.x;
         float y = transform.position.y;
         float z = transform.position.z;
 
         transform.position = new Vector3(x + shakeOffset.x, y + shakeOffset.y, z);
+        Debug.Log(shakeOffset.x);
+        Debug.Log(shakeOffset.y);
+        Debug.Log(transform.position);
     }
 
     public void repositionCameraBound(BoxCollider2D targetBound)

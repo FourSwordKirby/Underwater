@@ -15,7 +15,6 @@ public class EnemyHurtbox : Hurtbox {
         {
             timer -= Time.deltaTime;
             owner.spriteRenderer.color = hitColor;
-            Debug.Log("stun");
             if (timer <= 0)
                 owner.spriteRenderer.color = previousColor;
         }

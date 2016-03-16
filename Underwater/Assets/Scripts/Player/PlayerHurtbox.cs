@@ -16,6 +16,8 @@ public class PlayerHurtbox : Hurtbox {
             owner.ActionFsm.ChangeState(new HitState(owner, hitlag, hitstun, knockback, owner.ActionFsm));
         else
             owner.selfBody.velocity = knockback;
+
+        Camera.main.GetComponent<CameraControls>().Shake();
     }
 
     override public void ApplyEffect(Parameters.DamageEffect effect)
