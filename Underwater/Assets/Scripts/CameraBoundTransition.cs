@@ -8,10 +8,14 @@ public class CameraBoundTransition : MonoBehaviour {
     public float cameraSize;
 
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Camera myCamera = Camera.main;
-        myCamera.GetComponent<CameraControls>().repositionCameraBound(newCameraBounds);
-        myCamera.GetComponent<CameraControls>().changeCameraSize(cameraSize);
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
+        if (hurtbox != null)
+        {
+            Camera myCamera = Camera.main;
+            myCamera.GetComponent<CameraControls>().repositionCameraBound(newCameraBounds);
+            myCamera.GetComponent<CameraControls>().changeCameraSize(cameraSize);
+        }
     }
 }

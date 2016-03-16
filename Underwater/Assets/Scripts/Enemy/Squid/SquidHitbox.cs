@@ -6,7 +6,7 @@ public class SquidHitbox : Hitbox {
     void OnTriggerEnter2D(Collider2D col)
     {
         //Basic normal bubble stuff
-        Hurtbox hurtbox = col.gameObject.GetComponent<Hurtbox>();
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null)
         {
             hurtbox.TakeDamage(damage);
