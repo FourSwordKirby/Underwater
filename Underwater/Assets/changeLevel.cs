@@ -3,10 +3,11 @@ using System.Collections;
 
 public class changeLevel : MonoBehaviour {
 
-
-	public void change(){
-		//float fadeTime = GameObjec.find (controler).GetComponent<Fading> ().BeginFade (1);
-		//yield return new WaitForSeconds (fadeTime);
-		//Application.LoadLevel ("Submarine");
-	}
+    public IEnumerator change(string levelName)
+    {
+        float fadeTime = 0.8f;
+        this.GetComponent<ScreenFader>().fadeIn = false;
+        yield return this.GetComponent<ScreenFader>().FadeOut();
+        Application.LoadLevel(levelName);
+   	}
 }

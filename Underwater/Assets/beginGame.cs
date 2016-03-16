@@ -6,10 +6,8 @@ public class beginGame : MonoBehaviour {
 	void Update() {
 		if (Input.GetKeyDown ("z")) {
 			print ("z key was pressed");
-			Application.LoadLevel("Submarine");
-
+            //AutoFade.LoadLevel("Submarine", 3, 1, Color.black);
+            StartCoroutine(this.GetComponent<changeLevel>().change("Submarine"));
 		}
 	}
-		
-
 }
