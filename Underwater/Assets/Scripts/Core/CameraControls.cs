@@ -9,6 +9,7 @@ public class CameraControls : MonoBehaviour {
 
     public FocalPoint focus;
     public BoxCollider2D CameraBounds;
+    public BoxCollider2D desiredCameraBounds;
 
     private List<GameObject>visibleTargets; //accounts for all other targets that aren't just the main focus
 
@@ -58,6 +59,9 @@ public class CameraControls : MonoBehaviour {
         max_camera_size = 2.0f * original_camera_size;
         target_camera_size = original_camera_size;
 
+        CameraBounds.transform.position = desiredCameraBounds.transform.position;
+        CameraBounds.transform.localScale = desiredCameraBounds.transform.localScale;
+
         transform.position = focus.transform.position + new Vector3(0, 0, Z_OFFSET);
 	}
 	
@@ -102,15 +106,35 @@ public class CameraControls : MonoBehaviour {
                 resizeToFitTarget(targ);
             }
         }
+         */
         //external gradual resizing
         float cameraSize = cameraComponent.orthographicSize;
-        //Current issue is that if the character moves too quickly, the opponent then leaves the FOV too quickly, resulting in an awkward camera
         if (cameraSize < target_camera_size)
             cameraComponent.orthographicSize = Mathf.MoveTowards(cameraSize, cameraSize * 1 + ZOOM_RATE, zoomSpeed * Time.deltaTime);
         if (cameraSize > target_camera_size)
             cameraComponent.orthographicSize = Mathf.MoveTowards(cameraSize, cameraSize * 1 - ZOOM_RATE, zoomSpeed * Time.deltaTime);
-        */
-	}
+
+        if (Math.Abs(cameraComponent.orthographicSize - target_camera_size) < 0.01f)
+        {
+            cameraComponent.orthographicSize = target_camera_size;
+        }
+
+        //adjusting camera bound
+        CameraBounds.transform.position = Vector3.Lerp(CameraBounds.transform.position, desiredCameraBounds.transform.position, 1.0f * Time.deltaTime);
+        CameraBounds.transform.localScale = Vector3.Lerp(CameraBounds.transform.localScale, desiredCameraBounds.transform.localScale, 1.0f * Time.deltaTime);
+
+        if (Math.Abs(CameraBounds.transform.position.x - desiredCameraBounds.transform.position.x) < 1f
+            && Math.Abs(CameraBounds.transform.position.y - desiredCameraBounds.transform.position.y) < 1f) 
+        {
+            CameraBounds.transform.position = desiredCameraBounds.transform.position;
+        }
+
+        if (Math.Abs(CameraBounds.transform.localScale.x - desiredCameraBounds.transform.localScale.x) < 1f
+            && Math.Abs(CameraBounds.transform.localScale.y - desiredCameraBounds.transform.localScale.y) < 1f)
+        {
+            CameraBounds.transform.localScale = desiredCameraBounds.transform.localScale;
+        }
+    }
 
     public void Shake(float Intensity = 0.05f, 
                         float Duration = 0.5f, 
@@ -146,6 +170,21 @@ public class CameraControls : MonoBehaviour {
         float z = transform.position.z;
 
         transform.position = new Vector3(x + shakeOffset.x, y + shakeOffset.y, z);
+    }
+
+    public void repositionCameraBound(BoxCollider2D targetBound)
+    {
+
+    }
+
+    public void changeCameraSize(float desiredSize)
+    {
+        target_camera_size = desiredSize;
+    }
+    
+    public void resetCameraSize()
+    {
+        target_camera_size = original_camera_size;
     }
 
     private bool inCameraBounds(Mobile target)
