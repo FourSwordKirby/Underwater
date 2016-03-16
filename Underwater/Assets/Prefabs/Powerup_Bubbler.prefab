@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21203706}
+  triggerBox: {fileID: 6128432}
   BasicBubbler: {fileID: 11455014, guid: 78aff9b0dde72bc449d98891d0f617eb, type: 2}
   textFile: {fileID: 4900000, guid: 4514e3d13bebb5e4290cd3911c33af70, type: 3}
   pickupSound: {fileID: 8240864}
@@ -213,6 +214,10 @@ Prefab:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21203706}
+    - target: {fileID: 0}
+      propertyPath: triggerBox
+      value: 
+      objectReference: {fileID: 6128432}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 117882}

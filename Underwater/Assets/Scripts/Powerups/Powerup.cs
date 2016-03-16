@@ -8,6 +8,7 @@ public class Powerup : MonoBehaviour
 
     /*self references*/
     public SpriteRenderer sprite;
+    public Collider2D triggerBox;
 
     void Update()
     {
@@ -22,6 +23,7 @@ public class Powerup : MonoBehaviour
     public void finishPickup()
     {
         sprite.enabled = false;
+        triggerBox.enabled = false;
         timer = pickupDespawnLength;
     }
 }

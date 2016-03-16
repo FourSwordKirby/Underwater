@@ -131,6 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21230976}
+  triggerBox: {fileID: 6190064}
   TimedBomber: {fileID: 11481742, guid: 8836a5675dd99e24ca73808bfb37dffc, type: 2}
   textFile: {fileID: 4900000, guid: 6013680d378bccc439451a08009e2cf6, type: 3}
   pickupSound: {fileID: 8286404}
@@ -213,6 +214,10 @@ Prefab:
       propertyPath: sprite
       value: 
       objectReference: {fileID: 21230976}
+    - target: {fileID: 0}
+      propertyPath: triggerBox
+      value: 
+      objectReference: {fileID: 6190064}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197188}
