@@ -89,7 +89,10 @@ public class BoostState : State<Player>
 
     override public void FixedExecute()
     {
-        player.selfBody.velocity = jetPackDirection.normalized * player.jetpackSpeed;
+        if(!player.isWeighted)
+            player.selfBody.velocity = jetPackDirection.normalized * player.jetpackSpeed;
+        else
+            player.selfBody.velocity = new Vector2((jetPackDirection.normalized * player.jetpackSpeed).x, player.selfBody.velocity.y);
     }
 
     override public void Exit()

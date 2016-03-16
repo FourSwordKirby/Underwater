@@ -52,10 +52,12 @@ public class Player : Mobile {
     {
         get
         {
-            if (isUnderWater)
-                return 2.0f * baseJumpHeight;
-            else
+            if(!isUnderWater)
                 return baseJumpHeight;
+            else if(isWeighted)
+                return 1.2f * baseJumpHeight;
+            else
+                return 2.0f * baseJumpHeight;
         }
     }
     public float fallSpeed
