@@ -8,9 +8,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 468428}
-  - 212: {fileID: 21215166}
   - 61: {fileID: 6159678}
   - 114: {fileID: 11433272}
+  - 212: {fileID: 21262286}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -43,7 +43,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 0.905, y: 1.16}
+  m_Size: {x: 7, y: 4.14}
 --- !u!114 &11433272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -60,13 +60,13 @@ MonoBehaviour:
   activePeriod: 5
   cooldownPeriod: 2
   windArea: {fileID: 6159678}
---- !u!212 &21215166
+--- !u!212 &21262286
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136854}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
@@ -84,9 +84,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1618106609
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300006, guid: 8831b1d4eac922c49a67b38c40aea420, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fa23e211970f4f2469106e725b8bd3a2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,6 +100,23 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: fa23e211970f4f2469106e725b8bd3a2,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1618106609
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Size.y
+      value: 4.14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
