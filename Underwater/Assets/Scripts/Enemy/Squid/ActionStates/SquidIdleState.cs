@@ -34,7 +34,9 @@ public class SquidIdleState : State<Squid>
             enemy.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
 
         if (enemy.transform.position.y <= enemy.startingHeight)
-            enemy.selfBody.velocity = new Vector2(0, jumpHeight);
+        {
+            enemy.selfBody.velocity += new Vector2(0, jumpHeight) - new Vector2(0, enemy.selfBody.velocity.y);
+        }
     }
 
     override public void Exit()

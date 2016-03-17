@@ -5,7 +5,8 @@ using System.Collections.Generic;
 public class Boss : MonoBehaviour {
 
     public int maxHealth;
-    private int health;
+    public int health { get; private set; }
+    public bool injured { get; private set; }
 
     public StateMachine<Boss> ActionFsm { get; private set; }
 
@@ -17,15 +18,27 @@ public class Boss : MonoBehaviour {
     public CollisionboxManager hitboxManager { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
     public Collider2D environmentCollisionBox;
-    public GameObject squidPrfab;
+
+
+    public GameObject mouthPosition;
+    public Wind inhaleHitbox;
+    public List<GameObject> spawnableEnemies;
+
+    public enum BossStates
+    {
+        Swipe,
+        Suction,
+        Summon
+    }
+
 
 	// Use this for initialization
 	void Start () {
         health = maxHealth;
 
         ActionFsm = new StateMachine<Boss>(this);
-        //State<Boss> startState = new SquidIdleState(this, this.ActionFsm);
-        //ActionFsm.InitialState(startState);
+        State<Boss> startState = new BossSummonState(this, this.ActionFsm, 2);//new BossIdleState(this, this.ActionFsm, BossStates.Swipe);
+        ActionFsm.InitialState(startState);
 
         if (this.health <= 0)
             Die();

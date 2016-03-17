@@ -43,11 +43,11 @@ public class Enemy : Mobile {
     void Awake()
     {
         health = maxHealth;
+        initBaseClass();
     }
 
     // Use this for initialization of variables that rely on other objects
 	void Start () {
-        initBaseClass();
     }
 
     public void initBaseClass()
