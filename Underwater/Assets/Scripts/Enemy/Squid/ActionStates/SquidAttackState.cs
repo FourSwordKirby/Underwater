@@ -58,6 +58,9 @@ public class SquidAttackState : State<Squid>
             Quaternion targetRotation = Quaternion.AngleAxis(angle, Vector3.forward);
             enemy.transform.rotation = Quaternion.RotateTowards(enemy.transform.rotation, targetRotation, 60 * Time.deltaTime);
 
+            if (Mathf.Abs(enemy.transform.rotation.eulerAngles.z - angle) < 1.0f)
+                enemy.transform.rotation = targetRotation;
+
             if (timer > chargeLength)
             {
                 timer = 0.0f;

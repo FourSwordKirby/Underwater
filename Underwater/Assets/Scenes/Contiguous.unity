@@ -1486,11 +1486,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 216
+      value: 10.3
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -51
+      value: -2.1
       objectReference: {fileID: 0}
     - target: {fileID: 484188, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7183,11 +7183,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 465136, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 41.5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 465136, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -23.4
+      value: -6.9
       objectReference: {fileID: 0}
     - target: {fileID: 465136, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: m_LocalPosition.z
@@ -7211,7 +7211,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 465136, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 11454562, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: CameraBounds
@@ -7220,7 +7220,7 @@ Prefab:
     - target: {fileID: 11454562, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: desiredCameraBounds
       value: 
-      objectReference: {fileID: 847254778}
+      objectReference: {fileID: 441507140}
     - target: {fileID: 11491234, guid: 9f18997bf85a72449a64bed919919761, type: 2}
       propertyPath: targets.Array.data[0]
       value: 
@@ -8401,7 +8401,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 29.91
+      value: 29.5
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.y
@@ -8600,6 +8600,10 @@ Prefab:
     - target: {fileID: 151990, guid: 45735941a48aa39469402d039a82cd56, type: 2}
       propertyPath: m_Name
       value: Squid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5073112, guid: 45735941a48aa39469402d039a82cd56, type: 2}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45735941a48aa39469402d039a82cd56, type: 2}
@@ -11467,7 +11471,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 31.440002
+      value: 32.18
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.y
