@@ -248,6 +248,8 @@ public class Player : Mobile {
     {
         if (damage > 0)
             this.health -= damage;
+        if (this.health < 0)
+            Debug.Log("dead player");
     }
 
     public void RegainHealth(float amount)
@@ -283,6 +285,7 @@ public class Player : Mobile {
     public void LockControls()
     {
         inCutscene = true;
+        activeWeapon.CeaseFire();
         this.selfBody.velocity = new Vector2(0.0f, this.selfBody.velocity.y);
     }
 

@@ -146,8 +146,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 104118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.33043396, y: 0.33043396, z: 0.33043396}
+  m_LocalPosition: {x: 0, y: 0.662, z: 0}
+  m_LocalScale: {x: 0.33043396, y: 0.11152105, z: 0.33043396}
   m_Children:
   - {fileID: 456518}
   m_Father: {fileID: 492872}
@@ -160,7 +160,7 @@ Transform:
   m_GameObject: {fileID: 133912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.66, z: 0}
-  m_LocalScale: {x: 0.19999994, y: 0.3262499, z: 1}
+  m_LocalScale: {x: 0.25249964, y: 0.3262499, z: 1}
   m_Children:
   - {fileID: 442460}
   m_Father: {fileID: 492872}
@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.354359, y: -23.46828, z: 0}
+  m_LocalPosition: {x: 20.335983, y: -11.848436, z: 0}
   m_LocalScale: {x: 2.325, y: 1, z: 1}
   m_Children:
   - {fileID: 469590}
@@ -200,8 +200,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.37, z: 0}
-  m_LocalScale: {x: 0.63603354, y: 2.384804, z: 1.9935074}
+  m_LocalPosition: {x: 0, y: -0.19, z: 0}
+  m_LocalScale: {x: 0.580381, y: 1.5799358, z: 1.9935074}
   m_Children: []
   m_Father: {fileID: 483268}
   m_RootOrder: 0
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1019792565
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 49b7b0ff2efa7f248aa250e3e6f7b4e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -379,7 +379,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_SortingLayerID
+      value: 1019792565
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 154092}
