@@ -16,7 +16,7 @@ public class CheckWeapon : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (player.activeWeapon == null || player.activeWeapon.gameObject.active == false) {
+		if (player.activeWeapon == null || player.activeWeapon.gameObject.activeSelf == false) {
             ammoImage.enabled = false;
 		}
 		else if (player.activeWeapon.GetComponent<Bubbler>() != null) {
