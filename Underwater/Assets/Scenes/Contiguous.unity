@@ -11732,11 +11732,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 11404338, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 216319696}
-    - target: {fileID: 11409964, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+    - target: {fileID: 11485760, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
@@ -11744,7 +11740,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
-    - target: {fileID: 11485760, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+    - target: {fileID: 11409964, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 216319696}
+    - target: {fileID: 11404338, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
