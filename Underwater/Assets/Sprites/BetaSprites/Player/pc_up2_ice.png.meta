@@ -1,9 +1,17 @@
 fileFormatVersion: 2
 guid: a606c26e89e09924aa95f51f8f835346
-timeCreated: 1458245566
+timeCreated: 1458248135
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: pc_up2_ice_0
+    21300002: pc_up2_ice_1
+    21300004: pc_up2_ice_2
+    21300006: pc_up2_ice_3
+    21300008: pc_up2_ice_4
+    21300010: pc_up2_ice_5
+    21300012: pc_up2_ice_6
+    21300014: pc_up2_ice_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -30,7 +38,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 16
     mipBias: -1
     wrapMode: 1
   nPOTScale: 0
@@ -38,7 +46,7 @@ TextureImporter:
   rGBM: 0
   compressionQuality: 50
   allowsAlphaSplitting: 0
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -49,7 +57,202 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: pc_up2_ice_0
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 405
+        width: 161
+        height: 387
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 68.5, y: 98.5}
+        - {x: -7.5, y: 131.5}
+        - {x: -33.5, y: 193.5}
+        - {x: -76.5, y: 193.5}
+        - {x: -79.5, y: 116.5}
+        - {x: -80.5, y: 108.5}
+        - {x: -80.5, y: -18.5}
+        - {x: -47.5, y: -28.5}
+        - {x: -50.5, y: -178.5}
+        - {x: -37.5, y: -193.5}
+        - {x: 22.5, y: -193.5}
+        - {x: 60.5, y: -180.5}
+        - {x: 80.5, y: -160.5}
+        - {x: 80.5, y: 12.5}
+    - name: pc_up2_ice_1
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 407
+        width: 170
+        height: 385
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 57, y: -81.5}
+        - {x: 79, y: 22.5}
+        - {x: 64, y: 97.5}
+        - {x: -12, y: 130.5}
+        - {x: -38, y: 192.5}
+        - {x: -81, y: 192.5}
+        - {x: -84, y: 115.5}
+        - {x: -85, y: 109.5}
+        - {x: -85, y: -93.5}
+        - {x: -63, y: -191.5}
+        - {x: -61, y: -192.5}
+        - {x: 72, y: -192.5}
+        - {x: 85, y: -171.5}
+        - {x: 85, y: -127.5}
+    - name: pc_up2_ice_2
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 405
+        width: 152
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -76, y: 193}
+        - {x: -76, y: -156}
+        - {x: -25, y: -193}
+        - {x: -17, y: -193}
+        - {x: 17, y: -169}
+        - {x: 17, y: -144}
+        - {x: 4, y: -118}
+        - {x: 9, y: -128}
+        - {x: 16, y: -131}
+        - {x: 17, y: -150}
+        - {x: 18, y: -193}
+        - {x: 55, y: -193}
+        - {x: 76, y: -186}
+        - {x: 76, y: 103}
+        - {x: -21, y: 193}
+    - name: pc_up2_ice_3
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 406
+        width: 147
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 123}
+        - {x: -29.5, y: 193}
+        - {x: -66.5, y: 193}
+        - {x: -58.5, y: 113}
+        - {x: -73.5, y: 86}
+        - {x: -73.5, y: -9}
+        - {x: -37.5, y: -27}
+        - {x: -59.5, y: -192}
+        - {x: -56.5, y: -193}
+        - {x: 59.5, y: -193}
+        - {x: 73.5, y: -75}
+        - {x: 73.5, y: 61}
+        - {x: 47.5, y: 123}
+    - name: pc_up2_ice_4
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 1
+        width: 147
+        height: 389
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 124.5}
+        - {x: -29.5, y: 194.5}
+        - {x: -71.5, y: 194.5}
+        - {x: -73.5, y: 162.5}
+        - {x: -73.5, y: -11.5}
+        - {x: -37.5, y: -25.5}
+        - {x: -45.5, y: -124.5}
+        - {x: -23.5, y: -194.5}
+        - {x: 38.5, y: -194.5}
+        - {x: 73.5, y: -86.5}
+        - {x: 73.5, y: 62.5}
+        - {x: 47.5, y: 124.5}
+    - name: pc_up2_ice_5
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1
+        width: 147
+        height: 390
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 73.5, y: 63}
+        - {x: 47.5, y: 125}
+        - {x: -6.5, y: 125}
+        - {x: -29.5, y: 195}
+        - {x: -70.5, y: 195}
+        - {x: -73.5, y: 150}
+        - {x: -73.5, y: -88}
+        - {x: -62.5, y: -182}
+        - {x: -40.5, y: -195}
+        - {x: 22.5, y: -195}
+        - {x: 66.5, y: -172}
+        - {x: 56.5, y: -139}
+        - {x: 45.5, y: -117}
+        - {x: 73.5, y: -50}
+    - name: pc_up2_ice_6
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 6
+        width: 147
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 47.5, y: 123}
+        - {x: -6.5, y: 123}
+        - {x: -29.5, y: 193}
+        - {x: -66.5, y: 193}
+        - {x: -58.5, y: 113}
+        - {x: -73.5, y: 103}
+        - {x: -73.5, y: -22}
+        - {x: -69.5, y: -37}
+        - {x: -19.5, y: -191}
+        - {x: -11.5, y: -193}
+        - {x: 47.5, y: -193}
+        - {x: 61.5, y: -180}
+        - {x: 73.5, y: -75}
+        - {x: 73.5, y: 61}
+    - name: pc_up2_ice_7
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 5
+        width: 147
+        height: 386
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -6.5, y: 123}
+        - {x: -29.5, y: 193}
+        - {x: -69.5, y: 193}
+        - {x: -73.5, y: 136}
+        - {x: -73.5, y: -10}
+        - {x: -41.5, y: -31}
+        - {x: -21.5, y: -193}
+        - {x: 48.5, y: -193}
+        - {x: 73.5, y: -136}
+        - {x: 73.5, y: 61}
+        - {x: 47.5, y: 123}
     outline: []
   spritePackingTag: 
   userData: 
