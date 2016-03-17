@@ -8,6 +8,12 @@ public class CameraBoundTransition : MonoBehaviour {
     public float cameraSize;
 
     public AudioSource newAudio;
+    private float volume;
+
+    void Awake()
+    {
+        volume = newAudio.volume;
+    }
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -17,7 +23,7 @@ public class CameraBoundTransition : MonoBehaviour {
             Camera myCamera = Camera.main;
             myCamera.GetComponent<CameraControls>().repositionCameraBound(newCameraBounds);
             myCamera.GetComponent<CameraControls>().changeCameraSize(cameraSize);
-            AudioController.changeAudioSource(newAudio, newAudio.volume);
+            AudioController.changeAudioSource(newAudio, volume);
         }
     }
 }

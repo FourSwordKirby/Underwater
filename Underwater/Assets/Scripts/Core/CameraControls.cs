@@ -170,9 +170,6 @@ public class CameraControls : MonoBehaviour {
         float z = transform.position.z;
 
         transform.position = new Vector3(x + shakeOffset.x, y + shakeOffset.y, z);
-        Debug.Log(shakeOffset.x);
-        Debug.Log(shakeOffset.y);
-        Debug.Log(transform.position);
     }
 
     public void repositionCameraBound(BoxCollider2D targetBound)
