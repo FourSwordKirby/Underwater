@@ -110,6 +110,8 @@ public class Player : Mobile {
     public bool isWeighted;
     public Vector2 externalForce;
 
+    private float baseInvulnTime;
+    public float invulnTime;
 
     public Parameters.Direction direction; //{ get; set; }
     public Parameters.Aim aim; //{ get; set; }
@@ -157,6 +159,17 @@ public class Player : Mobile {
     void Update()
     {
         this.ActionFsm.Execute();
+
+        if (invulnTime > 0)
+        {
+            invulnTime -= Time.deltaTime;
+
+            if (invulnTime <= 0)
+            {
+                this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Player");
+                this.hitboxManager.activateAllHitboxes();
+            }
+        }
 
         if (inCutscene)
             return;

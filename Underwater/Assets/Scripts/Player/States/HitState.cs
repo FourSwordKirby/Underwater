@@ -24,28 +24,19 @@ public class HitState : State<Player>
     override public void Enter()
     {
         //Go into a hit animation
+        Debug.Log("I've been hit");
+
+        player.invulnTime = 1.0f;
+
+        player.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Invuln");
+        player.hitboxManager.deactivateAllHitboxes();
+
+
+        player.selfBody.velocity += knockback;
     }
 
     override public void Execute()
     {
-        if (hitlag > 0)
-        {
-            hitlag -= Time.deltaTime;
-            if (hitlag <= 0)
-            {
-                //transition into a tumble animation or something
-
-                //record the players direction for DI purposes
-                Vector2 DIVector = Controls.getDirection(player);
-                
-                //This formula might change in the future
-                knockback += DIVector;
-
-                player.selfBody.velocity = knockback;
-            }
-            return;
-        }
-
         if (hitstun > 0)
         {
             hitstun -= Time.deltaTime;
@@ -54,6 +45,7 @@ public class HitState : State<Player>
             {
                 player.ActionFsm.ChangeState(new IdleState(player, player.ActionFsm));
             }
+            return;
         }
     }
 
