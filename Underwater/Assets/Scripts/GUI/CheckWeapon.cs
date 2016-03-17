@@ -6,6 +6,7 @@ public class CheckWeapon : MonoBehaviour {
 	public Player player;
 	public Image ammoImage;
 	public List<Sprite> spriteArray;
+	public int ammo;
 
 
 
@@ -24,9 +25,11 @@ public class CheckWeapon : MonoBehaviour {
 		}
 		else if (player.activeWeapon.GetComponent<Bubbler>() != null) {
 			ammoImage.sprite = spriteArray [1];
+			ammo = player.activeWeapon.GetComponent<Bubbler> ().GetAmmoCount();
 		}
 		else if(player.activeWeapon.GetComponent<Bomber>() != null){
 			ammoImage.sprite = spriteArray [2];
+			ammo = player.activeWeapon.GetComponent<Bomber>().GetAmmoCount();
 		}
 			
 
