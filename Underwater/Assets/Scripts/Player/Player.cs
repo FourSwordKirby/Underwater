@@ -285,7 +285,8 @@ public class Player : Mobile {
     public void LockControls()
     {
         inCutscene = true;
-        activeWeapon.CeaseFire();
+        foreach(Weapon weapon in weaponInventory)
+            weapon.CeaseFire();
         this.selfBody.velocity = new Vector2(0.0f, this.selfBody.velocity.y);
     }
 
