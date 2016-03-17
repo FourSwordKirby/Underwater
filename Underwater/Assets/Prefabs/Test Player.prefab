@@ -533,6 +533,7 @@ MonoBehaviour:
   grounded: 1
   isWeighted: 0
   externalForce: {x: 0, y: 0}
+  baseInvulnTime: 1
   invulnTime: 0
   direction: 0
   aim: 0
@@ -647,7 +648,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2276a94b377940e4eba8e920428bbcef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionBoxes: []
+  CollisionBoxes:
+  - {fileID: 11473604}
 --- !u!212 &21226642
 SpriteRenderer:
   m_ObjectHideFlags: 1

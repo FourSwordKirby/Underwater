@@ -110,7 +110,7 @@ public class Player : Mobile {
     public bool isWeighted;
     public Vector2 externalForce;
 
-    private float baseInvulnTime;
+    public float baseInvulnTime;
     public float invulnTime;
 
     public Parameters.Direction direction; //{ get; set; }
@@ -128,6 +128,7 @@ public class Player : Mobile {
     //private Collider selfCollider;
     public Animator anim { get; private set; }
     public Rigidbody2D selfBody { get; private set; }
+    public SpriteRenderer spriteRenderer { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
     public ECB environmentCollisionBox;
     public DialogBox dialogBox;
@@ -149,6 +150,7 @@ public class Player : Mobile {
         anim = this.GetComponent<Animator>();
         selfBody = this.GetComponent<Rigidbody2D>();
         hitboxManager = this.GetComponent<CollisionboxManager>();
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
 
         ActionFsm = new StateMachine<Player>(this);
         State<Player> startState = new IdleState(this, this.ActionFsm);
@@ -163,6 +165,15 @@ public class Player : Mobile {
         if (invulnTime > 0)
         {
             invulnTime -= Time.deltaTime;
+
+            if ((int)(invulnTime * 4) % 2  == 1)
+                this.spriteRenderer.color = Color.red;
+            if ((int)(invulnTime * 4) % 2 == 0)
+                this.spriteRenderer.color = Color.white;
+
+            this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Invuln");
+            this.hitboxManager.deactivateAllHitboxes();
+
 
             if (invulnTime <= 0)
             {

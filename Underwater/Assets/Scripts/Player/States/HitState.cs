@@ -23,15 +23,7 @@ public class HitState : State<Player>
 
     override public void Enter()
     {
-        //Go into a hit animation
-        Debug.Log("I've been hit");
-
-        player.invulnTime = 1.0f;
-
-        player.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Invuln");
-        player.hitboxManager.deactivateAllHitboxes();
-
-
+        player.invulnTime = player.baseInvulnTime;
         player.selfBody.velocity += knockback;
     }
 

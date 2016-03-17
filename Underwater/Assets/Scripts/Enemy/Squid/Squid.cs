@@ -54,12 +54,14 @@ public class Squid : Enemy {
     override public void Freeze()
     {
         base.Freeze();
-        ActionFsm.SuspendState(new SquidFrozenState(this, this.ActionFsm));
+        ActionFsm.ChangeState(new SquidFrozenState(this, this.ActionFsm));
+        this.attackRange.gameObject.SetActive(false);
     }
 
     override public void Unfreeze()
     {
         base.Unfreeze();
-        ActionFsm.ResumeState();
+        this.attackRange.gameObject.SetActive(true);
+        ActionFsm.ChangeState(new SquidIdleState(this, this.ActionFsm));
     }
 }

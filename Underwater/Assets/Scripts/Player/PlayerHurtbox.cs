@@ -12,8 +12,6 @@ public class PlayerHurtbox : Hurtbox {
 
     override public void TakeHit(float hitlag, float hitstun, Vector2 knockback)
     {
-        Debug.Log("ow");
-
         hitstun = 0.5f;
         knockback = Vector2.up * 2.0f;
 
