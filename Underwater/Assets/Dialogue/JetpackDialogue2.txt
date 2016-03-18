@@ -1,3 +1,3 @@
 Can't get very far in these parts without using my jetpack.
-While I'm underwater, if I hit the A button while I'm off the ground, the jetpack kicks in.
-If I hold it down, I can boost farther.
+It works with the A button while I'm jumping.
+If I hold the A button down, I can boost farther.

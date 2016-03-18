@@ -1,0 +1,4 @@
+Oh boy!
+It's dialog that will play during scripted cutscenes
+This is great
+
