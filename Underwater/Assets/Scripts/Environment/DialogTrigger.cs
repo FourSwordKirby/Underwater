@@ -4,6 +4,7 @@ using System.Collections;
 public class DialogTrigger : MonoBehaviour {
 
     public TextAsset textFile;
+    public Player.PlayerControls desiredControl;
 
     void OnTriggerEnter2D(Collider2D col)
     {
@@ -13,7 +14,7 @@ public class DialogTrigger : MonoBehaviour {
             Player player = hurtbox.owner;
 
             //Make the player go into a dialog state + cutscenes I guess
-            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
+            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile, desiredControl));
             Destroy(this.gameObject);
         }
     }

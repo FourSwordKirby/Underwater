@@ -130,6 +130,9 @@ public class Player : Mobile {
     public Rigidbody2D selfBody { get; private set; }
     public SpriteRenderer spriteRenderer { get; private set; }
     public CollisionboxManager hitboxManager { get; private set; }
+
+    public List<Sprite> potentialInstructionSprites; 
+    public SpriteRenderer InstructionSprite; 
     public ECB environmentCollisionBox;
     public DialogBox dialogBox;
     public List<AudioClip> audio;
@@ -256,6 +259,13 @@ public class Player : Mobile {
             isWeighted = !isWeighted;
             Debug.Log("Weights Equipped");
         }
+
+        //Contextual visuals
+        if (currentInteractable != null)
+            showControl(PlayerControls.Interact);
+        //Try to hide controls if they are visible
+        if (InstructionSprite.gameObject.activeSelf)
+            hideControl();
     }
 
     void FixedUpdate()
@@ -351,5 +361,78 @@ public class Player : Mobile {
     {
         if(!isWeighted)
             externalForce = force;
+    }
+
+    public void showControl(PlayerControls input)
+    {
+        this.InstructionSprite.gameObject.SetActive(true);
+        if (input == PlayerControls.Jump)
+        {
+            InstructionSprite.sprite = potentialInstructionSprites[0];
+        }
+        if (input == PlayerControls.Shoot)
+        {
+            InstructionSprite.sprite = potentialInstructionSprites[1];
+        }
+        if (input == PlayerControls.Toggle)
+        {
+            InstructionSprite.sprite = potentialInstructionSprites[2];
+        }
+        if (input == PlayerControls.Aim)
+        {
+            InstructionSprite.sprite = potentialInstructionSprites[3];
+        }
+        if (input == PlayerControls.Interact)
+        {
+            InstructionSprite.sprite = potentialInstructionSprites[4];
+        }
+    }
+
+    public void hideControl()
+    {
+        //Jump controls
+        if (Controls.JumpInputDown())
+        {
+            if (InstructionSprite.sprite == potentialInstructionSprites[0])
+                InstructionSprite.gameObject.SetActive(false);
+        }
+
+        //Shooting controls
+        if (Controls.ShootInputHeld() && activeWeapon != null)
+        {
+            if (InstructionSprite.sprite == potentialInstructionSprites[1])
+                InstructionSprite.gameObject.SetActive(false);
+        }
+
+        //Switching Weapons Controls
+        if (Controls.PrevWeaponInputDown() || Controls.NextWeaponInputDown())
+        {
+            if (InstructionSprite.sprite == potentialInstructionSprites[2])
+                InstructionSprite.gameObject.SetActive(false);
+        }
+
+        //aim controls
+        if (Controls.AimDownInputHeld() || Controls.AimUpInputHeld())
+        {
+            if (InstructionSprite.sprite == potentialInstructionSprites[3])
+                InstructionSprite.gameObject.SetActive(false);
+        }
+        
+        //aim controls
+        if (Controls.InteractInputDown())
+        {
+            if (InstructionSprite.sprite == potentialInstructionSprites[4])
+                InstructionSprite.gameObject.SetActive(false);
+        }
+    }
+
+    public enum PlayerControls
+    {
+        Jump,
+        Shoot,
+        Toggle,
+        Aim,
+        Interact,
+        None
     }
 }

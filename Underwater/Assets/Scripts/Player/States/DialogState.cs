@@ -11,12 +11,16 @@ public class DialogState : State<Player>
     private string[] dialog;
     private int dialogCounter;
 
+    private Player.PlayerControls desiredControl;
+
     string[] separatingStrings = { "\n" };
 
-    public DialogState(Player playerInstance, StateMachine<Player> fsm, TextAsset textFile)
+    public DialogState(Player playerInstance, StateMachine<Player> fsm, TextAsset textFile, Player.PlayerControls desiredControl = Player.PlayerControls.None)
         : base(playerInstance, fsm)
     {
         player = playerInstance;
+
+        this.desiredControl = desiredControl;
 
         this.dialogBox = player.dialogBox;
         this.dialog = textFile.text.Split(separatingStrings, System.StringSplitOptions.RemoveEmptyEntries);
@@ -63,5 +67,10 @@ public class DialogState : State<Player>
     override public void Exit()
     {
         player.UnlockControls();
+        //Show the instruction if it is set
+        if (desiredControl != Player.PlayerControls.None)
+        {
+            player.showControl(desiredControl);
+        }
     }
 }

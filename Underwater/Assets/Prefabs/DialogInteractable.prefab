@@ -56,6 +56,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFile: {fileID: 4900000, guid: 05c5560df08f4844fa614d909bc64164, type: 3}
+  desiredControl: 5
 --- !u!212 &21282290
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -108,6 +109,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
       value: 1019792565
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: desiredControl
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
