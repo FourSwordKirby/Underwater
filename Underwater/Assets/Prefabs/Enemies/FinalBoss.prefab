@@ -32,7 +32,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &133428
 GameObject:
   m_ObjectHideFlags: 1
@@ -231,8 +231,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.1006608, y: 3.10066, z: 3.10066}
+  m_LocalPosition: {x: -8.7, y: 5, z: 0}
+  m_LocalScale: {x: 5.344716, y: 5.344714, z: 5.344714}
   m_Children: []
   m_Father: {fileID: 450550}
   m_RootOrder: 0
@@ -365,9 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71357710335ea2e4db01a8ca05cc25aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
-  status: 0
-  owner: {fileID: 0}
+  owner: {fileID: 11476072}
+  cooldown: 0
 --- !u!114 &11433018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 3
+  health: 0
   environmentCollisionBox: {fileID: 0}
   mouthPosition: {fileID: 190826}
   inhaleHitbox: {fileID: 11483676}

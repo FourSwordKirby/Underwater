@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Boss : MonoBehaviour {
 
     public int maxHealth;
-    public int health { get; private set; }
+    public int health;
     public bool injured { get; private set; }
 
     public StateMachine<Boss> ActionFsm { get; private set; }

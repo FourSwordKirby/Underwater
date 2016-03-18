@@ -48,5 +48,10 @@ public class Wind : MonoBehaviour {
         {
             hurtbox.owner.ApplyPushForce(this.force);
         }
+
+        if (col.gameObject.GetComponent<Bomb>() != null)
+        {
+            col.gameObject.GetComponent<Rigidbody2D>().velocity += this.force;
+        }
     }
 }

@@ -11261,12 +11261,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 172262, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
   m_PrefabInternal: {fileID: 2004099077}
---- !u!114 &1875254058 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11476072, guid: 7385f75a2975e4340b616a9986efa633,
-    type: 2}
-  m_PrefabInternal: {fileID: 2004099077}
-  m_Script: {fileID: 11500000, guid: 32413e94251a6c643bf631db6eb7bf87, type: 3}
 --- !u!1 &1902081546
 GameObject:
   m_ObjectHideFlags: 0
@@ -11978,34 +11972,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 453368, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: -8.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 453368, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 5.02
-      objectReference: {fileID: 0}
-    - target: {fileID: 453368, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 5.344716
-      objectReference: {fileID: 0}
-    - target: {fileID: 453368, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 5.344714
-      objectReference: {fileID: 0}
-    - target: {fileID: 453368, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 5.344714
-      objectReference: {fileID: 0}
-    - target: {fileID: 109024, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+    - target: {fileID: 172262, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11402950, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 1875254058}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
   m_IsPrefabParent: 0
