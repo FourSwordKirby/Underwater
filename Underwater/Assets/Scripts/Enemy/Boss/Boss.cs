@@ -10,6 +10,12 @@ public class Boss : MonoBehaviour {
 
     public StateMachine<Boss> ActionFsm { get; private set; }
 
+    //graphical stuff
+    private Color previousColor;
+    private Color hitColor = Color.red;
+    private float hitFlashLength = 0.2f;
+    private float timer;
+
 
     //self references to various components
     //private Collider selfCollider;
@@ -55,6 +61,14 @@ public class Boss : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         ActionFsm.Execute();
+
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            this.spriteRenderer.color = hitColor;
+            if (timer <= 0)
+                this.spriteRenderer.color = previousColor;
+        }
 	}
 
     // Update is called once per frame
@@ -72,5 +86,8 @@ public class Boss : MonoBehaviour {
     public void TakeDamage(int damage)
     {
         this.health -= damage;
+        if (this.spriteRenderer.color != hitColor)
+            previousColor = this.spriteRenderer.color;
+        timer = hitFlashLength;
     }
 }
