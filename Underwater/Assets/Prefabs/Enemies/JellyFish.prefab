@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.335983, y: -11.848436, z: 0}
+  m_LocalPosition: {x: 32.335983, y: 17.251564, z: 0}
   m_LocalScale: {x: 2.325, y: 1, z: 1}
   m_Children:
   - {fileID: 469590}
@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Jellyfish Hitbox
-  damage: 10
+  damage: 2
   knockbackVector: {x: 0, y: 0}
   hitlag: 0
   hitstun: 0

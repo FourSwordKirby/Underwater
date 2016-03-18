@@ -282,8 +282,9 @@ public class Player : Mobile {
     {
         if (damage > 0)
             this.health -= damage;
-        if (this.health < 0)
-            Debug.Log("dead player");
+		if (this.health < 0) {
+			GameObject.Find ("Death").GetComponent<die> ().gameOver ();
+		}
     }
 
     public void RegainHealth(float amount)

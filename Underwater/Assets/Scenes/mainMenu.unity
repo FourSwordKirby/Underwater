@@ -234,7 +234,7 @@ Transform:
   m_LocalScale: {x: 0.6751633, y: 0.6751633, z: 0.6751633}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1001 &177173506
 Prefab:
   m_ObjectHideFlags: 0
@@ -291,7 +291,7 @@ GameObject:
   - 224: {fileID: 348965989}
   - 222: {fileID: 348965991}
   - 114: {fileID: 348965990}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press 'z' to begin
+  m_Text: Press A to begin
 --- !u!222 &348965991
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -411,7 +411,7 @@ GameObject:
   - 223: {fileID: 805180537}
   - 114: {fileID: 805180536}
   - 114: {fileID: 805180535}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ RectTransform:
   m_Children:
   - {fileID: 348965989}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
@@ -594,7 +594,7 @@ Transform:
   m_LocalScale: {x: 0.6751633, y: 0.6751633, z: 0.6751633}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
 --- !u!1001 &1135261445
 Prefab:
   m_ObjectHideFlags: 0
@@ -856,7 +856,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &1510122912
 MonoBehaviour:
   m_ObjectHideFlags: 0

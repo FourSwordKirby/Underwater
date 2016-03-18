@@ -413,7 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   name: Squid Hitbox
-  damage: 10
+  damage: 3
   knockbackVector: {x: 0, y: 0}
   hitlag: 0
   hitstun: 0
