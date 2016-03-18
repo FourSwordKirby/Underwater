@@ -1,0 +1,3 @@
+Oh my!
+It's dialog which appears when you choose to interact with a thing
+How quiant!
