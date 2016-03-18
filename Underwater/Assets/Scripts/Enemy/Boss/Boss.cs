@@ -31,6 +31,14 @@ public class Boss : MonoBehaviour {
         Summon
     }
 
+    void Awake()
+    {
+        //Initializing components
+        anim = this.GetComponent<Animator>();
+        selfBody = this.GetComponent<Rigidbody2D>();
+        hitboxManager = this.GetComponent<CollisionboxManager>();
+        spriteRenderer = this.GetComponent<SpriteRenderer>();
+    }
 
 	// Use this for initialization
 	void Start () {

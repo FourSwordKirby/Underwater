@@ -16,6 +16,7 @@ public class BossSwipeState : State<Boss>
 
     override public void Enter()
     {
+        boss.anim.SetTrigger("swipe");
     }
 
 

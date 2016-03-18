@@ -21,6 +21,7 @@ public class BossSummonState : State<Boss>
 
     override public void Enter()
     {
+        boss.anim.SetTrigger("summon");
     }
 
 

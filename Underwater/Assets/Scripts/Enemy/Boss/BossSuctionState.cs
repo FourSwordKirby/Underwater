@@ -17,6 +17,7 @@ public class BossSuctionState : State<Boss>
     override public void Enter()
     {
         boss.inhaleHitbox.gameObject.SetActive(true);
+        boss.anim.SetTrigger("suction");
     }
 
 

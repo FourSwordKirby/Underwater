@@ -32,6 +32,9 @@ public class DialogState : State<Player>
 
     override public void Enter()
     {
+        player.anim.SetFloat("MoveSpeed", 0.0f);
+        player.anim.SetBool("Airborne", false);
+
         dialogBox.gameObject.SetActive(true);
         player.LockControls();
     }

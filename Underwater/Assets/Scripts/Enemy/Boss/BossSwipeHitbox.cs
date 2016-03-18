@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossSwipeHitbox : MonoBehaviour {
+public class BossSwipeHitbox : Hitbox {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	//Basic normal bubble stuff
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
+        if (hurtbox != null)
+        {
+            hurtbox.TakeDamage(damage);
+            hurtbox.TakeHit(0, hitstun, knockbackVector);
+            hurtbox.ApplyEffect(this.effect);
+        }
+    }
 }
