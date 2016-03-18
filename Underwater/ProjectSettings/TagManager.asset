@@ -41,14 +41,14 @@ TagManager:
   - name: Background
     uniqueID: 1618106609
     locked: 0
+  - name: Platforms
+    uniqueID: 3413024313
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Boss
     uniqueID: 1584802759
-    locked: 0
-  - name: Platforms
-    uniqueID: 3413024313
     locked: 0
   - name: Player
     uniqueID: 566256231
