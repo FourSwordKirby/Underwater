@@ -173,6 +173,7 @@ public class Player : Mobile {
                 this.spriteRenderer.color = Color.red;
             if ((int)(invulnTime * 4) % 2 == 0)
                 this.spriteRenderer.color = Color.white;
+            Debug.Log("ow");
 
             this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Invuln");
             this.hitboxManager.deactivateAllHitboxes();

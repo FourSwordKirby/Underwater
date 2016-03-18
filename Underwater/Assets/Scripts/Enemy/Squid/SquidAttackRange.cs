@@ -32,7 +32,7 @@ public class SquidAttackRange : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col)
     {
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
-        if (hurtbox != null && hurtbox.owner.gameObject == owner.currentTarget.gameObject)
+        if (hurtbox != null && owner.currentTarget != null && hurtbox.owner.gameObject == owner.currentTarget.gameObject)
         {
             //start the deaggro timer
             deaggroTimer = deaggroLength;

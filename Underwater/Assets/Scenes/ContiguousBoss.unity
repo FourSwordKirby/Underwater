@@ -1556,10 +1556,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11440642, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
-      propertyPath: width
-      value: 40
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5f03a6fe5d771dc49bd7e70ac9e05f57, type: 2}
   m_IsPrefabParent: 0
@@ -12001,11 +11997,7 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 11485760, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 216319696}
-    - target: {fileID: 11409964, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+    - target: {fileID: 11401782, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
@@ -12013,7 +12005,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
-    - target: {fileID: 11401782, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+    - target: {fileID: 11409964, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 216319696}
+    - target: {fileID: 11485760, guid: 4c46c7b7e9cbd7e4d810e226103f0ffd, type: 2}
       propertyPath: player
       value: 
       objectReference: {fileID: 216319696}
