@@ -6,9 +6,9 @@ public class BossSummonState : State<Boss>
     private Boss boss;
     private int enemyCount;
 
-    private int currentEnemyCount;
+    private int currentEnemyCount = 1;
 
-    private float phaseLength = 6.0f;
+    private float phaseLength = 2.0f;
     private float timer;
 
 
@@ -30,7 +30,7 @@ public class BossSummonState : State<Boss>
     {
         timer += Time.deltaTime;
 
-        if (timer > currentEnemyCount * phaseLength/enemyCount)
+        if (timer > currentEnemyCount * phaseLength)
         {
             GameObject spawnedEnemy = GameObject.Instantiate(boss.spawnableEnemies[0]);
             spawnedEnemy.transform.position = boss.mouthPosition.transform.position;
@@ -40,9 +40,11 @@ public class BossSummonState : State<Boss>
                 squid.selfBody.velocity = (Vector2.left+ new Vector2(0, Random.Range(-0.5f, 0.5f))) * 4.0f;
             }
             currentEnemyCount++;
+            if(currentEnemyCount < enemyCount)
+                boss.anim.SetTrigger("summon");
         }
 
-        if (timer > phaseLength)
+        if (timer > enemyCount * phaseLength)
         {
             boss.ActionFsm.ChangeState(new BossIdleState(boss, boss.ActionFsm, Boss.BossStates.Swipe));
         }

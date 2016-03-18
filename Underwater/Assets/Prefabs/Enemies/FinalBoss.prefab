@@ -24,8 +24,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 453368}
-  - 114: {fileID: 11496290}
   - 61: {fileID: 6113750}
+  - 114: {fileID: 11402950}
   m_Layer: 11
   m_Name: EnemyHurtbox
   m_TagString: Untagged
@@ -33,6 +33,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &133428
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 462068}
+  - 114: {fileID: 11440814}
+  - 61: {fileID: 6178386}
+  m_Layer: 11
+  m_Name: SwipeHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &152378
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &190826
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +172,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452102}
+  - {fileID: 462068}
   m_Father: {fileID: 466166}
   m_RootOrder: 3
 --- !u!4 &438272
@@ -164,7 +182,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 190826}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.09, y: 1.35, z: 0}
+  m_LocalPosition: {x: -9.8, y: 4.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 466166}
@@ -200,9 +218,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178722}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.97, y: 1.39, z: 0}
-  m_LocalScale: {x: 1.0293947, y: 0.6858299, z: 0.61930203}
+  m_LocalRotation: {x: 0, y: 0, z: 0.36802536, w: 0.92981577}
+  m_LocalPosition: {x: -16.35, y: -5.34, z: 0}
+  m_LocalScale: {x: 3.0306756, y: 1.6599705, z: 0.61930203}
   m_Children: []
   m_Father: {fileID: 422450}
   m_RootOrder: 0
@@ -218,6 +236,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 450550}
   m_RootOrder: 0
+--- !u!4 &462068
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133428}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.9, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422450}
+  m_RootOrder: 1
 --- !u!4 &466166
 Transform:
   m_ObjectHideFlags: 1
@@ -225,8 +255,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 153.2353, y: -21.071928, z: 0}
-  m_LocalScale: {x: 2.5799131, y: 2.5799136, z: 2.5799136}
+  m_LocalPosition: {x: 140.7, y: -20.4, z: 0}
+  m_LocalScale: {x: 0.91926885, y: 0.91926813, z: 0.91926813}
   m_Children:
   - {fileID: 438272}
   - {fileID: 421286}
@@ -293,6 +323,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 7, y: 4.14}
+--- !u!61 &6178386
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133428}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!95 &9504822
 Animator:
   serializedVersion: 3
@@ -300,9 +344,9 @@ Animator:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172262}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2faa55b6cb51b734d969cb0690ec92fc, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53b14e0d0692c354e815dd2829729121, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -310,6 +354,20 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11402950
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71357710335ea2e4db01a8ca05cc25aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  status: 0
+  owner: {fileID: 0}
 --- !u!114 &11433018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -322,6 +380,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CollisionBoxes: []
+--- !u!114 &11440814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7771cae3b8e75984494e75912a7e374a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  damage: 10
+  knockbackVector: {x: 0, y: 0}
+  hitlag: 0
+  hitstun: 0
+  effect: 0
 --- !u!114 &11476072
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -351,25 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 9
-  force: {x: 3, y: 0}
+  force: {x: 3, y: 5}
   activePeriod: 5
   cooldownPeriod: 2
   windArea: {fileID: 6164530}
   spriteRenderer: {fileID: 21202380}
---- !u!114 &11496290
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 109024}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c29e83d6bcba1749b231cb856d9d2dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Hurtbox
-  status: 0
-  owner: {fileID: 0}
 --- !u!212 &21202380
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -424,9 +485,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1019792565
+  m_SortingLayerID: 1584802759
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 9f1154a4e702b4e4ca07d54d4fdbf836, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fce0d634dbc142045be6b4f0dd16f520, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
