@@ -263,6 +263,8 @@ public class Player : Mobile {
         //Contextual visuals
         if (currentInteractable != null)
             showControl(PlayerControls.Interact);
+        else
+
         //Try to hide controls if they are visible
         if (InstructionSprite.gameObject.activeSelf)
             hideControl();
@@ -419,12 +421,8 @@ public class Player : Mobile {
                 InstructionSprite.gameObject.SetActive(false);
         }
         
-        //aim controls
-        if (Controls.InteractInputDown())
-        {
-            if (InstructionSprite.sprite == potentialInstructionSprites[4])
-                InstructionSprite.gameObject.SetActive(false);
-        }
+        if (InstructionSprite.sprite == potentialInstructionSprites[4])
+            InstructionSprite.gameObject.SetActive(false);
     }
 
     public enum PlayerControls

@@ -18,8 +18,13 @@ public class CheckWeapon : MonoBehaviour {
 	void Update () {
 		if (player.activeWeapon == null || player.activeWeapon.gameObject.activeSelf == false) {
             ammoImage.enabled = false;
-		}
-		else if (player.activeWeapon.GetComponent<Bubbler>() != null) {
+        }
+        else
+        {
+            ammoImage.enabled = true;
+        }
+
+		if (player.activeWeapon.GetComponent<Bubbler>() != null) {
             if (player.activeWeapon.GetComponent<Bubbler>().ammo.effect != Parameters.DamageEffect.Freeze)
             {
                 ammoImage.sprite = spriteArray[0];
