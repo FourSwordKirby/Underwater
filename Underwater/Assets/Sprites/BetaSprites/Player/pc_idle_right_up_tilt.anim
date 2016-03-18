@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pc_air_right_down_tilt
+  m_Name: pc_idle_right_up_tilt
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -19,7 +19,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300004, guid: 9afe08324a674bb4f9b6b75d5778945f, type: 3}
+      value: {fileID: 21300000, guid: 05994f653cabb9c40a50a1156135dbd6, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -38,7 +38,7 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300004, guid: 9afe08324a674bb4f9b6b75d5778945f, type: 3}
+    - {fileID: 21300000, guid: 05994f653cabb9c40a50a1156135dbd6, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
