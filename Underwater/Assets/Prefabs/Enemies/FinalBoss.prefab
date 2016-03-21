@@ -33,6 +33,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
+--- !u!1 &122672
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 437048}
+  - 114: {fileID: 11415210}
+  - 61: {fileID: 6180008}
+  m_Layer: 11
+  m_Name: MouthHitbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
 --- !u!1 &133428
 GameObject:
   m_ObjectHideFlags: 1
@@ -173,8 +190,21 @@ Transform:
   m_Children:
   - {fileID: 452102}
   - {fileID: 462068}
+  - {fileID: 437048}
   m_Father: {fileID: 466166}
   m_RootOrder: 3
+--- !u!4 &437048
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122672}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 422450}
+  m_RootOrder: 2
 --- !u!4 &438272
 Transform:
   m_ObjectHideFlags: 1
@@ -194,8 +224,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 101334}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.860739, y: 4.860742, z: 4.860742}
+  m_LocalPosition: {x: -9.2, y: 0, z: 0}
+  m_LocalScale: {x: 4.860739, y: 50.644226, z: 4.860742}
   m_Children: []
   m_Father: {fileID: 421286}
   m_RootOrder: 0
@@ -276,7 +306,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -337,6 +367,20 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
+--- !u!61 &6180008
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122672}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!95 &9504822
 Animator:
   serializedVersion: 3
@@ -367,6 +411,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 11476072}
   cooldown: 0
+--- !u!114 &11415210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7241bba52c21724482928e60ecd90ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: 
+  damage: 15
+  knockbackVector: {x: 0, y: 0}
+  hitlag: 0
+  hitstun: 0
+  effect: 0
 --- !u!114 &11433018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -387,7 +448,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 133428}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7771cae3b8e75984494e75912a7e374a, type: 3}
+  m_Script: {fileID: 11500000, guid: f7241bba52c21724482928e60ecd90ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   name: 
@@ -409,6 +470,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   health: 0
+  activated: 0
+  startingX: 0
+  moveRange: 5
   environmentCollisionBox: {fileID: 0}
   mouthPosition: {fileID: 190826}
   inhaleHitbox: {fileID: 11483676}

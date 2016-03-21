@@ -15,6 +15,10 @@ public class Boss : MonoBehaviour {
     private Color hitColor = Color.red;
     private float hitFlashLength = 0.2f;
     private float timer;
+    public bool activated;
+
+    public float startingX;
+    public float moveRange;
 
 
     //self references to various components
@@ -39,6 +43,9 @@ public class Boss : MonoBehaviour {
 
     void Awake()
     {
+        startingX = this.transform.position.x;
+        moveRange = 10.0f;
+
         //Initializing components
         anim = this.GetComponent<Animator>();
         selfBody = this.GetComponent<Rigidbody2D>();
@@ -60,21 +67,27 @@ public class Boss : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        ActionFsm.Execute();
-
-        if (timer > 0)
+        if (activated)
         {
-            timer -= Time.deltaTime;
-            this.spriteRenderer.color = hitColor;
-            if (timer <= 0)
-                this.spriteRenderer.color = previousColor;
+            ActionFsm.Execute();
+
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                this.spriteRenderer.color = hitColor;
+                if (timer <= 0)
+                    this.spriteRenderer.color = previousColor;
+            }
+
+            //Moving back and forth
         }
 	}
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        ActionFsm.FixedExecute();
+        if(activated)
+            ActionFsm.FixedExecute();
     }
 
 

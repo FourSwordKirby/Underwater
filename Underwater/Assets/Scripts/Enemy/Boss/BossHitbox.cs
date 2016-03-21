@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class BossSwipeHitbox : Hitbox {
+public class BossHitbox : Hitbox {
 
 	//Basic normal bubble stuff
     void OnTriggerEnter2D(Collider2D col)
