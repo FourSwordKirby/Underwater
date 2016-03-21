@@ -286,7 +286,7 @@ public class Player : Mobile {
         if (damage > 0)
             this.health -= damage;
 		if (this.health < 0) {
-			GameObject.Find ("Death").GetComponent<die> ().gameOver ();
+            Die();
 		}
     }
 
@@ -307,7 +307,8 @@ public class Player : Mobile {
 
     public void Die()
     {
-        Debug.Log("died");
+
+        GameObject.Find("Death").GetComponent<DeathScript>().gameOver();
     }
 
     public void LockDirection()
