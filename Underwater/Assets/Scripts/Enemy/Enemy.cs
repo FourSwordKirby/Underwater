@@ -91,9 +91,6 @@ public class Enemy : Mobile {
     {
         this.frozen = true;
 
-        //Temporary visual cue
-        spriteRenderer.color = Color.blue;
-
         this.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Platform");
         this.selfBody.isKinematic = true;
@@ -105,9 +102,6 @@ public class Enemy : Mobile {
     public virtual void Unfreeze()
     {
         this.frozen = false;
-
-        //Temporary visual cue
-        spriteRenderer.color = Color.white;
 
         this.gameObject.layer = LayerMask.NameToLayer("Enemy");
         this.environmentCollisionBox.gameObject.layer = LayerMask.NameToLayer("Enemy");

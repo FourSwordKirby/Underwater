@@ -33,6 +33,19 @@ public class Squid : Enemy {
         ActionFsm.Execute();
         StatusFsm.Execute();
 
+        if (frozen)
+        {
+            spriteRenderer.color = Color.blue;
+        }
+        else
+        {
+            Color newColor = Color.white;
+            newColor.r = 200 + 55 * (health / maxHealth);
+            newColor.r = 90 + 165 * (health / maxHealth);
+            newColor.r = 90 + 165 * (health / maxHealth);
+            spriteRenderer.color = newColor;
+        }
+
         if (this.health <= 0)
         {
             Destroy(this.gameObject);
