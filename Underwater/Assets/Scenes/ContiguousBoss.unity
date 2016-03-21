@@ -8584,6 +8584,30 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 2.88
       objectReference: {fileID: 0}
+    - target: {fileID: 437048, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 437048, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 122672, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 437048, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 4.114911
+      objectReference: {fileID: 0}
+    - target: {fileID: 437048, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 4.1149116
+      objectReference: {fileID: 0}
+    - target: {fileID: 437048, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 4.1149116
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7385f75a2975e4340b616a9986efa633, type: 2}
   m_IsPrefabParent: 0
@@ -10405,6 +10429,22 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.426256
       objectReference: {fileID: 0}
+    - target: {fileID: 21237678, guid: f1d0f6333bda23e48a6798cf7978b48a, type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237678, guid: f1d0f6333bda23e48a6798cf7978b48a, type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237678, guid: f1d0f6333bda23e48a6798cf7978b48a, type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 21237678, guid: f1d0f6333bda23e48a6798cf7978b48a, type: 2}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f1d0f6333bda23e48a6798cf7978b48a, type: 2}
   m_IsPrefabParent: 0
@@ -11363,7 +11403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeIn: 1
-  fadeTime: 2
+  fadeTime: 10
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeMaterial: {fileID: 2100000, guid: e642b458f4453e04ab7e2b711c58db98, type: 2}
 --- !u!114 &1832961221

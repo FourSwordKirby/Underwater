@@ -74,7 +74,12 @@ public class Boss : MonoBehaviour {
             if (timer > 0)
             {
                 timer -= Time.deltaTime;
-                this.spriteRenderer.color = hitColor;
+
+                if ((int)(timer/ (hitFlashLength * 0.125f)) % 2 == 1)
+                    this.spriteRenderer.color = hitColor;
+                if ((int)(timer / (hitFlashLength * 0.125f)) % 2 == 0)
+                    this.spriteRenderer.color = previousColor;
+
                 if (timer <= 0)
                     this.spriteRenderer.color = previousColor;
             }
@@ -93,7 +98,7 @@ public class Boss : MonoBehaviour {
 
     public void Die()
     {
-        Destroy(this.gameObject);
+        GameObject.Find("FinishGame").GetComponent<finishGame>().startCredits();
     }
 
     public void TakeDamage(int damage)
@@ -101,6 +106,12 @@ public class Boss : MonoBehaviour {
         this.health -= damage;
         if (this.spriteRenderer.color != hitColor)
             previousColor = this.spriteRenderer.color;
-        timer = hitFlashLength;
+        if (this.health > 0)
+            timer = hitFlashLength;
+        else
+        {
+            timer = hitFlashLength * 20;
+            Die();
+        }
     }
 }
