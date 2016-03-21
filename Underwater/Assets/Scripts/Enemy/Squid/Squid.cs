@@ -35,15 +35,13 @@ public class Squid : Enemy {
 
         if (frozen)
         {
-            spriteRenderer.color = Color.blue;
+            spriteRenderer.color = new Color(0.25f, 1f, 1f, 1f);
         }
         else
         {
-            Color newColor = Color.white;
-            newColor.r = 200 + 55 * (health / maxHealth);
-            newColor.r = 90 + 165 * (health / maxHealth);
-            newColor.r = 90 + 165 * (health / maxHealth);
-            spriteRenderer.color = newColor;
+            spriteRenderer.color = new Color(0.8f + 0.2f * (health / maxHealth),
+                                            0.36f + 0.64f * (health / maxHealth),
+                                            0.36f + 0.64f * (health / maxHealth), 1f);
         }
 
         if (this.health <= 0)

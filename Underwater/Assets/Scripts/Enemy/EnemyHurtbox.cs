@@ -11,6 +11,7 @@ public class EnemyHurtbox : Hurtbox {
 
     void Update()
     {
+        /*
         if (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -18,6 +19,7 @@ public class EnemyHurtbox : Hurtbox {
             if (timer <= 0)
                 owner.spriteRenderer.color = previousColor;
         }
+         */
     }
 
     override public void TakeDamage(float damage)
@@ -39,9 +41,5 @@ public class EnemyHurtbox : Hurtbox {
                 owner.Freeze();
             }
         }
-
-        if (owner.spriteRenderer.color != hitColor)
-            previousColor = owner.spriteRenderer.color;
-        timer = hitFlashLength;
     }
 }

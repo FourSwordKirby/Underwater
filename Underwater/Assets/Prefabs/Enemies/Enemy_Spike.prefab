@@ -79,7 +79,7 @@ MonoBehaviour:
   hitlag: 0
   hitstun: 0
   effect: 0
-  decayTime: 5
+  decayTime: 2
   selfBody: {fileID: 5003362}
 --- !u!212 &21261912
 SpriteRenderer:
@@ -124,7 +124,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: decayTime
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Enabled

@@ -89,8 +89,8 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 442460}
-  - 114: {fileID: 11427282}
   - 61: {fileID: 6195508}
+  - 114: {fileID: 11436716}
   m_Layer: 11
   m_Name: EnemyHurtbox
   m_TagString: Untagged
@@ -185,7 +185,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.235977, y: 10.651564, z: 0}
+  m_LocalPosition: {x: 210.8, y: -52.1, z: 0}
   m_LocalScale: {x: 2.325, y: 1, z: 1}
   m_Children:
   - {fileID: 469590}
@@ -200,8 +200,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 194546}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.19, z: 0}
-  m_LocalScale: {x: 0.580381, y: 1.5799358, z: 1.9935074}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalScale: {x: 0.7254762, y: 2.488407, z: 1.9935074}
   m_Children: []
   m_Father: {fileID: 483268}
   m_RootOrder: 0
@@ -298,7 +298,7 @@ MonoBehaviour:
   hitlag: 0
   hitstun: 0
   effect: 0
---- !u!114 &11427282
+--- !u!114 &11436716
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -306,11 +306,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 186022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c29e83d6bcba1749b231cb856d9d2dc, type: 3}
+  m_Script: {fileID: 11500000, guid: 064b4d2f68d55704fb897cb006818255, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Hurtbox
-  status: 0
   owner: {fileID: 11492134}
 --- !u!114 &11489410
 MonoBehaviour:
@@ -343,6 +341,9 @@ MonoBehaviour:
   direction: 0
   environmentCollisionBox: {fileID: 6129618}
   prefabs: []
+  audio:
+  - {fileID: 8300000, guid: 1f0be32ce5213674aa04699f73af1768, type: 3}
+  - {fileID: 8300000, guid: 59ede32878412434190a89c800c666a7, type: 3}
 --- !u!212 &21237678
 SpriteRenderer:
   m_ObjectHideFlags: 1

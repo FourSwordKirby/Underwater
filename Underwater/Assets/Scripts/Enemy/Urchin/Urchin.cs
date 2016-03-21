@@ -30,6 +30,17 @@ public class Urchin : Enemy {
         ActionFsm.Execute();
         StatusFsm.Execute();
 
+        if (frozen)
+        {
+            spriteRenderer.color = new Color(0.25f, 1f, 1f, 1f);
+        }
+        else
+        {
+            spriteRenderer.color = new Color(0.8f + 0.2f * (health / maxHealth),
+                                            0.36f + 0.64f * (health / maxHealth),
+                                            0.36f + 0.64f * (health / maxHealth), 1f);
+        }
+
         if (this.health <= 0)
         {
             Destroy(this.gameObject);
