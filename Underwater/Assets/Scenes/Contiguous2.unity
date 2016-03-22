@@ -1652,7 +1652,7 @@ Transform:
   - {fileID: 1662801026}
   - {fileID: 878726402}
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
 --- !u!1001 &242473078
 Prefab:
   m_ObjectHideFlags: 0
@@ -2782,11 +2782,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 257.38
+      value: 273.9
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -69.17
+      value: -59.1
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2810,7 +2810,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 11417144, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: newCameraBounds
@@ -5140,11 +5140,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 258.5
+      value: 275
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -69.1
+      value: -59
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5168,7 +5168,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 11417144, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: newCameraBounds
@@ -10867,7 +10867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
 --- !u!1001 &1833070156
 Prefab:
   m_ObjectHideFlags: 0
@@ -11435,7 +11435,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
       propertyPath: m_LocalScale.y
@@ -11457,6 +11457,10 @@ Prefab:
       propertyPath: newAudio
       value: 
       objectReference: {fileID: 785651438}
+    - target: {fileID: 433928, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
+      propertyPath: m_LocalScale.x
+      value: -0.63749987
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f875cdce78aad3d439cd91a282b80942, type: 2}
   m_IsPrefabParent: 0
