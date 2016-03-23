@@ -76,9 +76,10 @@ MonoBehaviour:
   name: Bomb
   damage: 0
   knockbackVector: {x: 0, y: 0}
+  hitlag: 0
   hitstun: 0
   effect: 0
-  fuseLength: 5
+  fuseLength: 3
   explosionPrefab: {fileID: 11456494, guid: 73741c71f3225a548ae9202d9fdb9637, type: 2}
   selfBody: {fileID: 5000060}
 --- !u!212 &21214312
@@ -137,7 +138,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: fuseLength
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: explosionPrefab
