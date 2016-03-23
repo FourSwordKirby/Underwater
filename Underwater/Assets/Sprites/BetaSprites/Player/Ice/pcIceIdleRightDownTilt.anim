@@ -5,7 +5,7 @@ AnimationClip:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: pc_ice_idle_right_down
+  m_Name: pcIceIdleRightDownTilt
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
