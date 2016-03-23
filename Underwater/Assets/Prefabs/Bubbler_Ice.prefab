@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e611c181d461d4984d56e0002d30e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Bubbler
+  name: Ice
   maxAmmoCount: 50
   ammo: {fileID: 11405866, guid: 83741fe70c01a81478c5edbc253adb7b, type: 2}
   rechargeRate: 30
@@ -169,6 +169,10 @@ Prefab:
       propertyPath: firingAudio
       value: 
       objectReference: {fileID: 8250614}
+    - target: {fileID: 0}
+      propertyPath: name
+      value: Ice
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 114668}
