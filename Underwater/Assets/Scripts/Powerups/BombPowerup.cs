@@ -18,7 +18,7 @@ public class BombPowerup : Powerup {
             player.AddWeapon(TimedBomber);
 
             //Make the player go into a dialog state + cutscenes I guess
-            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
+            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile, Player.PlayerControls.Toggle));
 
             pickupSound.Play();
 

@@ -18,7 +18,7 @@ public class IcePowerup : Powerup
             player.AddWeapon(IceBubbler);
 
             //Make the player go into a dialog state + cutscenes I guess
-            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
+            player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile, Player.PlayerControls.Aim));
 
             pickupSound.Play();
 

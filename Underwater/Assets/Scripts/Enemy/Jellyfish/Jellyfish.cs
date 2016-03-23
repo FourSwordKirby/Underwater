@@ -33,7 +33,7 @@ public class Jellyfish : Enemy {
         }
         else
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.color = new Color(0.1f + 0.9f * (health / maxHealth), 1, 1, 1);
         }
 
         this.health = Mathf.Clamp(health, 0, maxHealth);

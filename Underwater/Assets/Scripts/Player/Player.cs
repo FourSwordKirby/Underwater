@@ -406,12 +406,12 @@ public class Player : Mobile {
         //Jump controls
         if (Controls.JumpInputDown())
         {
-            if (InstructionSprite.sprite == potentialInstructionSprites[0])
+            if (InstructionSprite.sprite == potentialInstructionSprites[0] && this.grounded == false)
                 InstructionSprite.gameObject.SetActive(false);
         }
 
         //Shooting controls
-        if (Controls.ShootInputHeld() && activeWeapon != null)
+        if (Controls.ShootInputHeld() && activeWeapon != null && isUnderWater)
         {
             if (InstructionSprite.sprite == potentialInstructionSprites[1])
                 InstructionSprite.gameObject.SetActive(false);
