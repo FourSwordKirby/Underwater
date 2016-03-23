@@ -10,7 +10,7 @@ public class beginGame : MonoBehaviour {
 		if (Controls.JumpInputDown()) {
             //AutoFade.LoadLevel("Submarine", 3, 1, Color.black);
             gameText.text = "Loading...";
-            StartCoroutine(this.GetComponent<changeLevel>().change("Contiguous"));
+            StartCoroutine(this.GetComponent<changeLevel>().change("Contiguous2"));
 		}
 	}
 }
