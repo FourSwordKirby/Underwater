@@ -119,6 +119,8 @@ public class Player : Mobile {
     private bool lockedDir;
     private bool inCutscene;
 
+    public List<Animator> animators;
+
     //Tells us the status of the player (things that affect the hitbox)
     public Parameters.PlayerStatus status {get; set; }
 
@@ -150,7 +152,7 @@ public class Player : Mobile {
     // Use this for initialization of variables that rely on other objects
 	void Start () {
         //Initializing components
-        anim = this.GetComponent<Animator>();
+        anim = animators[0];
         selfBody = this.GetComponent<Rigidbody2D>();
         hitboxManager = this.GetComponent<CollisionboxManager>();
         spriteRenderer = this.GetComponent<SpriteRenderer>();
@@ -257,6 +259,12 @@ public class Player : Mobile {
                 AudioSource.PlayClipAtPoint(audio[2], transform.position);
 
             isWeighted = !isWeighted;
+            if (isWeighted)
+            {
+                anim.gameObject.SetActive(false); 
+                anim = animators[2];
+                anim.gameObject.SetActive(true);
+            }
             Debug.Log("Weights Equipped");
         }
 
