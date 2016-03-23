@@ -213,6 +213,9 @@ public class Player : Mobile {
         this.anim.SetFloat("Direction", Parameters.GetDirAnimation(this.direction));
         this.anim.SetFloat("Aim", Parameters.GetAimAnimation(this.aim));
 
+        //Syncing the anims
+        SyncAnims();
+
         //Shooting controls
         if (Controls.ShootInputHeld() && activeWeapon != null)
         {
@@ -259,13 +262,8 @@ public class Player : Mobile {
                 AudioSource.PlayClipAtPoint(audio[2], transform.position);
 
             isWeighted = !isWeighted;
-            if (isWeighted)
-            {
-                anim.gameObject.SetActive(false); 
-                anim = animators[2];
-                anim.gameObject.SetActive(true);
-            }
-            Debug.Log("Weights Equipped");
+
+            SetAnimator();
         }
 
         //Contextual visuals
@@ -349,6 +347,8 @@ public class Player : Mobile {
         this.activeWeapon = weapon;
         this.weaponInventory.Add(weapon);
         this.currentWeaponIndex = weaponInventory.Count - 1;
+
+        SetAnimator();
     }
 
     public void SwitchWeapons(int weaponIndex)
@@ -366,6 +366,8 @@ public class Player : Mobile {
         }
         this.currentWeaponIndex = weaponIndex;
         this.activeWeapon = weaponInventory[currentWeaponIndex];
+
+        SetAnimator();
     }
 
     public void ApplyPushForce(Vector2 force)
@@ -431,6 +433,44 @@ public class Player : Mobile {
         
         if (InstructionSprite.sprite == potentialInstructionSprites[4])
             InstructionSprite.gameObject.SetActive(false);
+    }
+
+    public void SyncAnims()
+    {
+        float direction = anim.GetFloat("Direction");
+        float aim = anim.GetFloat("Aim");
+        float movespeed = anim.GetFloat("MoveSpeed");
+        bool airborne = anim.GetBool("Airborne");
+
+        foreach(Animator animator in animators)
+        {
+            animator.SetFloat("Direction", direction);
+            animator.SetFloat("Aim", aim);
+            animator.SetFloat("MoveSpeed", movespeed);
+            animator.SetBool("Airborne", airborne);
+        }
+    }
+
+    public void SetAnimator()
+    {
+        anim.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+
+        if (isWeighted)
+        {
+            if (activeWeapon.name == "Ice")
+                anim = animators[3];
+            else
+                anim = animators[2];
+        }
+        else
+        {
+            if (activeWeapon.name == "Ice")
+                anim = animators[1];
+            else
+                anim = animators[0];
+        }
+
+        anim.gameObject.GetComponent<SpriteRenderer>().enabled = true;
     }
 
     public enum PlayerControls

@@ -14,6 +14,8 @@ public class WeightPowerup : Powerup
         {
             Player player = hurtbox.owner;
             player.hasWeights = true;
+            player.isWeighted = true;
+            player.SetAnimator();
 
             //Make the player go into a dialog state + cutscenes I guess
             player.ActionFsm.ChangeState(new DialogState(player, player.ActionFsm, textFile));
