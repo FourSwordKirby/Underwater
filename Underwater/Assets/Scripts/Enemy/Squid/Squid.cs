@@ -40,8 +40,8 @@ public class Squid : Enemy {
         else
         {
             spriteRenderer.color = new Color(0.8f + 0.2f * (health / maxHealth),
-                                            0.36f + 0.64f * (health / maxHealth),
-                                            0.36f + 0.64f * (health / maxHealth), 1f);
+                                            0.25f + 0.75f * (health / maxHealth),
+                                            0.25f + 0.75f * (health / maxHealth), 1f);
         }
 
         if (this.health <= 0)
