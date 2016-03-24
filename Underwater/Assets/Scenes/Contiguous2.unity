@@ -4254,11 +4254,11 @@ Prefab:
     - target: {fileID: 11433272, guid: be39fc0781ddce64e9c3933d1c9665e0, type: 2}
       propertyPath: windArea
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1445145049}
     - target: {fileID: 11433272, guid: be39fc0781ddce64e9c3933d1c9665e0, type: 2}
       propertyPath: spriteRenderer
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1445145048}
     - target: {fileID: 468428, guid: be39fc0781ddce64e9c3933d1c9665e0, type: 2}
       propertyPath: m_LocalScale.x
       value: 12.120545
@@ -10612,6 +10612,16 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 417664, guid: b647b8dc88cbbf34abfab52ee5da55c5, type: 2}
   m_PrefabInternal: {fileID: 1435111346}
+--- !u!212 &1445145048 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 21262286, guid: be39fc0781ddce64e9c3933d1c9665e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 569564580}
+--- !u!61 &1445145049 stripped
+BoxCollider2D:
+  m_PrefabParentObject: {fileID: 6159678, guid: be39fc0781ddce64e9c3933d1c9665e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 569564580}
 --- !u!1001 &1449050956
 Prefab:
   m_ObjectHideFlags: 0
