@@ -135,6 +135,7 @@ MonoBehaviour:
   IceBubbler: {fileID: 11477744, guid: d6114151b104abd4bbbe00c86f8a2dbf, type: 2}
   textFile: {fileID: 4900000, guid: c071a55b5eaffa74cb64f66672256c19, type: 3}
   pickupSound: {fileID: 8272698}
+  wall: {fileID: 0}
 --- !u!212 &21228936
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -159,7 +160,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1019792565
+  m_SortingLayerID: 566256231
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5a7cd1837fb0a294494422f7bed6d1b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -210,7 +211,7 @@ Prefab:
       objectReference: {fileID: 6172294}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
-      value: 1019792565
+      value: 566256231
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Sprite

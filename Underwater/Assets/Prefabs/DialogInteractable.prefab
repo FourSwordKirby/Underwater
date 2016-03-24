@@ -25,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 116806}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.735977, y: -7.95, z: 0}
-  m_LocalScale: {x: 1.1007296, y: 1.1007296, z: 1.1007296}
+  m_LocalPosition: {x: 245.39, y: -58.47, z: 0}
+  m_LocalScale: {x: 0.52483267, y: 0.52483267, z: 0.52483267}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad721f1d15a6ad7439041cca7b0bcfae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textFile: {fileID: 4900000, guid: 05c5560df08f4844fa614d909bc64164, type: 3}
+  textFile: {fileID: 4900000, guid: 4744ffd95cceca048bc80bd562c92ac4, type: 3}
   desiredControl: 5
 --- !u!212 &21282290
 SpriteRenderer:

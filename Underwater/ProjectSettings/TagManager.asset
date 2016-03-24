@@ -53,12 +53,12 @@ TagManager:
   - name: Player
     uniqueID: 566256231
     locked: 0
+  - name: Foreground
+    uniqueID: 2312272715
+    locked: 0
   - name: Water
     uniqueID: 2268171675
     locked: 0
   - name: GameEntitites
     uniqueID: 1019792565
-    locked: 0
-  - name: Foreground
-    uniqueID: 2312272715
     locked: 0
