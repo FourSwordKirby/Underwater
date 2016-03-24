@@ -11,6 +11,7 @@ GameObject:
   - 61: {fileID: 6159678}
   - 114: {fileID: 11433272}
   - 212: {fileID: 21262286}
+  - 95: {fileID: 9515964}
   m_Layer: 0
   m_Name: Wind
   m_TagString: Untagged
@@ -25,8 +26,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.06, y: -18.07, z: 0}
-  m_LocalScale: {x: 59.349995, y: 18.980001, z: 24.101564}
+  m_LocalPosition: {x: 28.7, y: 0.8, z: 0}
+  m_LocalScale: {x: 20.685963, y: 7.9245706, z: 12.445046}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -43,7 +44,24 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 7, y: 4.14}
+  m_Size: {x: 2.08, y: 2.03}
+--- !u!95 &9515964
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 136854}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2104a5dd48cf8440ae7c1f6d4dd94b4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11433272
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -87,7 +105,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1618106609
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fa23e211970f4f2469106e725b8bd3a2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 872639271c815e044ade58e3175bbd19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,7 +123,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: fa23e211970f4f2469106e725b8bd3a2,
+      objectReference: {fileID: 21300000, guid: fd4ada9aebcb5494f802bc3150f58a68,
         type: 3}
     - target: {fileID: 0}
       propertyPath: m_SortingLayerID
@@ -123,6 +141,10 @@ Prefab:
       propertyPath: spriteRenderer
       value: 
       objectReference: {fileID: 21262286}
+    - target: {fileID: 0}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f2104a5dd48cf8440ae7c1f6d4dd94b4, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136854}

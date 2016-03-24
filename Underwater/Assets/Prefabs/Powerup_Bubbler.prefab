@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1019792565
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7008b26e6f59aae48850e46bd87bdd0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ef3e7689f64e2044d872c0073a5ebd6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,7 +175,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7008b26e6f59aae48850e46bd87bdd0c,
+      objectReference: {fileID: 21300000, guid: ef3e7689f64e2044d872c0073a5ebd6b,
         type: 3}
     - target: {fileID: 0}
       propertyPath: BasicBubbler
