@@ -70,6 +70,7 @@ public class DialogState : State<Player>
     override public void Exit()
     {
         player.UnlockControls();
+        dialogBox.gameObject.SetActive(false);
         //Show the instruction if it is set
         if (desiredControl != Player.PlayerControls.None)
         {

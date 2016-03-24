@@ -25,9 +25,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136854}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.7, y: 0.8, z: 0}
-  m_LocalScale: {x: 20.685963, y: 7.9245706, z: 12.445046}
+  m_LocalRotation: {x: 0, y: 0, z: 0.99995786, w: -0.009180166}
+  m_LocalPosition: {x: 72.6, y: -4.97, z: 0}
+  m_LocalScale: {x: 3.885554, y: 2.3233402, z: 12.445046}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   strength: 9
-  force: {x: -4, y: 0}
+  force: {x: 6, y: 0}
   activePeriod: 5
   cooldownPeriod: 2
   windArea: {fileID: 6159678}

@@ -69,5 +69,6 @@ public class Urchin : Enemy {
     {
         base.Unfreeze();
         ActionFsm.ResumeState();
+        this.selfBody.isKinematic = true;
     }
 }
