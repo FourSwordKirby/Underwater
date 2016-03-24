@@ -8,7 +8,7 @@ public class BossSpecificTransition : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        PlayerHurtbox player = col.GetComponent<Player>();
+        PlayerHurtbox player = col.GetComponent<PlayerHurtbox>();
         if (player != null)
         {
             Wall.SetActive(true);
