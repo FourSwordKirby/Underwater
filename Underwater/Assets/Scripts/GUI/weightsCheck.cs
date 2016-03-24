@@ -19,7 +19,7 @@ public class weightsCheck : MonoBehaviour {
 		
 		if (player.hasWeights == true) {
 			weightsImage.sprite = weight;
-		
+            weightsImage.enabled = true;
 		}
 		if (!player.isWeighted) {
 			weightsImage.color = new Color (weightsImage.color.r, weightsImage.color.b, weightsImage.color.g, .5f);
