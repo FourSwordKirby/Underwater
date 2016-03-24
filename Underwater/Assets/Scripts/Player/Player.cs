@@ -166,10 +166,13 @@ public class Player : Mobile {
     void Update()
     {
         this.ActionFsm.Execute();
+        this.spriteRenderer = this.anim.GetComponent<SpriteRenderer>();
 
         if (invulnTime > 0)
         {
             invulnTime -= Time.deltaTime;
+
+            Debug.Log((int)(invulnTime / (baseInvulnTime * 0.125)));
 
             if ((int)(invulnTime/(baseInvulnTime * 0.125)) % 2  == 1)
                 this.spriteRenderer.color = Color.red;

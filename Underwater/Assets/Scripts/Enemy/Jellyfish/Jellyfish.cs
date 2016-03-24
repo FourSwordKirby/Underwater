@@ -53,5 +53,6 @@ public class Jellyfish : Enemy {
     override public void Unfreeze()
     {
         base.Unfreeze();
+        this.selfBody.gravityScale = 0.1f;
     }
 }
