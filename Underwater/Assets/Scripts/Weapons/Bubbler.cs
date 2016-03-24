@@ -24,6 +24,8 @@ public class Bubbler : Weapon {
     private float fireTimer;
     private float rechargeTimer;
 
+    private float bubbleDistance = 2.0f;
+
     private Vector2 firePosition;
     private Vector2 fireVelocity;
 
@@ -85,27 +87,27 @@ public class Bubbler : Weapon {
         {
             if (aim == Parameters.Aim.Up)
             {
-                firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
+                firePosition = this.transform.position + new Vector3(0, 0.5f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.TiltUp)
             {
-                firePosition = this.transform.position + new Vector3(-0.25f, 0.25f, 0);
+                firePosition = this.transform.position + new Vector3(-0.25f, 0.25f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(-0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.Neutral)
             {
-                firePosition = this.transform.position + new Vector3(-0.5f, 0, 0);
+                firePosition = this.transform.position + new Vector3(-0.5f, 0, 0) * bubbleDistance;
                 fireVelocity = new Vector3(-1, yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.TiltDown)
             {
-                firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0);
+                firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(-0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.Down)
             {
-                firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0);
+                firePosition = this.transform.position + new Vector3(-0.25f, -0.25f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(-0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
                 //Temporary measures to mesh sprites together
                 /*
@@ -119,27 +121,27 @@ public class Bubbler : Weapon {
         {
             if (aim == Parameters.Aim.Up)
             {
-                firePosition = this.transform.position + new Vector3(0, 0.5f, 0);
+                firePosition = this.transform.position + new Vector3(0, 0.5f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(xRand, 1, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.TiltUp)
             {
-                firePosition = this.transform.position + new Vector3(0.25f, 0.25f, 0);
+                firePosition = this.transform.position + new Vector3(0.25f, 0.25f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(0.5f + xRand, 0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.Neutral)
             {
-                firePosition = this.transform.position + new Vector3(0.5f, 0, 0);
+                firePosition = this.transform.position + new Vector3(0.5f, 0, 0) * bubbleDistance;
                 fireVelocity = new Vector3(1, yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.TiltDown)
             {
-                firePosition = this.transform.position + new Vector3(0.25f, -0.25f, 0);
+                firePosition = this.transform.position + new Vector3(0.25f, -0.25f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
             }
             else if (aim == Parameters.Aim.Down)
             {
-                firePosition = this.transform.position + new Vector3(0, -0.5f, 0);
+                firePosition = this.transform.position + new Vector3(0, -0.5f, 0) * bubbleDistance;
                 fireVelocity = new Vector3(0.5f + xRand, -0.5f + yRand, 0) * bubbleSpeed;
             }
         }
