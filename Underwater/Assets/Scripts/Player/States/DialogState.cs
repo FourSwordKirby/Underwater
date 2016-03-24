@@ -58,6 +58,7 @@ public class DialogState : State<Player>
             }
             else
             {
+                Debug.Log("forcing dialogue");
                 dialogBox.forceDialog(dialog[dialogCounter - 1].Trim());
             }
         }

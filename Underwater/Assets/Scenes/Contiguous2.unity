@@ -1052,7 +1052,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441462, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11432814, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: textFile
@@ -7503,7 +7503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87ced1801121994baaa987f7efc5160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: e5ffbfd5bff9f0443ac5bbaad0a5c1fd, type: 3}
 --- !u!1 &1029548608
 GameObject:
   m_ObjectHideFlags: 0
@@ -7873,7 +7873,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441462, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 116806, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: m_Name
@@ -13023,7 +13023,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1615002787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13045,7 +13045,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -13447,11 +13447,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 417664, guid: b647b8dc88cbbf34abfab52ee5da55c5, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0.95303977
+      value: 0.9530398
       objectReference: {fileID: 0}
     - target: {fileID: 417664, guid: b647b8dc88cbbf34abfab52ee5da55c5, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 0.3028451
+      value: 0.30284512
       objectReference: {fileID: 0}
     - target: {fileID: 417664, guid: b647b8dc88cbbf34abfab52ee5da55c5, type: 2}
       propertyPath: m_RootOrder
@@ -13827,7 +13827,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1675312289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13849,7 +13849,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -15104,7 +15104,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 441462, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 116806, guid: 1fb1d2e3917b61745a06e5fdc843fb9d, type: 2}
       propertyPath: m_Name
@@ -18052,7 +18052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a87ced1801121994baaa987f7efc5160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: e5ffbfd5bff9f0443ac5bbaad0a5c1fd, type: 3}
 --- !u!1001 &2079252424
 Prefab:
   m_ObjectHideFlags: 0

@@ -31,6 +31,8 @@ public class DialogBox : MonoBehaviour {
 
         if (this.dialogField.text != dialog)
         {
+            if (dialogTracker >= dialog.Length)
+                return;
             this.dialogField.text += dialog[dialogTracker];
             dialogTracker++;
 

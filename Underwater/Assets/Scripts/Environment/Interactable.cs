@@ -10,7 +10,6 @@ public abstract class Interactable : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject);
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
         if (hurtbox != null)
         {
