@@ -6,10 +6,14 @@ public class BossSpecificTransition : MonoBehaviour {
     public GameObject Wall;
     public Boss levelBoss;
 
-    void OnTriggerEnter2D()
+    void OnTriggerEnter2D(Collider2D col)
     {
-        Wall.SetActive(true);
-        levelBoss.activated = true;
-        Debug.Log("THE EXALTED");
+        PlayerHurtbox player = col.GetComponent<Player>();
+        if (player != null)
+        {
+            Wall.SetActive(true);
+            levelBoss.activated = true;
+            Debug.Log("THE EXALTED");
+        }
     }
 }
