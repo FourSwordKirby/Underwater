@@ -9,6 +9,8 @@ public class IcePowerup : Powerup
 
     public AudioSource pickupSound;
 
+    public GameObject wall;
+
     void OnTriggerEnter2D(Collider2D col)
     {
         PlayerHurtbox hurtbox = col.gameObject.GetComponent<PlayerHurtbox>();
@@ -23,6 +25,8 @@ public class IcePowerup : Powerup
             pickupSound.Play();
 
             finishPickup();
+
+            wall.SetActive(false);
         }
     }
 }

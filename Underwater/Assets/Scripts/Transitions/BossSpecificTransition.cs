@@ -11,7 +11,7 @@ public class BossSpecificTransition : MonoBehaviour {
         PlayerHurtbox player = col.GetComponent<PlayerHurtbox>();
         if (player != null)
         {
-            Wall.SetActive(true);
+            Wall.SetActive(false);
             levelBoss.activated = true;
             Debug.Log("THE EXALTED");
         }
