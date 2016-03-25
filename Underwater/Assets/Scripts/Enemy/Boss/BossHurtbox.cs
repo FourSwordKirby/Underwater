@@ -22,7 +22,7 @@ public class BossHurtbox : MonoBehaviour
                 return;
             else
             {
-                cooldown = 8.0f;
+                cooldown = 3.0f;
                 owner.TakeDamage(1);
             }
         }

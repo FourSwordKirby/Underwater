@@ -30,7 +30,7 @@ public class BossSwipeState : State<Boss>
             float nextState = Random.Range(0.0f, 1.0f);
             if (!boss.injured)
             {
-                if (nextState < 1.0f / 2.0f)
+                if (nextState < 0.4f)
                     boss.ActionFsm.ChangeState(new BossIdleState(boss, boss.ActionFsm, Boss.BossStates.Swipe));
                 else
                 {
@@ -40,9 +40,9 @@ public class BossSwipeState : State<Boss>
             }
             else
             {
-                if (nextState < 1.0f / 2.0f)
+                if (nextState < 0.3f)
                     boss.ActionFsm.ChangeState(new BossIdleState(boss, boss.ActionFsm, Boss.BossStates.Swipe));
-                else if (1.0f / 2.0f < nextState && nextState < 3.0f / 4.0f)
+                else if (0.3f < nextState && nextState < 0.5f)
                     boss.ActionFsm.ChangeState(new BossIdleState(boss, boss.ActionFsm, Boss.BossStates.Summon));
                 else
                     boss.ActionFsm.ChangeState(new BossIdleState(boss, boss.ActionFsm, Boss.BossStates.Suction));
