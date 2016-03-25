@@ -37,7 +37,7 @@ public class BossSuctionState : State<Boss>
 
         if (timer > phaseLength)
         {
-            boss.ActionFsm.ChangeState(new BossSummonState(boss, boss.ActionFsm, 2));
+            boss.ActionFsm.ChangeState(new BossSummonState(boss, boss.ActionFsm, 1));
         }
         Debug.Log("Suctioning");
     }

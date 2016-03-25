@@ -37,7 +37,7 @@ public class BossSummonState : State<Boss>
             if (spawnedEnemy.GetComponent<Squid>() != null)
             {
                 Squid squid = spawnedEnemy.GetComponent<Squid>();
-                squid.selfBody.velocity = (Vector2.left+ new Vector2(0, Random.Range(-0.5f, 0.5f))) * 4.0f;
+                squid.selfBody.velocity = (Vector2.left+ new Vector2(0, Random.Range(-1.0f, 0.0f))) * 4.0f;
             }
             currentEnemyCount++;
             if(currentEnemyCount < enemyCount)

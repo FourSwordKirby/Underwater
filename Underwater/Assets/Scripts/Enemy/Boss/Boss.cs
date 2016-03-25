@@ -98,7 +98,7 @@ public class Boss : MonoBehaviour {
 
     public void Die()
     {
-        GameObject.Find("FinishGame").GetComponent<finishGame>().startCredits();
+        GameObject.Find("Credits").GetComponent<finishGame>().startCredits();
     }
 
     public void TakeDamage(int damage)

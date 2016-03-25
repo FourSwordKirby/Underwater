@@ -333,6 +333,7 @@ public class Player : Mobile {
         inCutscene = true;
         foreach(Weapon weapon in weaponInventory)
             weapon.CeaseFire();
+        InstructionSprite.gameObject.SetActive(false);
         this.selfBody.velocity = new Vector2(0.0f, this.selfBody.velocity.y);
     }
 
