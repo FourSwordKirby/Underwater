@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/mainMenu.unity
   - enabled: 0
     path: Assets/Scenes/testScene.unity
@@ -21,11 +21,11 @@ EditorBuildSettings:
     path: Assets/Scenes/testScene.unity
   - enabled: 0
     path: Assets/Scenes/testScene2.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/gameOver.unity
   - enabled: 0
     path: Assets/Scenes/Contiguous.unity
   - enabled: 1
     path: Assets/Scenes/credits.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Contiguous2.unity
