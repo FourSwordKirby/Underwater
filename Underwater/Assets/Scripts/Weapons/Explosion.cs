@@ -10,7 +10,7 @@ public class Explosion : Hitbox {
     void Start()
     {
         Camera.main.GetComponent<CameraControls>().Shake(0.1f);
-        AudioSource.PlayClipAtPoint(explosionSound.clip, this.transform.position);
+        AudioSource.PlayClipAtPoint(explosionSound.clip, this.transform.position, 100.0f);
     }
 
     void Update()

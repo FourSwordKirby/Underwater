@@ -48,6 +48,7 @@ public class Jellyfish : Enemy {
     override public void Freeze()
     {
         base.Freeze();
+        this.selfBody.velocity = Vector2.zero;
     }
 
     override public void Unfreeze()

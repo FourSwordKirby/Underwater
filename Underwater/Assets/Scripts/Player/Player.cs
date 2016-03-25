@@ -270,7 +270,7 @@ public class Player : Mobile {
         }
 
         //Contextual visuals
-        if (currentInteractable != null)
+        if (currentInteractable != null && !inCutscene)
             showControl(PlayerControls.Interact);
         else
 
